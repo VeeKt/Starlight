@@ -1,0 +1,573 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55B872872020FF9F00D37F2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872862020FF9F00D37F2E /* AppDelegate.m */; };
+		55B8728A2020FF9F00D37F2E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872892020FF9F00D37F2E /* ViewController.m */; };
+		55B872902020FF9F00D37F2E /* Starlight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55B8728E2020FF9F00D37F2E /* Starlight.xcdatamodeld */; };
+		55B872922020FF9F00D37F2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B872912020FF9F00D37F2E /* Assets.xcassets */; };
+		55B872982020FF9F00D37F2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872972020FF9F00D37F2E /* main.m */; };
+		55B872A22020FFA000D37F2E /* StarlightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872A12020FFA000D37F2E /* StarlightTests.m */; };
+		55B872AD2020FFA000D37F2E /* StarlightUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872AC2020FFA000D37F2E /* StarlightUITests.m */; };
+		55B872E62026586500D37F2E /* VYKPhoneMemoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872E52026586500D37F2E /* VYKPhoneMemoryViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		55B8729E2020FFA000D37F2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55B8727A2020FF9F00D37F2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55B872812020FF9F00D37F2E;
+			remoteInfo = Starlight;
+		};
+		55B872A92020FFA000D37F2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55B8727A2020FF9F00D37F2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55B872812020FF9F00D37F2E;
+			remoteInfo = Starlight;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		55B872822020FF9F00D37F2E /* Starlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Starlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55B872852020FF9F00D37F2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		55B872862020FF9F00D37F2E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		55B872882020FF9F00D37F2E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		55B872892020FF9F00D37F2E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		55B8728F2020FF9F00D37F2E /* Starlight.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Starlight.xcdatamodel; sourceTree = "<group>"; };
+		55B872912020FF9F00D37F2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55B872962020FF9F00D37F2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55B872972020FF9F00D37F2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		55B8729D2020FFA000D37F2E /* StarlightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarlightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55B872A12020FFA000D37F2E /* StarlightTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarlightTests.m; sourceTree = "<group>"; };
+		55B872A32020FFA000D37F2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55B872A82020FFA000D37F2E /* StarlightUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarlightUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55B872AC2020FFA000D37F2E /* StarlightUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarlightUITests.m; sourceTree = "<group>"; };
+		55B872AE2020FFA000D37F2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55B872E42026586500D37F2E /* VYKPhoneMemoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKPhoneMemoryViewController.h; sourceTree = "<group>"; };
+		55B872E52026586500D37F2E /* VYKPhoneMemoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKPhoneMemoryViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55B8727F2020FF9F00D37F2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55B8729A2020FFA000D37F2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55B872A52020FFA000D37F2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		55B872792020FF9F00D37F2E = {
+			isa = PBXGroup;
+			children = (
+				55B872842020FF9F00D37F2E /* Starlight */,
+				55B872A02020FFA000D37F2E /* StarlightTests */,
+				55B872AB2020FFA000D37F2E /* StarlightUITests */,
+				55B872832020FF9F00D37F2E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		55B872832020FF9F00D37F2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55B872822020FF9F00D37F2E /* Starlight.app */,
+				55B8729D2020FFA000D37F2E /* StarlightTests.xctest */,
+				55B872A82020FFA000D37F2E /* StarlightUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55B872842020FF9F00D37F2E /* Starlight */ = {
+			isa = PBXGroup;
+			children = (
+				55B872E32024884200D37F2E /* Delegates */,
+				55B872E120229C1100D37F2E /* Serveces */,
+				55B872E22022FBF400D37F2E /* Controllers */,
+				55B872912020FF9F00D37F2E /* Assets.xcassets */,
+				55B872962020FF9F00D37F2E /* Info.plist */,
+				55B872972020FF9F00D37F2E /* main.m */,
+				55B8728E2020FF9F00D37F2E /* Starlight.xcdatamodeld */,
+			);
+			path = Starlight;
+			sourceTree = "<group>";
+		};
+		55B872A02020FFA000D37F2E /* StarlightTests */ = {
+			isa = PBXGroup;
+			children = (
+				55B872A12020FFA000D37F2E /* StarlightTests.m */,
+				55B872A32020FFA000D37F2E /* Info.plist */,
+			);
+			path = StarlightTests;
+			sourceTree = "<group>";
+		};
+		55B872AB2020FFA000D37F2E /* StarlightUITests */ = {
+			isa = PBXGroup;
+			children = (
+				55B872AC2020FFA000D37F2E /* StarlightUITests.m */,
+				55B872AE2020FFA000D37F2E /* Info.plist */,
+			);
+			path = StarlightUITests;
+			sourceTree = "<group>";
+		};
+		55B872E120229C1100D37F2E /* Serveces */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Serveces;
+			sourceTree = "<group>";
+		};
+		55B872E22022FBF400D37F2E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				55B872882020FF9F00D37F2E /* ViewController.h */,
+				55B872892020FF9F00D37F2E /* ViewController.m */,
+				55B872E42026586500D37F2E /* VYKPhoneMemoryViewController.h */,
+				55B872E52026586500D37F2E /* VYKPhoneMemoryViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		55B872E32024884200D37F2E /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				55B872852020FF9F00D37F2E /* AppDelegate.h */,
+				55B872862020FF9F00D37F2E /* AppDelegate.m */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55B872812020FF9F00D37F2E /* Starlight */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55B872B12020FFA000D37F2E /* Build configuration list for PBXNativeTarget "Starlight" */;
+			buildPhases = (
+				55B8727E2020FF9F00D37F2E /* Sources */,
+				55B8727F2020FF9F00D37F2E /* Frameworks */,
+				55B872802020FF9F00D37F2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Starlight;
+			productName = Starlight;
+			productReference = 55B872822020FF9F00D37F2E /* Starlight.app */;
+			productType = "com.apple.product-type.application";
+		};
+		55B8729C2020FFA000D37F2E /* StarlightTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55B872B42020FFA000D37F2E /* Build configuration list for PBXNativeTarget "StarlightTests" */;
+			buildPhases = (
+				55B872992020FFA000D37F2E /* Sources */,
+				55B8729A2020FFA000D37F2E /* Frameworks */,
+				55B8729B2020FFA000D37F2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55B8729F2020FFA000D37F2E /* PBXTargetDependency */,
+			);
+			name = StarlightTests;
+			productName = StarlightTests;
+			productReference = 55B8729D2020FFA000D37F2E /* StarlightTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		55B872A72020FFA000D37F2E /* StarlightUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55B872B72020FFA000D37F2E /* Build configuration list for PBXNativeTarget "StarlightUITests" */;
+			buildPhases = (
+				55B872A42020FFA000D37F2E /* Sources */,
+				55B872A52020FFA000D37F2E /* Frameworks */,
+				55B872A62020FFA000D37F2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55B872AA2020FFA000D37F2E /* PBXTargetDependency */,
+			);
+			name = StarlightUITests;
+			productName = StarlightUITests;
+			productReference = 55B872A82020FFA000D37F2E /* StarlightUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55B8727A2020FF9F00D37F2E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = Victoria;
+				TargetAttributes = {
+					55B872812020FF9F00D37F2E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					55B8729C2020FFA000D37F2E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 55B872812020FF9F00D37F2E;
+					};
+					55B872A72020FFA000D37F2E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 55B872812020FF9F00D37F2E;
+					};
+				};
+			};
+			buildConfigurationList = 55B8727D2020FF9F00D37F2E /* Build configuration list for PBXProject "Starlight" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55B872792020FF9F00D37F2E;
+			productRefGroup = 55B872832020FF9F00D37F2E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55B872812020FF9F00D37F2E /* Starlight */,
+				55B8729C2020FFA000D37F2E /* StarlightTests */,
+				55B872A72020FFA000D37F2E /* StarlightUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55B872802020FF9F00D37F2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55B872922020FF9F00D37F2E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55B8729B2020FFA000D37F2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55B872A62020FFA000D37F2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55B8727E2020FF9F00D37F2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55B872E62026586500D37F2E /* VYKPhoneMemoryViewController.m in Sources */,
+				55B8728A2020FF9F00D37F2E /* ViewController.m in Sources */,
+				55B872872020FF9F00D37F2E /* AppDelegate.m in Sources */,
+				55B872982020FF9F00D37F2E /* main.m in Sources */,
+				55B872902020FF9F00D37F2E /* Starlight.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55B872992020FFA000D37F2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55B872A22020FFA000D37F2E /* StarlightTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55B872A42020FFA000D37F2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55B872AD2020FFA000D37F2E /* StarlightUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		55B8729F2020FFA000D37F2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55B872812020FF9F00D37F2E /* Starlight */;
+			targetProxy = 55B8729E2020FFA000D37F2E /* PBXContainerItemProxy */;
+		};
+		55B872AA2020FFA000D37F2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55B872812020FF9F00D37F2E /* Starlight */;
+			targetProxy = 55B872A92020FFA000D37F2E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		55B872AF2020FFA000D37F2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		55B872B02020FFA000D37F2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55B872B22020FFA000D37F2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Starlight/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vyk.Starlight;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		55B872B32020FFA000D37F2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Starlight/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vyk.Starlight;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		55B872B52020FFA000D37F2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = StarlightTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vyk.StarlightTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Starlight.app/Starlight";
+			};
+			name = Debug;
+		};
+		55B872B62020FFA000D37F2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = StarlightTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vyk.StarlightTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Starlight.app/Starlight";
+			};
+			name = Release;
+		};
+		55B872B82020FFA000D37F2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = StarlightUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vyk.StarlightUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Starlight;
+			};
+			name = Debug;
+		};
+		55B872B92020FFA000D37F2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = StarlightUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vyk.StarlightUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Starlight;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55B8727D2020FF9F00D37F2E /* Build configuration list for PBXProject "Starlight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55B872AF2020FFA000D37F2E /* Debug */,
+				55B872B02020FFA000D37F2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55B872B12020FFA000D37F2E /* Build configuration list for PBXNativeTarget "Starlight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55B872B22020FFA000D37F2E /* Debug */,
+				55B872B32020FFA000D37F2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55B872B42020FFA000D37F2E /* Build configuration list for PBXNativeTarget "StarlightTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55B872B52020FFA000D37F2E /* Debug */,
+				55B872B62020FFA000D37F2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55B872B72020FFA000D37F2E /* Build configuration list for PBXNativeTarget "StarlightUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55B872B82020FFA000D37F2E /* Debug */,
+				55B872B92020FFA000D37F2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		55B8728E2020FF9F00D37F2E /* Starlight.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				55B8728F2020FF9F00D37F2E /* Starlight.xcdatamodel */,
+			);
+			currentVersion = 55B8728F2020FF9F00D37F2E /* Starlight.xcdatamodel */;
+			path = Starlight.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 55B8727A2020FF9F00D37F2E /* Project object */;
+}
