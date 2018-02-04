@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "VYKPhoneMemoryViewController.h"
+#import "VYKTakePhotoViewController.h"
+#import "VYKSocialNetworkViewController.h"
 
 CGFloat widthOffset = 25;
 CGFloat hightOffset = 180;
@@ -16,7 +19,7 @@ CGFloat sideSize = 110;
 
 @property (nonatomic, strong) UIButton *phoneMemoryButton;
 @property (nonatomic, strong) UIButton *makePhotoButton;
-@property (nonatomic, strong) UIButton *facebookButton;
+@property (nonatomic, strong) UIButton *socialNetworkButton;
 @property (nonatomic, strong) UILabel *welcomeLabel;
 
 @end
@@ -41,26 +44,29 @@ CGFloat sideSize = 110;
     [self.welcomeLabel setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:self.welcomeLabel];
 
-    [self createButtonCustomStyle:self.phoneMemoryButton squareSide:sideSize offsetHight:hightOffset offsetWidth:CGRectGetWidth(self.view.frame) - widthOffset - sideSize image:[UIImage imageNamed:@"whiteSmartphone.png"] buttonBackgroundColor:[UIColor lightGrayColor] selector:@selector(clickOnPhoneMemoryButton:)];
+    [self createButtonCustomStyle:self.phoneMemoryButton squareSide:sideSize offsetHight:hightOffset offsetWidth:CGRectGetWidth(self.view.frame) - widthOffset - sideSize image:[UIImage imageNamed:@"whiteSmartphone.png"] buttonBackgroundColor:[UIColor orangeColor] selector:@selector(clickOnPhoneMemoryButton:)];
     
-    [self createButtonCustomStyle:self.makePhotoButton squareSide:sideSize offsetHight:hightOffset offsetWidth:widthOffset image:[UIImage imageNamed:@"whiteDslr.png"] buttonBackgroundColor:[UIColor lightGrayColor] selector:@selector(clickOnMakePhotoButton:)];
+    [self createButtonCustomStyle:self.makePhotoButton squareSide:sideSize offsetHight:hightOffset offsetWidth:widthOffset image:[UIImage imageNamed:@"whiteDslr.png"] buttonBackgroundColor:[UIColor yellowColor] selector:@selector(clickOnMakePhotoButton:)];
     
-    [self createButtonCustomStyle:self.facebookButton squareSide:sideSize offsetHight:1.7 * hightOffset offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * widthOffset image:[UIImage imageNamed:@"fcbk.png"] buttonBackgroundColor:[UIColor lightGrayColor] selector:@selector(clickOnFacebookButton:)];
+    [self createButtonCustomStyle:self.socialNetworkButton squareSide:sideSize offsetHight:1.7 * hightOffset offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * widthOffset image:[UIImage imageNamed:@"fcbk.png"] buttonBackgroundColor:[UIColor lightGrayColor] selector:@selector(clickOnSocialNetworkButton:)];
 }
 
 - (void)clickOnMakePhotoButton:(id)sender
 {
-    
+    VYKTakePhotoViewController *takePhotoViewController = [[VYKTakePhotoViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:takePhotoViewController animated:YES];
 }
 
 - (void)clickOnPhoneMemoryButton:(id)sender
 {
-    
+    VYKPhoneMemoryViewController *phoneMemoryViewController = [[VYKPhoneMemoryViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:phoneMemoryViewController animated:YES];
 }
 
-- (void)clickOnFacebookButton:(id)sender
+- (void)clickOnSocialNetworkButton:(id)sender
 {
-    
+    VYKSocialNetworkViewController *socialNetworkViewController = [[VYKSocialNetworkViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:socialNetworkViewController animated:YES];
 }
 
 - (void)createButtonCustomStyle:(UIButton *)button squareSide:(CGFloat)squareSide offsetHight:(CGFloat)offsetHight offsetWidth:(CGFloat)offsetWidth image:(UIImage *)image buttonBackgroundColor:(UIColor *)buttonBackgroundColor selector:(SEL)selector
@@ -73,38 +79,5 @@ CGFloat sideSize = 110;
     button.backgroundColor = buttonBackgroundColor;
     [self.view addSubview:button];
 }
-    
-//    self.makePhotoButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [self.makePhotoButton addTarget:self action:@selector(clickOnMakePhotoButton) forControlEvents:UIControlEventTouchUpInside];
-//    self.makePhotoButton.frame = CGRectMake(CGRectGetWidth(self.view.frame) - widthOffset - sideSize, hightOffset, sideSize, sideSize);
-//    [self.makePhotoButton setImage:[UIImage imageNamed:@"whiteDslr.png"] forState:UIControlStateNormal];
-//    self.makePhotoButton.backgroundColor = [UIColor lightGrayColor];
-//    [self.view addSubview:self.makePhotoButton];
-//}
-
-//- (void)createButtonWithBlock:(void (^)(UIButton*, CGFloat, CGFloat, CGFloat, UIColor*, SEL))createSquareButtonBlock
-//{
-//    self.phoneMemoryButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [self.phoneMemoryButton addTarget:self action:@selector(clickOnPhoneMemoryButton) forControlEvents:UIControlEventTouchUpInside];
-//    self.phoneMemoryButton.frame = CGRectMake(widthOffset, hightOffset, sideSize, sideSize);
-//    self.phoneMemoryButton.backgroundColor = [UIColor lightGrayColor];
-//    [self.view addSubview:self.phoneMemoryButton];
-//}
-//
-//void (^createSquareButtonBlock)(id, UIButton*, CGFloat, CGFloat, CGFloat, UIColor*, SEL) = ^(id idSelf, UIButton *button, CGFloat side, CGFloat offsetWidth, CGFloat offsetHight, UIColor *color, SEL action)
-//{
-//    button = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [button addTarget:idSelf action:@selector(action) forControlEvents:UIControlEventTouchUpInside];
-//    button.frame = CGRectMake(offsetWidth, offsetHight, side, side);
-//    button.backgroundColor = color;
-////    [self.view addSubview:button];
-//};
-
-
-
-//- (void)didReceiveMemoryWarning {
-//    [super didReceiveMemoryWarning];
-//    // Dispose of any resources that can be recreated.
-//}
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VYKCreateUIProtocol.h"
 
-@interface VYKPhoneMemoryViewController : UIViewController
+@interface VYKPhoneMemoryViewController : UIViewController <VYKCreateUIProtocol>
 
 @end

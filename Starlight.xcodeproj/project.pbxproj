@@ -15,6 +15,9 @@
 		55B872A22020FFA000D37F2E /* StarlightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872A12020FFA000D37F2E /* StarlightTests.m */; };
 		55B872AD2020FFA000D37F2E /* StarlightUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872AC2020FFA000D37F2E /* StarlightUITests.m */; };
 		55B872E62026586500D37F2E /* VYKPhoneMemoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872E52026586500D37F2E /* VYKPhoneMemoryViewController.m */; };
+		55B872E92026F75800D37F2E /* VYKPresenterForViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872E82026F75800D37F2E /* VYKPresenterForViewController.m */; };
+		55B872EF20273CCD00D37F2E /* VYKTakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872EE20273CCD00D37F2E /* VYKTakePhotoViewController.m */; };
+		55B872F220273D1800D37F2E /* VYKSocialNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872F120273D1800D37F2E /* VYKSocialNetworkViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,13 @@
 		55B872AE2020FFA000D37F2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55B872E42026586500D37F2E /* VYKPhoneMemoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKPhoneMemoryViewController.h; sourceTree = "<group>"; };
 		55B872E52026586500D37F2E /* VYKPhoneMemoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKPhoneMemoryViewController.m; sourceTree = "<group>"; };
+		55B872E72026F75800D37F2E /* VYKPresenterForViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKPresenterForViewController.h; sourceTree = "<group>"; };
+		55B872E82026F75800D37F2E /* VYKPresenterForViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKPresenterForViewController.m; sourceTree = "<group>"; };
+		55B872ED20273CCD00D37F2E /* VYKTakePhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKTakePhotoViewController.h; sourceTree = "<group>"; };
+		55B872EE20273CCD00D37F2E /* VYKTakePhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKTakePhotoViewController.m; sourceTree = "<group>"; };
+		55B872F020273D1800D37F2E /* VYKSocialNetworkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKSocialNetworkViewController.h; sourceTree = "<group>"; };
+		55B872F120273D1800D37F2E /* VYKSocialNetworkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKSocialNetworkViewController.m; sourceTree = "<group>"; };
+		55B872F520273E7100D37F2E /* VYKCreateUIProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKCreateUIProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +112,7 @@
 		55B872842020FF9F00D37F2E /* Starlight */ = {
 			isa = PBXGroup;
 			children = (
+				55B872F320273E2A00D37F2E /* Protocols */,
 				55B872E32024884200D37F2E /* Delegates */,
 				55B872E120229C1100D37F2E /* Serveces */,
 				55B872E22022FBF400D37F2E /* Controllers */,
@@ -109,6 +120,8 @@
 				55B872962020FF9F00D37F2E /* Info.plist */,
 				55B872972020FF9F00D37F2E /* main.m */,
 				55B8728E2020FF9F00D37F2E /* Starlight.xcdatamodeld */,
+				55B872E72026F75800D37F2E /* VYKPresenterForViewController.h */,
+				55B872E82026F75800D37F2E /* VYKPresenterForViewController.m */,
 			);
 			path = Starlight;
 			sourceTree = "<group>";
@@ -145,6 +158,10 @@
 				55B872892020FF9F00D37F2E /* ViewController.m */,
 				55B872E42026586500D37F2E /* VYKPhoneMemoryViewController.h */,
 				55B872E52026586500D37F2E /* VYKPhoneMemoryViewController.m */,
+				55B872ED20273CCD00D37F2E /* VYKTakePhotoViewController.h */,
+				55B872EE20273CCD00D37F2E /* VYKTakePhotoViewController.m */,
+				55B872F020273D1800D37F2E /* VYKSocialNetworkViewController.h */,
+				55B872F120273D1800D37F2E /* VYKSocialNetworkViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -156,6 +173,14 @@
 				55B872862020FF9F00D37F2E /* AppDelegate.m */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		55B872F320273E2A00D37F2E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				55B872F520273E7100D37F2E /* VYKCreateUIProtocol.h */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,8 +316,11 @@
 			files = (
 				55B872E62026586500D37F2E /* VYKPhoneMemoryViewController.m in Sources */,
 				55B8728A2020FF9F00D37F2E /* ViewController.m in Sources */,
+				55B872F220273D1800D37F2E /* VYKSocialNetworkViewController.m in Sources */,
+				55B872E92026F75800D37F2E /* VYKPresenterForViewController.m in Sources */,
 				55B872872020FF9F00D37F2E /* AppDelegate.m in Sources */,
 				55B872982020FF9F00D37F2E /* main.m in Sources */,
+				55B872EF20273CCD00D37F2E /* VYKTakePhotoViewController.m in Sources */,
 				55B872902020FF9F00D37F2E /* Starlight.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
