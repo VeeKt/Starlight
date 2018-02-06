@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  VYKViewController.h
 //  Starlight
 //
 //  Created by Victoria on 30.01.2018.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "VYKCreateUIProtocol.h"
 
-@interface ViewController : UIViewController <VYKCreateUIProtocol>
+@interface VYKViewController : UIViewController <VYKCreateUIProtocol>
 
 @end
 

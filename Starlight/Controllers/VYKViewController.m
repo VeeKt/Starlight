@@ -1,12 +1,12 @@
 //
-//  ViewController.m
+//  VYKViewController.m
 //  Starlight
 //
 //  Created by Victoria on 30.01.2018.
 //  Copyright © 2018 Victoria. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "VYKViewController.h"
 #import "VYKPhoneMemoryViewController.h"
 #import "VYKTakePhotoViewController.h"
 #import "VYKSocialNetworkViewController.h"
@@ -15,7 +15,7 @@ CGFloat widthOffset = 25;
 CGFloat hightOffset = 180;
 CGFloat sideSize = 110;
 
-@interface ViewController ()
+@interface VYKViewController ()
 
 @property (nonatomic, strong) UIButton *phoneMemoryButton;
 @property (nonatomic, strong) UIButton *makePhotoButton;
@@ -24,7 +24,7 @@ CGFloat sideSize = 110;
 
 @end
 
-@implementation ViewController
+@implementation VYKViewController
 
 - (void)viewDidLoad
 {

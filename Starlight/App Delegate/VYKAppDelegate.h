@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  VYKAppDelegate.h
 //  Starlight
 //
 //  Created by Victoria on 30.01.2018.
@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-#import "ViewController.h"
+#import "VYKViewController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface VYKAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
@@ -18,7 +18,7 @@
 
 @property (nonatomic, strong) UINavigationController *navigationControloler;
 
-@property (nonatomic, strong) ViewController *rootViewController;
+@property (nonatomic, strong) VYKViewController *rootViewController;
 
 - (void)saveContext;
 

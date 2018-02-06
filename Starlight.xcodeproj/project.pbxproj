@@ -7,17 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		55B872872020FF9F00D37F2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872862020FF9F00D37F2E /* AppDelegate.m */; };
-		55B8728A2020FF9F00D37F2E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872892020FF9F00D37F2E /* ViewController.m */; };
+		55B872872020FF9F00D37F2E /* VYKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872862020FF9F00D37F2E /* VYKAppDelegate.m */; };
+		55B8728A2020FF9F00D37F2E /* VYKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872892020FF9F00D37F2E /* VYKViewController.m */; };
 		55B872902020FF9F00D37F2E /* Starlight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55B8728E2020FF9F00D37F2E /* Starlight.xcdatamodeld */; };
 		55B872922020FF9F00D37F2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B872912020FF9F00D37F2E /* Assets.xcassets */; };
 		55B872982020FF9F00D37F2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872972020FF9F00D37F2E /* main.m */; };
 		55B872A22020FFA000D37F2E /* StarlightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872A12020FFA000D37F2E /* StarlightTests.m */; };
 		55B872AD2020FFA000D37F2E /* StarlightUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872AC2020FFA000D37F2E /* StarlightUITests.m */; };
 		55B872E62026586500D37F2E /* VYKPhoneMemoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872E52026586500D37F2E /* VYKPhoneMemoryViewController.m */; };
-		55B872E92026F75800D37F2E /* VYKPresenterForViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872E82026F75800D37F2E /* VYKPresenterForViewController.m */; };
 		55B872EF20273CCD00D37F2E /* VYKTakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872EE20273CCD00D37F2E /* VYKTakePhotoViewController.m */; };
 		55B872F220273D1800D37F2E /* VYKSocialNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872F120273D1800D37F2E /* VYKSocialNetworkViewController.m */; };
+		55B872F82027D0D200D37F2E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B872F72027D0D200D37F2E /* MobileCoreServices.framework */; };
+		55B872FD2029F7A800D37F2E /* VYKCameraModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872FC2029F7A800D37F2E /* VYKCameraModel.m */; };
+		55B873002029F7C800D37F2E /* VYKPhotoLibraryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872FF2029F7C800D37F2E /* VYKPhotoLibraryModel.m */; };
+		55B873032029F7E800D37F2E /* VYKFacebookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B873022029F7E800D37F2E /* VYKFacebookModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,10 +42,10 @@
 
 /* Begin PBXFileReference section */
 		55B872822020FF9F00D37F2E /* Starlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Starlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		55B872852020FF9F00D37F2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		55B872862020FF9F00D37F2E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		55B872882020FF9F00D37F2E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		55B872892020FF9F00D37F2E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		55B872852020FF9F00D37F2E /* VYKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKAppDelegate.h; sourceTree = "<group>"; };
+		55B872862020FF9F00D37F2E /* VYKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKAppDelegate.m; sourceTree = "<group>"; };
+		55B872882020FF9F00D37F2E /* VYKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKViewController.h; sourceTree = "<group>"; };
+		55B872892020FF9F00D37F2E /* VYKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKViewController.m; sourceTree = "<group>"; };
 		55B8728F2020FF9F00D37F2E /* Starlight.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Starlight.xcdatamodel; sourceTree = "<group>"; };
 		55B872912020FF9F00D37F2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55B872962020FF9F00D37F2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,13 +58,18 @@
 		55B872AE2020FFA000D37F2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55B872E42026586500D37F2E /* VYKPhoneMemoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKPhoneMemoryViewController.h; sourceTree = "<group>"; };
 		55B872E52026586500D37F2E /* VYKPhoneMemoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKPhoneMemoryViewController.m; sourceTree = "<group>"; };
-		55B872E72026F75800D37F2E /* VYKPresenterForViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKPresenterForViewController.h; sourceTree = "<group>"; };
-		55B872E82026F75800D37F2E /* VYKPresenterForViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKPresenterForViewController.m; sourceTree = "<group>"; };
 		55B872ED20273CCD00D37F2E /* VYKTakePhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKTakePhotoViewController.h; sourceTree = "<group>"; };
 		55B872EE20273CCD00D37F2E /* VYKTakePhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKTakePhotoViewController.m; sourceTree = "<group>"; };
 		55B872F020273D1800D37F2E /* VYKSocialNetworkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKSocialNetworkViewController.h; sourceTree = "<group>"; };
 		55B872F120273D1800D37F2E /* VYKSocialNetworkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKSocialNetworkViewController.m; sourceTree = "<group>"; };
 		55B872F520273E7100D37F2E /* VYKCreateUIProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKCreateUIProtocol.h; sourceTree = "<group>"; };
+		55B872F72027D0D200D37F2E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		55B872FB2029F7A800D37F2E /* VYKCameraModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKCameraModel.h; sourceTree = "<group>"; };
+		55B872FC2029F7A800D37F2E /* VYKCameraModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKCameraModel.m; sourceTree = "<group>"; };
+		55B872FE2029F7C800D37F2E /* VYKPhotoLibraryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKPhotoLibraryModel.h; sourceTree = "<group>"; };
+		55B872FF2029F7C800D37F2E /* VYKPhotoLibraryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKPhotoLibraryModel.m; sourceTree = "<group>"; };
+		55B873012029F7E800D37F2E /* VYKFacebookModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKFacebookModel.h; sourceTree = "<group>"; };
+		55B873022029F7E800D37F2E /* VYKFacebookModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKFacebookModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55B872F82027D0D200D37F2E /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +105,7 @@
 				55B872A02020FFA000D37F2E /* StarlightTests */,
 				55B872AB2020FFA000D37F2E /* StarlightUITests */,
 				55B872832020FF9F00D37F2E /* Products */,
+				55B872F62027D0D200D37F2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,16 +122,15 @@
 		55B872842020FF9F00D37F2E /* Starlight */ = {
 			isa = PBXGroup;
 			children = (
-				55B872F320273E2A00D37F2E /* Protocols */,
-				55B872E32024884200D37F2E /* Delegates */,
-				55B872E120229C1100D37F2E /* Serveces */,
-				55B872E22022FBF400D37F2E /* Controllers */,
-				55B872912020FF9F00D37F2E /* Assets.xcassets */,
-				55B872962020FF9F00D37F2E /* Info.plist */,
 				55B872972020FF9F00D37F2E /* main.m */,
+				55B872962020FF9F00D37F2E /* Info.plist */,
+				55B872912020FF9F00D37F2E /* Assets.xcassets */,
 				55B8728E2020FF9F00D37F2E /* Starlight.xcdatamodeld */,
-				55B872E72026F75800D37F2E /* VYKPresenterForViewController.h */,
-				55B872E82026F75800D37F2E /* VYKPresenterForViewController.m */,
+				55B872E32024884200D37F2E /* App Delegate */,
+				55B872E22022FBF400D37F2E /* Controllers */,
+				55B872F920288EEA00D37F2E /* Models */,
+				55B872F320273E2A00D37F2E /* Protocols */,
+				55B872E120229C1100D37F2E /* Serveces */,
 			);
 			path = Starlight;
 			sourceTree = "<group>";
@@ -154,8 +163,8 @@
 		55B872E22022FBF400D37F2E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				55B872882020FF9F00D37F2E /* ViewController.h */,
-				55B872892020FF9F00D37F2E /* ViewController.m */,
+				55B872882020FF9F00D37F2E /* VYKViewController.h */,
+				55B872892020FF9F00D37F2E /* VYKViewController.m */,
 				55B872E42026586500D37F2E /* VYKPhoneMemoryViewController.h */,
 				55B872E52026586500D37F2E /* VYKPhoneMemoryViewController.m */,
 				55B872ED20273CCD00D37F2E /* VYKTakePhotoViewController.h */,
@@ -166,13 +175,13 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		55B872E32024884200D37F2E /* Delegates */ = {
+		55B872E32024884200D37F2E /* App Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				55B872852020FF9F00D37F2E /* AppDelegate.h */,
-				55B872862020FF9F00D37F2E /* AppDelegate.m */,
+				55B872852020FF9F00D37F2E /* VYKAppDelegate.h */,
+				55B872862020FF9F00D37F2E /* VYKAppDelegate.m */,
 			);
-			path = Delegates;
+			path = "App Delegate";
 			sourceTree = "<group>";
 		};
 		55B872F320273E2A00D37F2E /* Protocols */ = {
@@ -181,6 +190,27 @@
 				55B872F520273E7100D37F2E /* VYKCreateUIProtocol.h */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		55B872F62027D0D200D37F2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55B872F72027D0D200D37F2E /* MobileCoreServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		55B872F920288EEA00D37F2E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				55B872FB2029F7A800D37F2E /* VYKCameraModel.h */,
+				55B872FC2029F7A800D37F2E /* VYKCameraModel.m */,
+				55B872FE2029F7C800D37F2E /* VYKPhotoLibraryModel.h */,
+				55B872FF2029F7C800D37F2E /* VYKPhotoLibraryModel.m */,
+				55B873012029F7E800D37F2E /* VYKFacebookModel.h */,
+				55B873022029F7E800D37F2E /* VYKFacebookModel.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,11 +345,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				55B872E62026586500D37F2E /* VYKPhoneMemoryViewController.m in Sources */,
-				55B8728A2020FF9F00D37F2E /* ViewController.m in Sources */,
+				55B873002029F7C800D37F2E /* VYKPhotoLibraryModel.m in Sources */,
+				55B8728A2020FF9F00D37F2E /* VYKViewController.m in Sources */,
+				55B872FD2029F7A800D37F2E /* VYKCameraModel.m in Sources */,
 				55B872F220273D1800D37F2E /* VYKSocialNetworkViewController.m in Sources */,
-				55B872E92026F75800D37F2E /* VYKPresenterForViewController.m in Sources */,
-				55B872872020FF9F00D37F2E /* AppDelegate.m in Sources */,
+				55B872872020FF9F00D37F2E /* VYKAppDelegate.m in Sources */,
 				55B872982020FF9F00D37F2E /* main.m in Sources */,
+				55B873032029F7E800D37F2E /* VYKFacebookModel.m in Sources */,
 				55B872EF20273CCD00D37F2E /* VYKTakePhotoViewController.m in Sources */,
 				55B872902020FF9F00D37F2E /* Starlight.xcdatamodeld in Sources */,
 			);

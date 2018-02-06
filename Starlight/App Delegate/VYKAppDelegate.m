@@ -1,26 +1,28 @@
 //
-//  AppDelegate.m
+//  VYKAppDelegate.m
 //  Starlight
 //
 //  Created by Victoria on 30.01.2018.
 //  Copyright © 2018 Victoria. All rights reserved.
 //
 
-#import "AppDelegate.h"
-#import "ViewController.h"
+#import "VYKAppDelegate.h"
+#import "VYKViewController.h"
+#import <MobileCoreServices/MobileCoreServices.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
-@interface AppDelegate ()
+@interface VYKAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation VYKAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [UIWindow new];
     
-    self.rootViewController = [[ViewController alloc] initWithNibName:nil bundle:nil];
+    self.rootViewController = [[VYKViewController alloc] initWithNibName:nil bundle:nil];
     self.navigationControloler = [[UINavigationController alloc] initWithRootViewController:self.rootViewController];
     [self.window addSubview:self.navigationControloler.view];
     self.window.rootViewController = self.navigationControloler;
