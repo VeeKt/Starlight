@@ -21,6 +21,7 @@
 		55B872FD2029F7A800D37F2E /* VYKCameraModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872FC2029F7A800D37F2E /* VYKCameraModel.m */; };
 		55B873002029F7C800D37F2E /* VYKPhotoLibraryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872FF2029F7C800D37F2E /* VYKPhotoLibraryModel.m */; };
 		55B873032029F7E800D37F2E /* VYKFacebookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B873022029F7E800D37F2E /* VYKFacebookModel.m */; };
+		55B87307202A49AA00D37F2E /* VYKSecureTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B87306202A49AA00D37F2E /* VYKSecureTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		55B872FF2029F7C800D37F2E /* VYKPhotoLibraryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKPhotoLibraryModel.m; sourceTree = "<group>"; };
 		55B873012029F7E800D37F2E /* VYKFacebookModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKFacebookModel.h; sourceTree = "<group>"; };
 		55B873022029F7E800D37F2E /* VYKFacebookModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKFacebookModel.m; sourceTree = "<group>"; };
+		55B87305202A49AA00D37F2E /* VYKSecureTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKSecureTextField.h; sourceTree = "<group>"; };
+		55B87306202A49AA00D37F2E /* VYKSecureTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKSecureTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,8 @@
 		55B872E120229C1100D37F2E /* Serveces */ = {
 			isa = PBXGroup;
 			children = (
+				55B87305202A49AA00D37F2E /* VYKSecureTextField.h */,
+				55B87306202A49AA00D37F2E /* VYKSecureTextField.m */,
 			);
 			path = Serveces;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55B872E62026586500D37F2E /* VYKPhoneMemoryViewController.m in Sources */,
+				55B87307202A49AA00D37F2E /* VYKSecureTextField.m in Sources */,
 				55B873002029F7C800D37F2E /* VYKPhotoLibraryModel.m in Sources */,
 				55B8728A2020FF9F00D37F2E /* VYKViewController.m in Sources */,
 				55B872FD2029F7A800D37F2E /* VYKCameraModel.m in Sources */,

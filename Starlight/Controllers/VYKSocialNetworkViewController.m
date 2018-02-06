@@ -8,6 +8,7 @@
 
 #import "VYKSocialNetworkViewController.h"
 #import <UIKit/UIKit.h>
+#import "VYKSecureTextField.h"
 
 CGFloat widthFieldOffset = 25;
 CGFloat hightFieldOffset = 50;
@@ -15,7 +16,7 @@ CGFloat hightFieldOffset = 50;
 @interface VYKSocialNetworkViewController ()
 
 @property (nonatomic, strong) UITextField *login;
-@property (nonatomic, strong) UITextField *passwordField;
+@property (nonatomic, strong) VYKSecureTextField *passwordField;
 @property (nonatomic, strong) UIButton *enterButton;
 @property (nonatomic, copy) NSString *password;
 
@@ -33,8 +34,8 @@ CGFloat hightFieldOffset = 50;
     self.view.backgroundColor = [UIColor whiteColor];
     [self createTextField:self.login hightOffset:4 * hightFieldOffset text:@" E-mail"];
     [self createTextField:self.passwordField hightOffset:6 * hightFieldOffset text:@" Password"];
-    [self.passwordField setSecureTextEntry:YES];
-    [self.passwordField addTarget:self action:@selector(secureTextEditing:) forControlEvents:UIControlEventAllEvents];
+//    [self.passwordField addTarget:self action:@selector(secureTextEditing:) forControlEvents:UIControlEventAllEvents];
+    self.passwordField.secureTextEntry = YES;
     
     self.passwordField.rightViewMode = UITextFieldViewModeWhileEditing;
     UIButton *showTextButton = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -51,27 +52,21 @@ CGFloat hightFieldOffset = 50;
     [self.view addSubview:self.enterButton];
 }
 
-- (void)secureTextEditing:(UITextField *)sender
-{
-    
-}
-
 - (void)onShowHideButtonClick:(UIButton *)sender
 {
-    [sender setImage:[UIImage imageNamed:@"view.png"] forState:!UIControlStateNormal];
-//    NSLog(@"here");
-//    if(self.password.secureTextEntry)
-//    {
-//        [sender setImage:[UIImage imageNamed:@"hide.png"] forState:!UIControlStateNormal];
-//        self.password.secureTextEntry = NO;
-//    }
-//    else
-//    {
-//       [sender setImage:[UIImage imageNamed:@"view.png"] forState:!UIControlStateNormal];
-//        self.password.enabled = NO;
-//        self.password.secureTextEntry = YES;
-//        self.password.enabled = YES;
-//    }
+//    [sender setImage:[UIImage imageNamed:@"view.png"] forState:!UIControlStateNormal];
+    if(self.passwordField.secureTextEntry)
+    {
+        [sender setImage:[UIImage imageNamed:@"hide.png"] forState:!UIControlStateNormal];
+        self.passwordField.secureTextEntry = NO;
+    }
+    else
+    {
+       [sender setImage:[UIImage imageNamed:@"view.png"] forState:!UIControlStateNormal];
+        self.passwordField.enabled = NO;
+        self.passwordField.secureTextEntry = YES;
+        self.passwordField.enabled = YES;
+    }
 }
 
 - (void)onEnterButtonClick
@@ -109,3 +104,10 @@ CGFloat hightFieldOffset = 50;
 }
 
 @end
+
+//проблемы:
+//пароль не заменяется на * (соответственно, не работает кнопка show/hide)
+//нет проверки на корректность ввода логина и пароля
+//нет класса, реализующего полключение к facebook api
+//клавиатура перекрывает вьюхи
+//нет картинки логотипа fasebook 
