@@ -7,6 +7,7 @@
 //
 
 #import "VYKTakePhotoViewController.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
 @interface VYKTakePhotoViewController ()
 
@@ -20,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createUI];
-//    [self application:nil didFinishLaunchingWithOptions:[NSDictionary dictionary]];
+    [self application:nil didFinishLaunchingWithOptions:[NSDictionary dictionary]];
 }
 
 - (void)createUI
@@ -28,33 +29,38 @@
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
-//- (BOOL)isCameraAvailable
-//{
-//    return [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
-//}
-//
-//- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(nullable NSDictionary *)launchOptions
-//{
-//    if ([self isCameraAvailable])
-//    {
-//        NSLog(@"Camera is available.");
-//    }
-//    else
-//    {
-//        NSLog(@"Camera is not available.");
-//    }
-//    return YES;
-//}
+- (BOOL)isCameraAvailable
+{
+    return [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(nullable NSDictionary *)launchOptions
+{
+    if ([self isCameraAvailable])
+    {
+        [self createImagePickerController];
+    }
+    else
+    {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Внимание!" message:@"На данном устройстве нет камеры." preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action){
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    return YES;
+}
 
 
-//- (void)imagePickerController
-//{
-//    self.imagePickerController = [[UIImagePickerController alloc] init];
-//    self.imagePickerController.delegate = self;
-//    self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-//    self.imagePickerController.mediaTypes = @[(NSString *) kUTTypeImage];
-//    self.imagePickerController.allowsEditing = YES;
-//    [self presentViewController:self.imagePickerController animated:YES completion:nil];
-//}
+- (void)createImagePickerController
+{
+    self.imagePickerController = [[UIImagePickerController alloc] init];
+    self.imagePickerController.delegate = self;
+    self.imagePickerController.mediaTypes = @[(NSString *) kUTTypeImage];
+    self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+    self.imagePickerController.allowsEditing = YES;
+    [self presentViewController:self.imagePickerController animated:YES completion:nil];
+}
 
 @end

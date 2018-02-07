@@ -12,6 +12,7 @@
 @interface VYKPhoneMemoryViewController ()
 
 @property (nonatomic, strong) NSFileManager *fileManager;
+//@property (nonatomic, strong )
 
 @end
 

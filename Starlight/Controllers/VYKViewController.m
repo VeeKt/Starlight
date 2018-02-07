@@ -10,10 +10,7 @@
 #import "VYKPhoneMemoryViewController.h"
 #import "VYKTakePhotoViewController.h"
 #import "VYKSocialNetworkViewController.h"
-
-CGFloat widthOffset = 25;
-CGFloat hightOffset = 180;
-CGFloat sideSize = 110;
+#import "Constants.h"
 
 @interface VYKViewController ()
 
@@ -39,16 +36,16 @@ CGFloat sideSize = 110;
     self.title = @"Starlight";
     self.welcomeLabel = [UILabel new];
     self.welcomeLabel.numberOfLines = 0;
-    [self.welcomeLabel setFrame:CGRectMake(2 * widthOffset, hightOffset/2 - 20, CGRectGetWidth(self.view.frame) - 3 * widthOffset, hightOffset/2 + 40)];
-    [self.welcomeLabel setText:@"Добро пожаловать!\nВыберите изображение"];
+    [self.welcomeLabel setFrame:CGRectMake(2 * widthOffset, CGRectGetHeight(self.view.frame)/5, CGRectGetWidth(self.view.frame) - 3 * widthOffset, CGRectGetHeight(self.view.frame)/4)];
+    [self.welcomeLabel setText:@"Добро пожаловать!\n\nВозьму фотки из..."];
     [self.welcomeLabel setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:self.welcomeLabel];
 
-    [self createButtonCustomStyle:self.phoneMemoryButton squareSide:sideSize offsetHight:hightOffset offsetWidth:CGRectGetWidth(self.view.frame) - widthOffset - sideSize image:[UIImage imageNamed:@"whiteSmartphone.png"] buttonBackgroundColor:[UIColor orangeColor] selector:@selector(clickOnPhoneMemoryButton:)];
+    [self createButtonCustomStyle:self.phoneMemoryButton squareSide:sideSize offsetHight:CGRectGetHeight(self.view.frame)/2 - 25 offsetWidth:CGRectGetWidth(self.view.frame) - widthOffset - sideSize image:[UIImage imageNamed:@"whiteSmartphone.png"] buttonBackgroundColor:[UIColor orangeColor] selector:@selector(clickOnPhoneMemoryButton:)];
     
-    [self createButtonCustomStyle:self.makePhotoButton squareSide:sideSize offsetHight:hightOffset offsetWidth:widthOffset image:[UIImage imageNamed:@"whiteDslr.png"] buttonBackgroundColor:[UIColor yellowColor] selector:@selector(clickOnMakePhotoButton:)];
+    [self createButtonCustomStyle:self.makePhotoButton squareSide:sideSize offsetHight:CGRectGetHeight(self.view.frame)/2 - 25 offsetWidth:widthOffset image:[UIImage imageNamed:@"whiteDslr.png"] buttonBackgroundColor:[UIColor yellowColor] selector:@selector(clickOnMakePhotoButton:)];
     
-    [self createButtonCustomStyle:self.socialNetworkButton squareSide:sideSize offsetHight:1.7 * hightOffset offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * widthOffset image:[UIImage imageNamed:@"fcbk.png"] buttonBackgroundColor:[UIColor lightGrayColor] selector:@selector(clickOnSocialNetworkButton:)];
+    [self createButtonCustomStyle:self.socialNetworkButton squareSide:sideSize offsetHight:CGRectGetHeight(self.view.frame)/2 + sideSize offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * widthOffset image:[UIImage imageNamed:@"fcbk.png"] buttonBackgroundColor:[UIColor lightGrayColor] selector:@selector(clickOnSocialNetworkButton:)];
 }
 
 - (void)clickOnMakePhotoButton:(id)sender

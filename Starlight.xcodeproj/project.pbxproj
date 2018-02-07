@@ -22,6 +22,8 @@
 		55B873002029F7C800D37F2E /* VYKPhotoLibraryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872FF2029F7C800D37F2E /* VYKPhotoLibraryModel.m */; };
 		55B873032029F7E800D37F2E /* VYKFacebookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B873022029F7E800D37F2E /* VYKFacebookModel.m */; };
 		55B87307202A49AA00D37F2E /* VYKSecureTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B87306202A49AA00D37F2E /* VYKSecureTextField.m */; };
+		55B87309202A8B1500D37F2E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55B87308202A8B1500D37F2E /* Default-568h@2x.png */; };
+		55B8730D202A9F8900D37F2E /* Constans.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B8730C202A9F8900D37F2E /* Constans.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,9 @@
 		55B873022029F7E800D37F2E /* VYKFacebookModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKFacebookModel.m; sourceTree = "<group>"; };
 		55B87305202A49AA00D37F2E /* VYKSecureTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKSecureTextField.h; sourceTree = "<group>"; };
 		55B87306202A49AA00D37F2E /* VYKSecureTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKSecureTextField.m; sourceTree = "<group>"; };
+		55B87308202A8B1500D37F2E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		55B8730B202A8CED00D37F2E /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		55B8730C202A9F8900D37F2E /* Constans.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constans.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +109,7 @@
 		55B872792020FF9F00D37F2E = {
 			isa = PBXGroup;
 			children = (
+				55B87308202A8B1500D37F2E /* Default-568h@2x.png */,
 				55B872842020FF9F00D37F2E /* Starlight */,
 				55B872A02020FFA000D37F2E /* StarlightTests */,
 				55B872AB2020FFA000D37F2E /* StarlightUITests */,
@@ -130,6 +136,7 @@
 				55B872912020FF9F00D37F2E /* Assets.xcassets */,
 				55B8728E2020FF9F00D37F2E /* Starlight.xcdatamodeld */,
 				55B872E32024884200D37F2E /* App Delegate */,
+				55B8730A202A8CD500D37F2E /* Constants */,
 				55B872E22022FBF400D37F2E /* Controllers */,
 				55B872F920288EEA00D37F2E /* Models */,
 				55B872F320273E2A00D37F2E /* Protocols */,
@@ -216,6 +223,15 @@
 				55B873022029F7E800D37F2E /* VYKFacebookModel.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		55B8730A202A8CD500D37F2E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				55B8730B202A8CED00D37F2E /* Constants.h */,
+				55B8730C202A9F8900D37F2E /* Constans.m */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55B872922020FF9F00D37F2E /* Assets.xcassets in Resources */,
+				55B87309202A8B1500D37F2E /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +368,7 @@
 			files = (
 				55B872E62026586500D37F2E /* VYKPhoneMemoryViewController.m in Sources */,
 				55B87307202A49AA00D37F2E /* VYKSecureTextField.m in Sources */,
+				55B8730D202A9F8900D37F2E /* Constans.m in Sources */,
 				55B873002029F7C800D37F2E /* VYKPhotoLibraryModel.m in Sources */,
 				55B8728A2020FF9F00D37F2E /* VYKViewController.m in Sources */,
 				55B872FD2029F7A800D37F2E /* VYKCameraModel.m in Sources */,

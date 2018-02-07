@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "VYKCreateUIProtocol.h"
-#import <MobileCoreServices/MobileCoreServices.h>
 
 @interface VYKTakePhotoViewController : UIViewController <VYKCreateUIProtocol, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
