@@ -12,7 +12,8 @@
 @interface VYKTakePhotoViewController ()
 
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
-
+@property (nonatomic, strong) UIImage *photoImage;
+@property (nonatomic, strong) UIImageView *backgroundImage;
 
 @end
 
@@ -26,7 +27,11 @@
 
 - (void)createUI
 {
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.photoImage = [[UIImage alloc] init];
+    self.backgroundImage = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame)/8, CGRectGetHeight(self.view.frame)/4 + 20, 3 * CGRectGetWidth(self.view.frame)/4, CGRectGetHeight(self.view.frame)/2 + 10)];
+    self.backgroundImage.image = [UIImage imageNamed:@"camera.png"];
+    [self.view addSubview:self.backgroundImage];
 }
 
 - (BOOL)isCameraAvailable
@@ -61,6 +66,22 @@
     self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
     self.imagePickerController.allowsEditing = YES;
     [self presentViewController:self.imagePickerController animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    UIImage *currentImage = info[UIImagePickerControllerOriginalImage];
+    if (!currentImage)
+    {
+        currentImage = info[UIImagePickerControllerOriginalImage];
+    }
+    self.photoImage = currentImage;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
