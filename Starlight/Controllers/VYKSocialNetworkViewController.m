@@ -18,6 +18,7 @@ CGFloat hightFieldOffset = 50;
 @property (nonatomic, strong) UITextField *login;
 @property (nonatomic, strong) VYKSecureTextField *passwordField;
 @property (nonatomic, strong) UIButton *enterButton;
+@property (nonatomic, strong) UIImageView *fcbkLogo;
 @property (nonatomic, copy) NSString *password;
 
 @end
@@ -50,6 +51,10 @@ CGFloat hightFieldOffset = 50;
     [self.enterButton setTitleColor:[UIColor blueColor] forState:(!UIControlStateNormal)];
     [self.enterButton addTarget:self action:@selector(onEnterButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.enterButton];
+    
+    self.fcbkLogo = [[UIImageView alloc] initWithFrame:CGRectMake(widthFieldOffset, 2 * hightFieldOffset, CGRectGetWidth(self.view.frame) - 2 * widthFieldOffset, hightFieldOffset)];
+    self.fcbkLogo.image = [UIImage imageNamed:@"facebookText.png"];
+    [self.view addSubview:self.fcbkLogo];
 }
 
 - (void)onShowHideButtonClick:(UIButton *)sender
@@ -110,4 +115,3 @@ CGFloat hightFieldOffset = 50;
 //нет проверки на корректность ввода логина и пароля
 //нет класса, реализующего полключение к facebook api
 //клавиатура перекрывает вьюхи
-//нет картинки логотипа fasebook 

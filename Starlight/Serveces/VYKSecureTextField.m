@@ -15,9 +15,10 @@
     [super awakeFromNib];
     if(self.secureTextEntry)
     {
-        [self addTarget:self action:@selector(editingDidBegin) forControlEvents:UIControlEventEditingDidBegin];
-        [self addTarget:self action:@selector(editingDidChange) forControlEvents:UIControlEventEditingChanged];
-        [self addTarget:self action:@selector(editingDidFinished) forControlEvents:UIControlEventEditingDidEnd];
+        [self addTarget:self action:@selector(editingDidFinished) forControlEvents:UIControlEventAllEditingEvents];
+//        [self addTarget:self action:@selector(editingDidBegin) forControlEvents:UIControlEventEditingDidBegin];
+//        [self addTarget:self action:@selector(editingDidChange) forControlEvents:UIControlEventEditingChanged];
+//        [self addTarget:self action:@selector(editingDidFinished) forControlEvents:UIControlEventEditingDidEnd];
     }
 }
 
