@@ -8,11 +8,12 @@
 
 #import "VYKPhoneMemoryViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface VYKPhoneMemoryViewController ()
 
 @property (nonatomic, strong) NSFileManager *fileManager;
-//@property (nonatomic, strong )
+//@property (nonatomic, strong) 
 
 @end
 

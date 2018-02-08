@@ -31,16 +31,23 @@
 - (void)createUI
 {
     self.view.backgroundColor = [UIColor whiteColor];
-    [self createTextField:self.login hightOffset:3 * CGRectGetHeight(self.view.frame)/7 text:@" E-mail"];
-    [self createTextField:self.passwordField hightOffset:4.2 * CGRectGetHeight(self.view.frame)/7 text:@" Password"];
+    [self createTextField:self.login
+              hightOffset:3 * CGRectGetHeight(self.view.frame)/7
+                     text:@" E-mail"];
+    [self createTextField:self.passwordField
+              hightOffset:4.2 * CGRectGetHeight(self.view.frame)/7
+                     text:@" Password"];
 //    [self.passwordField addTarget:self action:@selector(secureTextEditing:) forControlEvents:UIControlEventAllEvents];
     self.passwordField.secureTextEntry = YES;
     
     self.passwordField.rightViewMode = UITextFieldViewModeWhileEditing;
     UIButton *showTextButton = [UIButton buttonWithType:UIButtonTypeSystem];
     showTextButton.frame = CGRectMake(CGRectGetWidth(self.view.frame) - 3 * widthOffset + 1.5f, 4.2 * CGRectGetHeight(self.view.frame)/7 + 1.5f, 2 * widthOffset - 3.0f, hightFieldOffset - 3.0f);
-    [showTextButton setImage:[UIImage imageNamed:@"hide.png"] forState:UIControlStateNormal];
-    [showTextButton addTarget:self action:@selector(onShowHideButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [showTextButton setImage:[UIImage imageNamed:@"hide.png"]
+                    forState:UIControlStateNormal];
+    [showTextButton addTarget:self
+                       action:@selector(onShowHideButtonClick:)
+             forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:showTextButton];
     
     self.enterButton = [[UIButton alloc] initWithFrame:CGRectMake(widthOffset, 5 * CGRectGetHeight(self.view.frame)/6, CGRectGetWidth(self.view.frame) - 2 * widthOffset, hightFieldOffset)];
@@ -86,7 +93,7 @@
     [sender.layer setBorderColor:[[UIColor yellowColor] CGColor]];
 }
 
-- (void) textFieldDidEndEditing:(UITextField *)sender
+- (void)textFieldDidEndEditing:(UITextField *)sender
 {
     [sender.layer setBorderColor:[[UIColor blueColor] CGColor]];
     [sender setTextColor:[UIColor darkGrayColor]];

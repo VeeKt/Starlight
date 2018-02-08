@@ -47,7 +47,7 @@
     }
     else
     {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Внимание!" message:@"На данном устройстве нет камеры." preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Внимание!" message:@"На вашем устройстве нет камеры." preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action){
             [self.navigationController popToRootViewControllerAnimated:YES];
         }];

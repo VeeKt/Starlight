@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "VYKCreateUIProtocol.h"
 
-@interface VYKPhoneMemoryViewController : UIViewController <VYKCreateUIProtocol>
+@interface VYKPhoneMemoryViewController : UIViewController <VYKCreateUIProtocol, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end
