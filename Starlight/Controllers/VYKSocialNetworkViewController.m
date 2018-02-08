@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 #import "VYKSecureTextField.h"
 #import "Constants.h"
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface VYKSocialNetworkViewController ()
 
@@ -50,12 +52,15 @@
              forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:showTextButton];
     
-    self.enterButton = [[UIButton alloc] initWithFrame:CGRectMake(widthOffset, 5 * CGRectGetHeight(self.view.frame)/6, CGRectGetWidth(self.view.frame) - 2 * widthOffset, hightFieldOffset)];
-    [self.enterButton setBackgroundColor:[UIColor blueColor]];
-    [self.enterButton setTitle:@"Войти" forState:UIControlStateNormal];
-    [self.enterButton setTitleColor:[UIColor blueColor] forState:(!UIControlStateNormal)];
-    [self.enterButton addTarget:self action:@selector(onEnterButtonClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.enterButton];
+//    self.enterButton = [[UIButton alloc] initWithFrame:CGRectMake(widthOffset, 5 * CGRectGetHeight(self.view.frame)/6, CGRectGetWidth(self.view.frame) - 2 * widthOffset, hightFieldOffset)];
+//    [self.enterButton setBackgroundColor:[UIColor blueColor]];
+//    [self.enterButton setTitle:@"Войти" forState:UIControlStateNormal];
+//    [self.enterButton setTitleColor:[UIColor blueColor] forState:(!UIControlStateNormal)];
+//    [self.enterButton addTarget:self action:@selector(onEnterButtonClick) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:self.enterButton];
+    
+    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] initWithFrame:CGRectMake(widthOffset, 5 * CGRectGetHeight(self.view.frame)/6, CGRectGetWidth(self.view.frame) - 2 * widthOffset, hightFieldOffset)];
+    [self.view addSubview:loginButton];
     
     self.fcbkLogo = [[UIImageView alloc] initWithFrame:CGRectMake(widthOffset, CGRectGetHeight(self.view.frame)/6, CGRectGetWidth(self.view.frame) - 2 * widthOffset, CGRectGetHeight(self.view.frame)/6)];
     self.fcbkLogo.image = [UIImage imageNamed:@"facebookText.png"];
@@ -120,3 +125,5 @@
 //нет проверки на корректность ввода логина и пароля
 //нет класса, реализующего полключение к facebook api
 //клавиатура перекрывает вьюхи
+
+//добавила кнопку авторизации на facebook, теперь надо выкидывать весь контроллер :(

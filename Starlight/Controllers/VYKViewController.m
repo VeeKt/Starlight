@@ -37,7 +37,7 @@
     self.welcomeLabel = [UILabel new];
     self.welcomeLabel.numberOfLines = 0;
     [self.welcomeLabel setFrame:CGRectMake(2 * widthOffset, CGRectGetHeight(self.view.frame)/5, CGRectGetWidth(self.view.frame) - 3 * widthOffset, CGRectGetHeight(self.view.frame)/4)];
-    [self.welcomeLabel setText:@"Добро пожаловать!\n\nВозьму фотки из..."];
+    [self.welcomeLabel setText:@"Welcome!\n\nLoad photo from..."];
     [self.welcomeLabel setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:self.welcomeLabel];
 

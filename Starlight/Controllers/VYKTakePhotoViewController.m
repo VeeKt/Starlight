@@ -29,8 +29,9 @@
 {
     self.view.backgroundColor = [UIColor lightGrayColor];
     self.photoImage = [[UIImage alloc] init];
-    self.backgroundImage = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame)/8, CGRectGetHeight(self.view.frame)/4 + 20, 3 * CGRectGetWidth(self.view.frame)/4, CGRectGetHeight(self.view.frame)/2 + 10)];
+    self.backgroundImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
     self.backgroundImage.image = [UIImage imageNamed:@"camera.png"];
+    self.backgroundImage.center = self.view.center;
     [self.view addSubview:self.backgroundImage];
 }
 
@@ -47,7 +48,7 @@
     }
     else
     {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Внимание!" message:@"На вашем устройстве нет камеры." preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Attention!" message:@"The camera is not available." preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action){
             [self.navigationController popToRootViewControllerAnimated:YES];
         }];
