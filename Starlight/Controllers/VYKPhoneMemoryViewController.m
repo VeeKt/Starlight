@@ -13,7 +13,7 @@
 @interface VYKPhoneMemoryViewController ()
 
 @property (nonatomic, strong) NSFileManager *fileManager;
-//@property (nonatomic, strong) 
+//@property (nonatomic, strong) UIImagePickerController *imagePickerController;
 
 @end
 
@@ -27,7 +27,6 @@
 - (void)createUI
 {
     self.view.backgroundColor = [UIColor whiteColor];
-    
 }
 
 //- (void)findPathToPhotoLibrary
@@ -65,9 +64,9 @@
 //    return result;
 //}
 //
-//- (BOOL)doesCameraSupportTakingPhotos
+//- (BOOL)doesCameraSupportPhotoLibrary
 //{
-//    return [self cameraSupportMedia:(__bridge NSString *)kUTTypeImage sourceType:UIImagePickerControllerSourceTypeCamera];
+//    return [self cameraSupportMedia:(__bridge NSString *)kUTTypeImage sourceType:UIImagePickerControllerSourceTypePhotoLibrary];
 //}
 
 

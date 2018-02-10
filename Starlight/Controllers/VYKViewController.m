@@ -40,30 +40,18 @@
     [self.welcomeLabel setText:@"Welcome!\n\nLoad photo from..."];
     [self.welcomeLabel setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:self.welcomeLabel];
-
-    [self createButtonCustomStyle:self.phoneMemoryButton
-                       squareSide:sideSize
-                      offsetHight:CGRectGetHeight(self.view.frame)/2 - 25
-                      offsetWidth:CGRectGetWidth(self.view.frame) - widthOffset - sideSize
-                            image:[UIImage imageNamed:@"whiteSmartphone.png"]
-            buttonBackgroundColor:[UIColor orangeColor]
-                         selector:@selector(clickOnPhoneMemoryButton:)];
     
-    [self createButtonCustomStyle:self.makePhotoButton
-                       squareSide:sideSize
-                      offsetHight:CGRectGetHeight(self.view.frame)/2 - 25
-                      offsetWidth:widthOffset
-                            image:[UIImage imageNamed:@"whiteDslr.png"]
-            buttonBackgroundColor:[UIColor yellowColor]
-                         selector:@selector(clickOnMakePhotoButton:)];
+    self.phoneMemoryButton = [[UIButton alloc] init];
+    self.phoneMemoryButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 - 25 offsetWidth:CGRectGetWidth(self.view.frame) - widthOffset - sideSize image:[UIImage imageNamed:@"whiteSmartphone.png"] buttonBackgroundColor:[UIColor orangeColor] selector:@selector(clickOnPhoneMemoryButton:)];
+    [self.view addSubview:self.phoneMemoryButton];
     
-    [self createButtonCustomStyle:self.socialNetworkButton
-                       squareSide:sideSize
-                      offsetHight:CGRectGetHeight(self.view.frame)/2 + sideSize
-                      offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * widthOffset
-                            image:[UIImage imageNamed:@"fcbk.png"]
-            buttonBackgroundColor:[UIColor lightGrayColor]
-                         selector:@selector(clickOnSocialNetworkButton:)];
+    self.makePhotoButton = [[UIButton alloc] init];
+    self.makePhotoButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 - 25 offsetWidth:widthOffset image:[UIImage imageNamed:@"whiteDslr.png"] buttonBackgroundColor:[UIColor yellowColor] selector:@selector(clickOnMakePhotoButton:)];
+    [self.view addSubview:self.makePhotoButton];
+    
+    self.socialNetworkButton = [[UIButton alloc] init];
+    self.socialNetworkButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 + sideSize offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * widthOffset image:[UIImage imageNamed:@"fcbk.png"] buttonBackgroundColor:[UIColor lightGrayColor] selector:@selector(clickOnSocialNetworkButton:)];
+    [self.view addSubview:self.socialNetworkButton];
 }
 
 - (void)clickOnMakePhotoButton:(id)sender
@@ -87,21 +75,19 @@
     [self.navigationController pushViewController:socialNetworkViewController animated:YES];
 }
 
-- (void)createButtonCustomStyle:(UIButton *)button
-                     squareSide:(CGFloat)squareSide
-                    offsetHight:(CGFloat)offsetHight
-                    offsetWidth:(CGFloat)offsetWidth
-                          image:(UIImage *)image
-          buttonBackgroundColor:(UIColor *)buttonBackgroundColor
-                       selector:(SEL)selector
+- (UIButton *)offsetHight:(CGFloat)offsetHight
+              offsetWidth:(CGFloat)offsetWidth
+                    image:(UIImage *)image
+    buttonBackgroundColor:(UIColor *)buttonBackgroundColor
+                 selector:(SEL)selector
 {
-    button = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
-    button.frame = CGRectMake(offsetWidth, offsetHight, squareSide, squareSide);
+    button.frame = CGRectMake(offsetWidth, offsetHight, sideSize, sideSize);
     button.layer.cornerRadius = 0.5 * button.bounds.size.width;
     [button setImage:image forState:UIControlStateNormal];
     button.backgroundColor = buttonBackgroundColor;
-    [self.view addSubview:button];
+    return button;
 }
 
 @end

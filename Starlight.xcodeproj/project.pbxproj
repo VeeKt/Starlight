@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		55B872872020FF9F00D37F2E /* VYKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872862020FF9F00D37F2E /* VYKAppDelegate.m */; };
+		55B872872020FF9F00D37F2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872862020FF9F00D37F2E /* AppDelegate.m */; };
 		55B8728A2020FF9F00D37F2E /* VYKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872892020FF9F00D37F2E /* VYKViewController.m */; };
 		55B872902020FF9F00D37F2E /* Starlight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55B8728E2020FF9F00D37F2E /* Starlight.xcdatamodeld */; };
 		55B872922020FF9F00D37F2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B872912020FF9F00D37F2E /* Assets.xcassets */; };
@@ -27,6 +27,7 @@
 		55F7D255202C63E4005211EB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F7D254202C63E4005211EB /* Bolts.framework */; };
 		55F7D259202C64DF005211EB /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F7D258202C64DF005211EB /* FBSDKLoginKit.framework */; };
 		55F7D25B202C64ED005211EB /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F7D25A202C64ED005211EB /* FBSDKCoreKit.framework */; };
+		55F7D27B202E2A4F005211EB /* VYKModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D27A202E2A4F005211EB /* VYKModelTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +49,8 @@
 
 /* Begin PBXFileReference section */
 		55B872822020FF9F00D37F2E /* Starlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Starlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		55B872852020FF9F00D37F2E /* VYKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKAppDelegate.h; sourceTree = "<group>"; };
-		55B872862020FF9F00D37F2E /* VYKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKAppDelegate.m; sourceTree = "<group>"; };
+		55B872852020FF9F00D37F2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		55B872862020FF9F00D37F2E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		55B872882020FF9F00D37F2E /* VYKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKViewController.h; sourceTree = "<group>"; };
 		55B872892020FF9F00D37F2E /* VYKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKViewController.m; sourceTree = "<group>"; };
 		55B8728F2020FF9F00D37F2E /* Starlight.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Starlight.xcdatamodel; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 		55F7D254202C63E4005211EB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		55F7D258202C64DF005211EB /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		55F7D25A202C64ED005211EB /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		55F7D27A202E2A4F005211EB /* VYKModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKModelTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			children = (
 				55B872A12020FFA000D37F2E /* StarlightTests.m */,
 				55B872A32020FFA000D37F2E /* Info.plist */,
+				55F7D27A202E2A4F005211EB /* VYKModelTests.m */,
 			);
 			path = StarlightTests;
 			sourceTree = "<group>";
@@ -199,8 +202,8 @@
 		55B872E32024884200D37F2E /* App Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				55B872852020FF9F00D37F2E /* VYKAppDelegate.h */,
-				55B872862020FF9F00D37F2E /* VYKAppDelegate.m */,
+				55B872852020FF9F00D37F2E /* AppDelegate.h */,
+				55B872862020FF9F00D37F2E /* AppDelegate.m */,
 			);
 			path = "App Delegate";
 			sourceTree = "<group>";
@@ -385,7 +388,7 @@
 				55B8728A2020FF9F00D37F2E /* VYKViewController.m in Sources */,
 				55B872FD2029F7A800D37F2E /* VYKCameraModel.m in Sources */,
 				55B872F220273D1800D37F2E /* VYKSocialNetworkViewController.m in Sources */,
-				55B872872020FF9F00D37F2E /* VYKAppDelegate.m in Sources */,
+				55B872872020FF9F00D37F2E /* AppDelegate.m in Sources */,
 				55B872982020FF9F00D37F2E /* main.m in Sources */,
 				55B873032029F7E800D37F2E /* VYKFacebookModel.m in Sources */,
 				55B872EF20273CCD00D37F2E /* VYKTakePhotoViewController.m in Sources */,
@@ -397,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F7D27B202E2A4F005211EB /* VYKModelTests.m in Sources */,
 				55B872A22020FFA000D37F2E /* StarlightTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

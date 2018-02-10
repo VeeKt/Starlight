@@ -1,22 +1,22 @@
 //
-//  VYKAppDelegate.m
+//  AppDelegate.m
 //  Starlight
 //
 //  Created by Victoria on 30.01.2018.
 //  Copyright © 2018 Victoria. All rights reserved.
 //
 
-#import "VYKAppDelegate.h"
+#import "AppDelegate.h"
 #import "VYKViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 //#import <MobileCoreServices/MobileCoreServices.h>
 //#import <AssetsLibrary/AssetsLibrary.h>
 
-@interface VYKAppDelegate ()
+@interface AppDelegate ()
 
 @end
 
-@implementation VYKAppDelegate
+@implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

@@ -1,5 +1,5 @@
 //
-//  VYKAppDelegate.h
+//  AppDelegate.h
 //  Starlight
 //
 //  Created by Victoria on 30.01.2018.
@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "VYKViewController.h"
 
-@interface VYKAppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
