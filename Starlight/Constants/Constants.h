@@ -12,6 +12,5 @@
 extern const float widthOffset;
 extern const float sideSize;
 extern const float hightFieldOffset;
-extern const int64_t delayInSeconds;
 
 #endif
