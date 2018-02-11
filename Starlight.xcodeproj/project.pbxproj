@@ -25,7 +25,6 @@
 		55F7D259202C64DF005211EB /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F7D258202C64DF005211EB /* FBSDKLoginKit.framework */; };
 		55F7D25B202C64ED005211EB /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F7D25A202C64ED005211EB /* FBSDKCoreKit.framework */; };
 		55F7D27B202E2A4F005211EB /* VYKModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D27A202E2A4F005211EB /* VYKModelTests.m */; };
-		55F7D281202F3FD8005211EB /* VYKRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D280202F3FD8005211EB /* VYKRoundButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +77,6 @@
 		55F7D258202C64DF005211EB /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		55F7D25A202C64ED005211EB /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		55F7D27A202E2A4F005211EB /* VYKModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKModelTests.m; sourceTree = "<group>"; };
-		55F7D27F202F3FD8005211EB /* VYKRoundButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKRoundButton.h; sourceTree = "<group>"; };
-		55F7D280202F3FD8005211EB /* VYKRoundButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKRoundButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +140,7 @@
 				55F7D27E202F3F8B005211EB /* Views */,
 				55B872E32024884200D37F2E /* App Delegate */,
 				55B8730A202A8CD500D37F2E /* Constants */,
-				55B872E22022FBF400D37F2E /* Controllers */,
+				55B872E22022FBF400D37F2E /* ViewControllers */,
 				55B872F920288EEA00D37F2E /* Models */,
 				55B872F320273E2A00D37F2E /* Protocols */,
 				55B872E120229C1100D37F2E /* Serveces */,
@@ -177,7 +174,7 @@
 			path = Serveces;
 			sourceTree = "<group>";
 		};
-		55B872E22022FBF400D37F2E /* Controllers */ = {
+		55B872E22022FBF400D37F2E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				55B872882020FF9F00D37F2E /* VYKViewController.h */,
@@ -189,7 +186,7 @@
 				55B872F020273D1800D37F2E /* VYKSocialNetworkViewController.h */,
 				55B872F120273D1800D37F2E /* VYKSocialNetworkViewController.m */,
 			);
-			path = Controllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		55B872E32024884200D37F2E /* App Delegate */ = {
@@ -239,8 +236,6 @@
 		55F7D27E202F3F8B005211EB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				55F7D27F202F3FD8005211EB /* VYKRoundButton.h */,
-				55F7D280202F3FD8005211EB /* VYKRoundButton.m */,
 				55B87305202A49AA00D37F2E /* VYKSecureTextField.h */,
 				55B87306202A49AA00D37F2E /* VYKSecureTextField.m */,
 			);
@@ -382,7 +377,6 @@
 				55B872E62026586500D37F2E /* VYKPhoneMemoryViewController.m in Sources */,
 				55B87307202A49AA00D37F2E /* VYKSecureTextField.m in Sources */,
 				55B8730D202A9F8900D37F2E /* Constans.m in Sources */,
-				55F7D281202F3FD8005211EB /* VYKRoundButton.m in Sources */,
 				55B8728A2020FF9F00D37F2E /* VYKViewController.m in Sources */,
 				55B872F220273D1800D37F2E /* VYKSocialNetworkViewController.m in Sources */,
 				55B872872020FF9F00D37F2E /* AppDelegate.m in Sources */,
