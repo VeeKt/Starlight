@@ -10,7 +10,7 @@
 
 @interface VYKSecureTextField : UITextField
 
-@property (nonatomic, assign) BOOL vykSecure;
 @property (nonatomic, copy) NSString *vykCurrentText;
+@property BOOL vykSecure;
 
 @end

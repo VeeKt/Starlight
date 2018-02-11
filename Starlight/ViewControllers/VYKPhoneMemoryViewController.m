@@ -7,13 +7,12 @@
 //
 
 #import "VYKPhoneMemoryViewController.h"
-#import <MobileCoreServices/MobileCoreServices.h>
-#import <AssetsLibrary/AssetsLibrary.h>
+#import "VYKPhotoLibraryController.h"
 
 @interface VYKPhoneMemoryViewController ()
 
-@property (nonatomic, strong) NSFileManager *fileManager;
-//@property (nonatomic, strong) UIImagePickerController *imagePickerController;
+@property (nonatomic, strong) VYKPhotoLibraryController *photoLibraryController;
+@property (nonatomic, strong) UIImageView *backgroundImage;
 
 @end
 
@@ -21,54 +20,48 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self createPhotoLibraryController];
     [self createUI];
 }
 
 - (void)createUI
 {
     self.view.backgroundColor = [UIColor whiteColor];
+    self.backgroundImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    self.backgroundImage.image = [UIImage imageNamed:@"pictures.png"];
+    self.backgroundImage.center = self.view.center;
+    [self.view addSubview:self.backgroundImage];
+    
+    [self createPhotoLibraryController];
 }
 
-//- (void)findPathToPhotoLibrary
-//{
-//    self.fileManager = [[NSFileManager alloc] init];
-//    NSArray *urls = [self.fileManager URLsForDirectory:NSPicturesDirectory inDomains:NSUserDomainMask];
-//    if ([urls count] > 0)
-//    {
-//        NSURL *pictureFolder = urls[0];
-//        NSLog(@"%@", pictureFolder);
-//    }
-//    else
-//    {
-//        NSLog(@"Could not find Picture folder.");
-//    }
-//}
-//
-//- (BOOL)cameraSupportMedia:(NSString *)paramMediaType sourceType:(UIImagePickerControllerSourceType)paramSourceType
-//{
-//    __block BOOL result = NO;
-//    if ([paramMediaType length] == 0)
-//    {
-//        NSLog(@"Media type is empty.");
-//        return NO;
-//    }
-//    NSArray *availableMediaTypes = [UIImagePickerController availableMediaTypesForSourceType:paramSourceType];
-//    [availableMediaTypes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop){
-//        NSString *mediaType = (NSString *)obj;
-//        if ([mediaType isEqualToString:paramMediaType])
-//        {
-//            result = YES;
-//            *stop = YES;
-//        }
-//    }];
-//    return result;
-//}
-//
-//- (BOOL)doesCameraSupportPhotoLibrary
-//{
-//    return [self cameraSupportMedia:(__bridge NSString *)kUTTypeImage sourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-//}
+
+#pragma mark - photo library
+
+- (void)createPhotoLibraryController
+{
+    self.photoLibraryController = [VYKPhotoLibraryController new];
+    
+    if (![self.photoLibraryController doesCameraSupportPhotoLibrary]){
+        [self createTableView];
+    }
+    else
+    {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Attention!" message:@"The photo library is not available." preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action){
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+}
 
 
+#pragma mark - table view
+
+- (void)createTableView
+{
+    
+}
 
 @end

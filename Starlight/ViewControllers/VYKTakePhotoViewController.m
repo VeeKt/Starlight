@@ -30,7 +30,7 @@
 
 - (void)createUI
 {
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.photoImage = [[UIImage alloc] init];
     self.backgroundImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
     self.backgroundImage.image = [UIImage imageNamed:@"camera.png"];

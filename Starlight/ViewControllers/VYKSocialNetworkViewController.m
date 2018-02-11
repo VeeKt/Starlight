@@ -49,7 +49,7 @@
     self.passwordField.secureTextEntry = YES;
     self.passwordField.rightViewMode = UITextFieldViewModeWhileEditing;
     
-    [self createShoHideButton];
+    [self createShowHideButton];
     [self createEnterButton];
     
     self.fcbkLogo = [[UIImageView alloc] initWithFrame:CGRectMake(widthOffset, CGRectGetHeight(self.view.frame)/6, CGRectGetWidth(self.view.frame) - 2 * widthOffset, CGRectGetHeight(self.view.frame)/6)];
@@ -79,7 +79,19 @@
 
 - (void)onEnterButtonClick
 {
-    //facebook authentification
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login
+     logInWithReadPermissions: @[@"public_profile"]
+     fromViewController:self
+     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+         if (error) {
+             NSLog(@"Process error");
+         } else if (result.isCancelled) {
+             NSLog(@"Cancelled");
+         } else {
+             NSLog(@"Logged in");
+         }
+     }];
 }
 
 - (void)textFieldEditingDidBegin:(UITextField *)sender
@@ -115,7 +127,7 @@
 }
 
 
-#pragma mark - button
+#pragma mark - enter button
 
 - (void)createEnterButton
 {
@@ -130,7 +142,7 @@
 
 #pragma mark - show/hide button
 
-- (void)createShoHideButton
+- (void)createShowHideButton
 {
     UIButton *showHideButton = [UIButton buttonWithType:UIButtonTypeSystem];
     showHideButton.frame = CGRectMake(CGRectGetWidth(self.view.frame) - 3 * widthOffset + 1.5f, 4.2 * CGRectGetHeight(self.view.frame)/7 + 1.5f, 2 * widthOffset - 3.0f, hightFieldOffset - 3.0f);
