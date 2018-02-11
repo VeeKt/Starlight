@@ -21,8 +21,6 @@
 @property (nonatomic, strong) UIButton *socialNetworkButton;
 @property (nonatomic, strong) UIButton *appLibraryButton;
 @property (nonatomic, strong) UILabel *welcomeLabel;
-@property (nonatomic, strong) NSError *error;
-@property (nonatomic) BOOL isCancelledResult;
 @property (nonatomic, strong) UIButton *socialNetworkPhotoGalleryButton;
 
 @end
@@ -36,10 +34,6 @@
 {
     [super viewDidLoad];
     [self createUI];
-    
-    self.error = [NSError new];
-    self.error = nil;
-    self.isCancelledResult = NO;
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -86,6 +80,15 @@
      logInWithReadPermissions: @[@"public_profile"]
      fromViewController:self
      handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+         
+//         do smth with it!!!!
+         if(error)
+         {
+             return;
+         } else if (result.isCancelled)
+         {
+             return;
+         }
          [self createSocialNetworkPhotoGalleryButton];
          [self.socialNetworkButton setHidden:YES];
      }];

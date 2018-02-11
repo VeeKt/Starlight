@@ -42,7 +42,7 @@
 {
     self.photoLibraryController = [VYKPhotoLibraryController new];
     
-    if (![self.photoLibraryController doesCameraSupportPhotoLibrary]){
+    if ([self.photoLibraryController doesCameraSupportPhotoLibrary]){
         [self createTableView];
     }
     else
