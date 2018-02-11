@@ -25,6 +25,9 @@
     [self application:nil didFinishLaunchingWithOptions:[NSDictionary dictionary]];
 }
 
+
+#pragma mark - ui
+
 - (void)createUI
 {
     self.view.backgroundColor = [UIColor lightGrayColor];
@@ -34,6 +37,9 @@
     self.backgroundImage.center = self.view.center;
     [self.view addSubview:self.backgroundImage];
 }
+
+
+#pragma mark - camera availability
 
 - (BOOL)isCameraAvailable
 {
@@ -58,6 +64,8 @@
     return YES;
 }
 
+
+#pragma mark - imagePickercontroller
 
 - (void)createImagePickerController
 {
