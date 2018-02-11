@@ -13,15 +13,10 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
-
-@property (nonatomic, strong) UINavigationController *navigationControloler;
-
-@property (nonatomic, strong) VYKViewController *rootViewController;
+@property (nonatomic, readonly) VYKViewController *rootViewController;
 
 - (void)saveContext;
-
 
 @end
 

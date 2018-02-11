@@ -18,9 +18,6 @@
 		55B872EF20273CCD00D37F2E /* VYKTakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872EE20273CCD00D37F2E /* VYKTakePhotoViewController.m */; };
 		55B872F220273D1800D37F2E /* VYKSocialNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872F120273D1800D37F2E /* VYKSocialNetworkViewController.m */; };
 		55B872F82027D0D200D37F2E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B872F72027D0D200D37F2E /* MobileCoreServices.framework */; };
-		55B872FD2029F7A800D37F2E /* VYKCameraModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872FC2029F7A800D37F2E /* VYKCameraModel.m */; };
-		55B873002029F7C800D37F2E /* VYKPhotoLibraryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872FF2029F7C800D37F2E /* VYKPhotoLibraryModel.m */; };
-		55B873032029F7E800D37F2E /* VYKFacebookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B873022029F7E800D37F2E /* VYKFacebookModel.m */; };
 		55B87307202A49AA00D37F2E /* VYKSecureTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B87306202A49AA00D37F2E /* VYKSecureTextField.m */; };
 		55B87309202A8B1500D37F2E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55B87308202A8B1500D37F2E /* Default-568h@2x.png */; };
 		55B8730D202A9F8900D37F2E /* Constans.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B8730C202A9F8900D37F2E /* Constans.m */; };
@@ -28,6 +25,7 @@
 		55F7D259202C64DF005211EB /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F7D258202C64DF005211EB /* FBSDKLoginKit.framework */; };
 		55F7D25B202C64ED005211EB /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F7D25A202C64ED005211EB /* FBSDKCoreKit.framework */; };
 		55F7D27B202E2A4F005211EB /* VYKModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D27A202E2A4F005211EB /* VYKModelTests.m */; };
+		55F7D281202F3FD8005211EB /* VYKRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D280202F3FD8005211EB /* VYKRoundButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,12 +69,6 @@
 		55B872F120273D1800D37F2E /* VYKSocialNetworkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKSocialNetworkViewController.m; sourceTree = "<group>"; };
 		55B872F520273E7100D37F2E /* VYKCreateUIProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKCreateUIProtocol.h; sourceTree = "<group>"; };
 		55B872F72027D0D200D37F2E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		55B872FB2029F7A800D37F2E /* VYKCameraModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKCameraModel.h; sourceTree = "<group>"; };
-		55B872FC2029F7A800D37F2E /* VYKCameraModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKCameraModel.m; sourceTree = "<group>"; };
-		55B872FE2029F7C800D37F2E /* VYKPhotoLibraryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKPhotoLibraryModel.h; sourceTree = "<group>"; };
-		55B872FF2029F7C800D37F2E /* VYKPhotoLibraryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKPhotoLibraryModel.m; sourceTree = "<group>"; };
-		55B873012029F7E800D37F2E /* VYKFacebookModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKFacebookModel.h; sourceTree = "<group>"; };
-		55B873022029F7E800D37F2E /* VYKFacebookModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKFacebookModel.m; sourceTree = "<group>"; };
 		55B87305202A49AA00D37F2E /* VYKSecureTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKSecureTextField.h; sourceTree = "<group>"; };
 		55B87306202A49AA00D37F2E /* VYKSecureTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKSecureTextField.m; sourceTree = "<group>"; };
 		55B87308202A8B1500D37F2E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -86,6 +78,8 @@
 		55F7D258202C64DF005211EB /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		55F7D25A202C64ED005211EB /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		55F7D27A202E2A4F005211EB /* VYKModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKModelTests.m; sourceTree = "<group>"; };
+		55F7D27F202F3FD8005211EB /* VYKRoundButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKRoundButton.h; sourceTree = "<group>"; };
+		55F7D280202F3FD8005211EB /* VYKRoundButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKRoundButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +140,7 @@
 				55B872962020FF9F00D37F2E /* Info.plist */,
 				55B872912020FF9F00D37F2E /* Assets.xcassets */,
 				55B8728E2020FF9F00D37F2E /* Starlight.xcdatamodeld */,
+				55F7D27E202F3F8B005211EB /* Views */,
 				55B872E32024884200D37F2E /* App Delegate */,
 				55B8730A202A8CD500D37F2E /* Constants */,
 				55B872E22022FBF400D37F2E /* Controllers */,
@@ -178,8 +173,6 @@
 		55B872E120229C1100D37F2E /* Serveces */ = {
 			isa = PBXGroup;
 			children = (
-				55B87305202A49AA00D37F2E /* VYKSecureTextField.h */,
-				55B87306202A49AA00D37F2E /* VYKSecureTextField.m */,
 			);
 			path = Serveces;
 			sourceTree = "<group>";
@@ -230,12 +223,6 @@
 		55B872F920288EEA00D37F2E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				55B872FB2029F7A800D37F2E /* VYKCameraModel.h */,
-				55B872FC2029F7A800D37F2E /* VYKCameraModel.m */,
-				55B872FE2029F7C800D37F2E /* VYKPhotoLibraryModel.h */,
-				55B872FF2029F7C800D37F2E /* VYKPhotoLibraryModel.m */,
-				55B873012029F7E800D37F2E /* VYKFacebookModel.h */,
-				55B873022029F7E800D37F2E /* VYKFacebookModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -247,6 +234,17 @@
 				55B8730C202A9F8900D37F2E /* Constans.m */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		55F7D27E202F3F8B005211EB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				55F7D27F202F3FD8005211EB /* VYKRoundButton.h */,
+				55F7D280202F3FD8005211EB /* VYKRoundButton.m */,
+				55B87305202A49AA00D37F2E /* VYKSecureTextField.h */,
+				55B87306202A49AA00D37F2E /* VYKSecureTextField.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,13 +382,11 @@
 				55B872E62026586500D37F2E /* VYKPhoneMemoryViewController.m in Sources */,
 				55B87307202A49AA00D37F2E /* VYKSecureTextField.m in Sources */,
 				55B8730D202A9F8900D37F2E /* Constans.m in Sources */,
-				55B873002029F7C800D37F2E /* VYKPhotoLibraryModel.m in Sources */,
+				55F7D281202F3FD8005211EB /* VYKRoundButton.m in Sources */,
 				55B8728A2020FF9F00D37F2E /* VYKViewController.m in Sources */,
-				55B872FD2029F7A800D37F2E /* VYKCameraModel.m in Sources */,
 				55B872F220273D1800D37F2E /* VYKSocialNetworkViewController.m in Sources */,
 				55B872872020FF9F00D37F2E /* AppDelegate.m in Sources */,
 				55B872982020FF9F00D37F2E /* main.m in Sources */,
-				55B873032029F7E800D37F2E /* VYKFacebookModel.m in Sources */,
 				55B872EF20273CCD00D37F2E /* VYKTakePhotoViewController.m in Sources */,
 				55B872902020FF9F00D37F2E /* Starlight.xcdatamodeld in Sources */,
 			);

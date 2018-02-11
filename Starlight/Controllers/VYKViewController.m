@@ -12,12 +12,17 @@
 #import "VYKSocialNetworkViewController.h"
 #import "Constants.h"
 
+#import "VYKRoundButton.h"
+
 @interface VYKViewController ()
 
-@property (nonatomic, strong) UIButton *phoneMemoryButton;
-@property (nonatomic, strong) UIButton *makePhotoButton;
-@property (nonatomic, strong) UIButton *socialNetworkButton;
+//@property (nonatomic, strong) UIButton *phoneMemoryButton;
+//@property (nonatomic, strong) UIButton *makePhotoButton;
+//@property (nonatomic, strong) UIButton *socialNetworkButton;
 @property (nonatomic, strong) UILabel *welcomeLabel;
+@property (nonatomic, strong) VYKRoundButton *phoneMemoryButton;
+@property (nonatomic, strong) VYKRoundButton *makePhotoButton;
+@property (nonatomic, strong) VYKRoundButton *socialNetworkButton;
 
 @end
 
@@ -26,7 +31,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     [self createUI];
 }
 
@@ -34,25 +38,15 @@
 {
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"Starlight";
-    self.welcomeLabel = [UILabel new];
-    self.welcomeLabel.numberOfLines = 0;
-    [self.welcomeLabel setFrame:CGRectMake(2 * widthOffset, CGRectGetHeight(self.view.frame)/5, CGRectGetWidth(self.view.frame) - 3 * widthOffset, CGRectGetHeight(self.view.frame)/4)];
-    [self.welcomeLabel setText:@"Welcome!\n\nLoad photo from..."];
-    [self.welcomeLabel setTextAlignment:NSTextAlignmentCenter];
-    [self.view addSubview:self.welcomeLabel];
     
-    self.phoneMemoryButton = [[UIButton alloc] init];
-    self.phoneMemoryButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 - 25 offsetWidth:CGRectGetWidth(self.view.frame) - widthOffset - sideSize image:[UIImage imageNamed:@"whiteSmartphone.png"] buttonBackgroundColor:[UIColor orangeColor] selector:@selector(clickOnPhoneMemoryButton:)];
-    [self.view addSubview:self.phoneMemoryButton];
-    
-    self.makePhotoButton = [[UIButton alloc] init];
-    self.makePhotoButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 - 25 offsetWidth:widthOffset image:[UIImage imageNamed:@"whiteDslr.png"] buttonBackgroundColor:[UIColor yellowColor] selector:@selector(clickOnMakePhotoButton:)];
-    [self.view addSubview:self.makePhotoButton];
-    
-    self.socialNetworkButton = [[UIButton alloc] init];
-    self.socialNetworkButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 + sideSize offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * widthOffset image:[UIImage imageNamed:@"fcbk.png"] buttonBackgroundColor:[UIColor lightGrayColor] selector:@selector(clickOnSocialNetworkButton:)];
-    [self.view addSubview:self.socialNetworkButton];
+    [self createWelcomeLabel];
+    [self createMakePhotoButton];
+    [self createPhoneMemoryButton];
+    [self createSocialNetworkButton];
 }
+
+
+#pragma mark - selectors
 
 - (void)clickOnMakePhotoButton:(id)sender
 {
@@ -75,19 +69,74 @@
     [self.navigationController pushViewController:socialNetworkViewController animated:YES];
 }
 
-- (UIButton *)offsetHight:(CGFloat)offsetHight
-              offsetWidth:(CGFloat)offsetWidth
-                    image:(UIImage *)image
-    buttonBackgroundColor:(UIColor *)buttonBackgroundColor
-                 selector:(SEL)selector
+
+# pragma mark - buttons
+
+//- (UIButton *)offsetHight:(CGFloat)offsetHight
+//              offsetWidth:(CGFloat)offsetWidth
+//                    image:(UIImage *)image
+//    buttonBackgroundColor:(UIColor *)buttonBackgroundColor
+//                 selector:(SEL)selector
+//{
+//    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [button addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
+//    button.frame = CGRectMake(offsetWidth, offsetHight, sideSize, sideSize);
+//    button.layer.cornerRadius = 0.5 * button.bounds.size.width;
+//    [button setImage:image forState:UIControlStateNormal];
+//    button.backgroundColor = buttonBackgroundColor;
+//    return button;
+//}
+
+- (void)createMakePhotoButton
 {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
-    button.frame = CGRectMake(offsetWidth, offsetHight, sideSize, sideSize);
-    button.layer.cornerRadius = 0.5 * button.bounds.size.width;
-    [button setImage:image forState:UIControlStateNormal];
-    button.backgroundColor = buttonBackgroundColor;
-    return button;
+    self.makePhotoButton = [UIButton new];
+    self.makePhotoButton.vykOffsetHieghtButton = CGRectGetHeight(self.view.frame)/2 - 25;
+    self.makePhotoButton.vykOffsetWidthButton = widthOffset;
+    self.makePhotoButton.vykColor = [UIColor yellowColor];
+    self.makePhotoButton.vykImage = [UIImage imageNamed:@"whiteDslr.png"];
+    self.makePhotoButton.vykClickOnButton = @selector(clickOnMakePhotoButton:);
+    self.makePhotoButton = [self.makePhotoButton initWithFrame:CGRectMake(self.makePhotoButton.vykOffsetWidthButton, self.makePhotoButton.vykOffsetHieghtButton, 100, 100)];
+    [self.view addSubview:self.makePhotoButton];
+}
+
+- (void)createPhoneMemoryButton
+{
+    self.phoneMemoryButton = [VYKRoundButton new];
+    self.phoneMemoryButton.vykOffsetHieghtButton = CGRectGetHeight(self.view.frame)/2 - 25;
+    self.phoneMemoryButton.vykOffsetWidthButton = CGRectGetWidth(self.view.frame) - widthOffset - sideSize;
+    self.phoneMemoryButton.vykColor = [UIColor orangeColor];
+    self.phoneMemoryButton.vykImage = [UIImage imageNamed:@"whiteSmartphone.png"];
+    self.phoneMemoryButton.vykClickOnButton = @selector(clickOnPhoneMemoryButton:);
+    self.phoneMemoryButton = [self.phoneMemoryButton initWithFrame:CGRectMake(self.phoneMemoryButton.vykOffsetWidthButton, self.phoneMemoryButton.vykOffsetHieghtButton, 100, 100)];
+    [self.view addSubview:self.phoneMemoryButton];
+}
+
+- (void)createSocialNetworkButton
+{
+    self.socialNetworkButton = [VYKRoundButton new];
+    self.socialNetworkButton.vykOffsetHieghtButton = CGRectGetHeight(self.view.frame)/2 + sideSize;
+    self.socialNetworkButton.vykOffsetWidthButton = CGRectGetWidth(self.view.frame)/2 - 2.2 * widthOffset;
+    self.socialNetworkButton.vykColor = [UIColor lightGrayColor];
+    self.socialNetworkButton.vykImage = [UIImage imageNamed:@"fcbk.png"];
+    self.socialNetworkButton.vykClickOnButton = @selector(clickOnSocialNetworkButton:);
+    self.socialNetworkButton = [self.socialNetworkButton initWithFrame:CGRectMake(self.socialNetworkButton.vykOffsetWidthButton, self.socialNetworkButton.vykOffsetHieghtButton, 100, 100)];
+    [self.view addSubview:self.socialNetworkButton];
+}
+
+
+#pragma mark - label
+
+- (void)createWelcomeLabel
+{
+    self.welcomeLabel = [UILabel new];
+    self.welcomeLabel.numberOfLines = 0;
+    [self.welcomeLabel setFrame:CGRectMake(2 * widthOffset,
+                                           CGRectGetHeight(self.view.frame)/5,
+                                           CGRectGetWidth(self.view.frame) - 3 * widthOffset,
+                                           CGRectGetHeight(self.view.frame)/4)];
+    [self.welcomeLabel setText:@"Welcome!\n\nLoad photo from..."];
+    [self.welcomeLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.view addSubview:self.welcomeLabel];
 }
 
 @end

@@ -9,34 +9,54 @@
 #import "AppDelegate.h"
 #import "VYKViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
-//#import <MobileCoreServices/MobileCoreServices.h>
-//#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) UINavigationController *navigationControloler;
+@property (nonatomic, strong) UITabBarController *tabBarController;
+
+@property (nonatomic, strong) VYKViewController *rootViewController;
 
 @end
 
 @implementation AppDelegate
 
 
+#pragma  mark - app delegate metods
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [UIWindow new];
-    
-    self.rootViewController = [[VYKViewController alloc] initWithNibName:nil bundle:nil];
-    self.navigationControloler = [[UINavigationController alloc] initWithRootViewController:self.rootViewController];
-    [self.window addSubview:self.navigationControloler.view];
-    self.window.rootViewController = self.navigationControloler;
-    [self.window makeKeyAndVisible];
-    
+    [self initWindow];
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
-    
     return YES;
 }
 
 
-#pragma mark - facebook
+#pragma mark - init navigation controller
+
+- (void)initNavigationController
+{
+    self.rootViewController = [[VYKViewController alloc] initWithNibName:nil bundle:nil];
+    self.navigationControloler = [[UINavigationController alloc] initWithRootViewController:self.rootViewController];
+    self.window.rootViewController = self.navigationControloler;
+    [self.window addSubview:self.navigationControloler.view];
+}
+
+
+# pragma mark - init window
+
+- (void)initWindow
+{
+    self.window = [UIWindow new];
+    self.window.tintColor = [UIColor blackColor];
+    
+    [self initNavigationController];
+    [self.window makeKeyAndVisible];
+}
+
+
+#pragma mark - facebook methods
 
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
