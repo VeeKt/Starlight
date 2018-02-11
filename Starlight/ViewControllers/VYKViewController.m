@@ -48,6 +48,8 @@
     VYKTakePhotoViewController *takePhotoViewController = [[VYKTakePhotoViewController alloc]
                                                            initWithNibName:nil bundle:nil];
     [self.navigationController pushViewController:takePhotoViewController animated:YES];
+    
+    [self updateLabelText];
 }
 
 - (void)clickOnPhoneMemoryButton:(id)sender
@@ -55,6 +57,7 @@
     VYKPhoneMemoryViewController *phoneMemoryViewController = [[VYKPhoneMemoryViewController alloc]
                                                                initWithNibName:nil bundle:nil];
     [self.navigationController pushViewController:phoneMemoryViewController animated:YES];
+    [self updateLabelText];
 }
 
 - (void)clickOnSocialNetworkButton:(id)sender
@@ -62,6 +65,7 @@
     VYKSocialNetworkViewController *socialNetworkViewController = [[VYKSocialNetworkViewController alloc]
                                                                    initWithNibName:nil bundle:nil];
     [self.navigationController pushViewController:socialNetworkViewController animated:YES];
+    [self updateLabelText];
 }
 
 
@@ -117,6 +121,14 @@
     [self.welcomeLabel setText:@"Welcome!\n\nLoad photo from..."];
     [self.welcomeLabel setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:self.welcomeLabel];
+}
+
+- (void)updateLabelText
+{
+    dispatch_time_t *showtime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(showtime, dispatch_get_main_queue(), ^(void){
+        self.welcomeLabel.text = @"Load photo from other place...";
+    });
 }
 
 @end

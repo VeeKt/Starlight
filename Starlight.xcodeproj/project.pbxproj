@@ -25,6 +25,7 @@
 		55F7D259202C64DF005211EB /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F7D258202C64DF005211EB /* FBSDKLoginKit.framework */; };
 		55F7D25B202C64ED005211EB /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F7D25A202C64ED005211EB /* FBSDKCoreKit.framework */; };
 		55F7D27B202E2A4F005211EB /* VYKModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D27A202E2A4F005211EB /* VYKModelTests.m */; };
+		55F7D286202FD4C2005211EB /* VYKAuthentificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D285202FD4C2005211EB /* VYKAuthentificationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		55F7D258202C64DF005211EB /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		55F7D25A202C64ED005211EB /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		55F7D27A202E2A4F005211EB /* VYKModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKModelTests.m; sourceTree = "<group>"; };
+		55F7D284202FD4C2005211EB /* VYKAuthentificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKAuthentificationController.h; sourceTree = "<group>"; };
+		55F7D285202FD4C2005211EB /* VYKAuthentificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKAuthentificationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +249,8 @@
 		55F7D282202FCBCA005211EB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				55F7D284202FD4C2005211EB /* VYKAuthentificationController.h */,
+				55F7D285202FD4C2005211EB /* VYKAuthentificationController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -385,6 +390,7 @@
 				55B872E62026586500D37F2E /* VYKPhoneMemoryViewController.m in Sources */,
 				55B87307202A49AA00D37F2E /* VYKSecureTextField.m in Sources */,
 				55B8730D202A9F8900D37F2E /* Constans.m in Sources */,
+				55F7D286202FD4C2005211EB /* VYKAuthentificationController.m in Sources */,
 				55B8728A2020FF9F00D37F2E /* VYKViewController.m in Sources */,
 				55B872F220273D1800D37F2E /* VYKSocialNetworkViewController.m in Sources */,
 				55B872872020FF9F00D37F2E /* AppDelegate.m in Sources */,

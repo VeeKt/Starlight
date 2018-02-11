@@ -11,12 +11,8 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface AppDelegate ()
-
-@property (nonatomic, strong) UINavigationController *navigationControloler;
-@property (nonatomic, strong) UITabBarController *tabBarController;
-
 @property (nonatomic, strong) VYKViewController *rootViewController;
-
+@property (nonatomic, strong) UINavigationController *navigationControloler;
 @end
 
 @implementation AppDelegate
@@ -27,6 +23,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self initWindow];
+    
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
     return YES;

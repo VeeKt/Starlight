@@ -11,3 +11,4 @@
 const float widthOffset = 25;
 const float sideSize = 110;
 const float hightFieldOffset = 50;
+const int64_t delayInSeconds = 2.5;

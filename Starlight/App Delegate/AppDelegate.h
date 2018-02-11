@@ -15,6 +15,7 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 @property (nonatomic, readonly) VYKViewController *rootViewController;
+@property (nonatomic, readonly) UINavigationController *navigationControloler;
 
 - (void)saveContext;
 
