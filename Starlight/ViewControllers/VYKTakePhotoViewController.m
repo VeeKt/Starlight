@@ -32,8 +32,8 @@
 {
     self.view.backgroundColor = [UIColor whiteColor];
     self.photoImage = [[UIImage alloc] init];
-    self.backgroundImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
-    self.backgroundImage.image = [UIImage imageNamed:@"camera.png"];
+    self.backgroundImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    self.backgroundImage.image = [UIImage imageNamed:@"smallCam.png"];
     self.backgroundImage.center = self.view.center;
     [self.view addSubview:self.backgroundImage];
 }

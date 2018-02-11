@@ -10,6 +10,7 @@
 #import "VYKPhoneMemoryViewController.h"
 #import "VYKTakePhotoViewController.h"
 #import "VYKSocialNetworkViewController.h"
+#import "VYKAppLibraryViewController.h"
 #import "Constants.h"
 
 @interface VYKViewController ()
@@ -17,6 +18,7 @@
 @property (nonatomic, strong) UIButton *phoneMemoryButton;
 @property (nonatomic, strong) UIButton *makePhotoButton;
 @property (nonatomic, strong) UIButton *socialNetworkButton;
+@property (nonatomic, strong) UIButton *appLibraryButton;
 @property (nonatomic, strong) UILabel *welcomeLabel;
 
 @end
@@ -43,6 +45,7 @@
     [self createMakePhotoButton];
     [self createPhoneMemoryButton];
     [self createSocialNetworkButton];
+    [self createAppLibraryButton];
 }
 
 
@@ -69,6 +72,13 @@
     [self.navigationController pushViewController:socialNetworkViewController animated:YES];
 }
 
+- (void)clickAppLibraryButton:(id)sender
+{
+    VYKAppLibraryViewController *appLibraryViewController = [[VYKAppLibraryViewController alloc]
+                                                             initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:appLibraryViewController animated:YES];
+}
+
 
 # pragma mark - buttons
 
@@ -90,14 +100,14 @@
 - (void)createMakePhotoButton
 {
     self.makePhotoButton = [UIButton new];
-    self.makePhotoButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 - 25 offsetWidth:widthOffset image:[UIImage imageNamed:@"whiteDslr.png"] buttonBackgroundColor:[UIColor yellowColor] selector:@selector(clickOnMakePhotoButton:)];
+    self.makePhotoButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 offsetWidth:widthOffset image:[UIImage imageNamed:@"whiteDslr.png"] buttonBackgroundColor:[UIColor yellowColor] selector:@selector(clickOnMakePhotoButton:)];
     [self.view addSubview:self.makePhotoButton];
 }
 
 - (void)createPhoneMemoryButton
 {
     self.phoneMemoryButton = [UIButton new];
-    self.phoneMemoryButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 - 25 offsetWidth:CGRectGetWidth(self.view.frame) - widthOffset - sideSize image:[UIImage imageNamed:@"whiteSmartphone.png"] buttonBackgroundColor:[UIColor orangeColor] selector:@selector(clickOnPhoneMemoryButton:)];
+    self.phoneMemoryButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 offsetWidth:CGRectGetWidth(self.view.frame) - widthOffset - sideSize image:[UIImage imageNamed:@"whiteSmartphone.png"] buttonBackgroundColor:[UIColor orangeColor] selector:@selector(clickOnPhoneMemoryButton:)];
     [self.view addSubview:self.phoneMemoryButton];
 }
 
@@ -108,6 +118,13 @@
     [self.view addSubview:self.socialNetworkButton];
 }
 
+- (void)createAppLibraryButton
+{
+    self.appLibraryButton = [UIButton new];
+    self.appLibraryButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 - sideSize offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * widthOffset image:[UIImage imageNamed:@"library.png"] buttonBackgroundColor:[UIColor lightGrayColor] selector:@selector(clickAppLibraryButton:)];
+    [self.view addSubview:self.appLibraryButton];
+}
+
 
 #pragma mark - label
 
@@ -116,9 +133,9 @@
     self.welcomeLabel = [UILabel new];
     self.welcomeLabel.numberOfLines = 0;
     [self.welcomeLabel setFrame:CGRectMake(2 * widthOffset,
-                                           CGRectGetHeight(self.view.frame)/5,
+                                           CGRectGetHeight(self.view.frame)/8,
                                            CGRectGetWidth(self.view.frame) - 3 * widthOffset,
-                                           CGRectGetHeight(self.view.frame)/4)];
+                                           CGRectGetHeight(self.view.frame)/7/*4*/)];
     [self.welcomeLabel setText:@"Welcome!\n\nLoad photo from..."];
     [self.welcomeLabel setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:self.welcomeLabel];
