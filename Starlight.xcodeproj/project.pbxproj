@@ -85,6 +85,10 @@
 		55F7D28F20307A46005211EB /* VYKAppLibraryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKAppLibraryController.h; sourceTree = "<group>"; };
 		55F7D29020307A46005211EB /* VYKAppLibraryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKAppLibraryController.m; sourceTree = "<group>"; };
 		55F7D2932030A8F9005211EB /* Starlight.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Starlight.xcdatamodel; sourceTree = "<group>"; };
+		55F7D29520310BAF005211EB /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataProperties.h"; sourceTree = "<group>"; };
+		55F7D29620310BAF005211EB /* Item+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataClass.h"; sourceTree = "<group>"; };
+		55F7D29720310BAF005211EB /* Item+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataClass.m"; sourceTree = "<group>"; };
+		55F7D29820310BAF005211EB /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +235,10 @@
 		55B872F920288EEA00D37F2E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				55F7D29520310BAF005211EB /* Item+CoreDataProperties.h */,
+				55F7D29620310BAF005211EB /* Item+CoreDataClass.h */,
+				55F7D29720310BAF005211EB /* Item+CoreDataClass.m */,
+				55F7D29820310BAF005211EB /* Item+CoreDataProperties.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -402,10 +410,12 @@
 				55F7D286202FD4C2005211EB /* VYKAuthentificationController.m in Sources */,
 				55B8728A2020FF9F00D37F2E /* VYKViewController.m in Sources */,
 				55B872872020FF9F00D37F2E /* AppDelegate.m in Sources */,
+				55F7D29A20310BAF005211EB /* Item+CoreDataProperties.m in Sources */,
 				55B872982020FF9F00D37F2E /* main.m in Sources */,
 				55B872EF20273CCD00D37F2E /* VYKTakePhotoViewController.m in Sources */,
 				55F7D29120307A46005211EB /* VYKAppLibraryController.m in Sources */,
 				55F7D28E20307A05005211EB /* VYKAppLibraryViewController.m in Sources */,
+				55F7D29920310BAF005211EB /* Item+CoreDataClass.m in Sources */,
 				55F7D2942030A8F9005211EB /* Starlight.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
