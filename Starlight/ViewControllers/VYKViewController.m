@@ -81,7 +81,7 @@
      fromViewController:self
      handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
          
-//         do smth with it!!!!
+//do smth with it!!!!
          if(error)
          {
              return;

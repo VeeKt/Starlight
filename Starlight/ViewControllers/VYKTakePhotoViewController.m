@@ -23,6 +23,14 @@
     [super viewDidLoad];
     [self createUI];
     [self application:nil didFinishLaunchingWithOptions:[NSDictionary dictionary]];
+    
+////load data from camera to image view when app was restarted
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    if ([defaults objectForKey:@"userImage"])
+//    {
+//        NSData *loadData = [defaults objectForKey:@"userImage"];
+//        self.photoImageView.image = [UIImage imageWithData:loadData];
+//    }
 }
 
 
@@ -88,11 +96,12 @@
     }
     self.photoImageView.image = currentImage;
     [self dismissViewControllerAnimated:YES completion:nil];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSData *data = UIImageJPEGRepresentation(self.photoImageView.image, 1.0);
-    [defaults setObject:data forKey:@"userImage"];
-    [defaults synchronize];
+ 
+////save image from cam to UserDefaults
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    NSData *data = UIImageJPEGRepresentation(self.photoImageView.image, 1.0);
+//    [defaults setObject:data forKey:@"userImage"];
+//    [defaults synchronize];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker

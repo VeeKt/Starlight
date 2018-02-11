@@ -11,4 +11,6 @@
 
 @interface VYKTakePhotoViewController : UIViewController <VYKCreateUIProtocol, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
+@property (nonatomic, readonly) UIImageView *photoImageView;
+
 @end
