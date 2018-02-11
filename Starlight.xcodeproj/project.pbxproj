@@ -111,12 +111,12 @@
 		55B872792020FF9F00D37F2E = {
 			isa = PBXGroup;
 			children = (
+				55F7D283202FCE0C005211EB /* Pods */,
 				55B87308202A8B1500D37F2E /* Default-568h@2x.png */,
 				55B872842020FF9F00D37F2E /* Starlight */,
 				55B872A02020FFA000D37F2E /* StarlightTests */,
 				55B872AB2020FFA000D37F2E /* StarlightUITests */,
 				55B872832020FF9F00D37F2E /* Products */,
-				55B872F62027D0D200D37F2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +137,7 @@
 				55B872962020FF9F00D37F2E /* Info.plist */,
 				55B872912020FF9F00D37F2E /* Assets.xcassets */,
 				55B8728E2020FF9F00D37F2E /* Starlight.xcdatamodeld */,
+				55F7D282202FCBCA005211EB /* Controllers */,
 				55F7D27E202F3F8B005211EB /* Views */,
 				55B872E32024884200D37F2E /* App Delegate */,
 				55B8730A202A8CD500D37F2E /* Constants */,
@@ -215,6 +216,7 @@
 				55B872F72027D0D200D37F2E /* MobileCoreServices.framework */,
 			);
 			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		55B872F920288EEA00D37F2E /* Models */ = {
@@ -240,6 +242,21 @@
 				55B87306202A49AA00D37F2E /* VYKSecureTextField.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		55F7D282202FCBCA005211EB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		55F7D283202FCE0C005211EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				55B872F62027D0D200D37F2E /* Frameworks */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
