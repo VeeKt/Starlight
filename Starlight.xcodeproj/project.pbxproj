@@ -9,16 +9,13 @@
 /* Begin PBXBuildFile section */
 		55B872872020FF9F00D37F2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872862020FF9F00D37F2E /* AppDelegate.m */; };
 		55B8728A2020FF9F00D37F2E /* VYKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872892020FF9F00D37F2E /* VYKViewController.m */; };
-		55B872902020FF9F00D37F2E /* Starlight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55B8728E2020FF9F00D37F2E /* Starlight.xcdatamodeld */; };
 		55B872922020FF9F00D37F2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B872912020FF9F00D37F2E /* Assets.xcassets */; };
 		55B872982020FF9F00D37F2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872972020FF9F00D37F2E /* main.m */; };
 		55B872A22020FFA000D37F2E /* StarlightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872A12020FFA000D37F2E /* StarlightTests.m */; };
 		55B872AD2020FFA000D37F2E /* StarlightUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872AC2020FFA000D37F2E /* StarlightUITests.m */; };
 		55B872E62026586500D37F2E /* VYKPhoneMemoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872E52026586500D37F2E /* VYKPhoneMemoryViewController.m */; };
 		55B872EF20273CCD00D37F2E /* VYKTakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872EE20273CCD00D37F2E /* VYKTakePhotoViewController.m */; };
-		55B872F220273D1800D37F2E /* VYKSocialNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872F120273D1800D37F2E /* VYKSocialNetworkViewController.m */; };
 		55B872F82027D0D200D37F2E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B872F72027D0D200D37F2E /* MobileCoreServices.framework */; };
-		55B87307202A49AA00D37F2E /* VYKSecureTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B87306202A49AA00D37F2E /* VYKSecureTextField.m */; };
 		55B87309202A8B1500D37F2E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55B87308202A8B1500D37F2E /* Default-568h@2x.png */; };
 		55B8730D202A9F8900D37F2E /* Constans.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B8730C202A9F8900D37F2E /* Constans.m */; };
 		55F7D255202C63E4005211EB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F7D254202C63E4005211EB /* Bolts.framework */; };
@@ -30,6 +27,7 @@
 		55F7D28B203066E1005211EB /* FBSDKPlacesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F7D28A203066E0005211EB /* FBSDKPlacesKit.framework */; };
 		55F7D28E20307A05005211EB /* VYKAppLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D28D20307A05005211EB /* VYKAppLibraryViewController.m */; };
 		55F7D29120307A46005211EB /* VYKAppLibraryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D29020307A46005211EB /* VYKAppLibraryController.m */; };
+		55F7D2942030A8F9005211EB /* Starlight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D2922030A8F9005211EB /* Starlight.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +53,6 @@
 		55B872862020FF9F00D37F2E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		55B872882020FF9F00D37F2E /* VYKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKViewController.h; sourceTree = "<group>"; };
 		55B872892020FF9F00D37F2E /* VYKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKViewController.m; sourceTree = "<group>"; };
-		55B8728F2020FF9F00D37F2E /* Starlight.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Starlight.xcdatamodel; sourceTree = "<group>"; };
 		55B872912020FF9F00D37F2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55B872962020FF9F00D37F2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55B872972020FF9F00D37F2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -69,12 +66,8 @@
 		55B872E52026586500D37F2E /* VYKPhoneMemoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKPhoneMemoryViewController.m; sourceTree = "<group>"; };
 		55B872ED20273CCD00D37F2E /* VYKTakePhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKTakePhotoViewController.h; sourceTree = "<group>"; };
 		55B872EE20273CCD00D37F2E /* VYKTakePhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKTakePhotoViewController.m; sourceTree = "<group>"; };
-		55B872F020273D1800D37F2E /* VYKSocialNetworkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKSocialNetworkViewController.h; sourceTree = "<group>"; };
-		55B872F120273D1800D37F2E /* VYKSocialNetworkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKSocialNetworkViewController.m; sourceTree = "<group>"; };
 		55B872F520273E7100D37F2E /* VYKCreateUIProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKCreateUIProtocol.h; sourceTree = "<group>"; };
 		55B872F72027D0D200D37F2E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		55B87305202A49AA00D37F2E /* VYKSecureTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKSecureTextField.h; sourceTree = "<group>"; };
-		55B87306202A49AA00D37F2E /* VYKSecureTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKSecureTextField.m; sourceTree = "<group>"; };
 		55B87308202A8B1500D37F2E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		55B8730B202A8CED00D37F2E /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		55B8730C202A9F8900D37F2E /* Constans.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constans.m; sourceTree = "<group>"; };
@@ -91,6 +84,7 @@
 		55F7D28D20307A05005211EB /* VYKAppLibraryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKAppLibraryViewController.m; sourceTree = "<group>"; };
 		55F7D28F20307A46005211EB /* VYKAppLibraryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKAppLibraryController.h; sourceTree = "<group>"; };
 		55F7D29020307A46005211EB /* VYKAppLibraryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKAppLibraryController.m; sourceTree = "<group>"; };
+		55F7D2932030A8F9005211EB /* Starlight.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Starlight.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,10 +142,10 @@
 		55B872842020FF9F00D37F2E /* Starlight */ = {
 			isa = PBXGroup;
 			children = (
+				55F7D2922030A8F9005211EB /* Starlight.xcdatamodeld */,
 				55B872972020FF9F00D37F2E /* main.m */,
 				55B872962020FF9F00D37F2E /* Info.plist */,
 				55B872912020FF9F00D37F2E /* Assets.xcassets */,
-				55B8728E2020FF9F00D37F2E /* Starlight.xcdatamodeld */,
 				55F7D282202FCBCA005211EB /* Controllers */,
 				55F7D27E202F3F8B005211EB /* Views */,
 				55B872E32024884200D37F2E /* App Delegate */,
@@ -199,8 +193,6 @@
 				55B872E52026586500D37F2E /* VYKPhoneMemoryViewController.m */,
 				55B872ED20273CCD00D37F2E /* VYKTakePhotoViewController.h */,
 				55B872EE20273CCD00D37F2E /* VYKTakePhotoViewController.m */,
-				55B872F020273D1800D37F2E /* VYKSocialNetworkViewController.h */,
-				55B872F120273D1800D37F2E /* VYKSocialNetworkViewController.m */,
 				55F7D28C20307A05005211EB /* VYKAppLibraryViewController.h */,
 				55F7D28D20307A05005211EB /* VYKAppLibraryViewController.m */,
 			);
@@ -255,8 +247,6 @@
 		55F7D27E202F3F8B005211EB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				55B87305202A49AA00D37F2E /* VYKSecureTextField.h */,
-				55B87306202A49AA00D37F2E /* VYKSecureTextField.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -408,17 +398,15 @@
 			files = (
 				55B872E62026586500D37F2E /* VYKPhoneMemoryViewController.m in Sources */,
 				55F7D289202FE238005211EB /* VYKPhotoLibraryController.m in Sources */,
-				55B87307202A49AA00D37F2E /* VYKSecureTextField.m in Sources */,
 				55B8730D202A9F8900D37F2E /* Constans.m in Sources */,
 				55F7D286202FD4C2005211EB /* VYKAuthentificationController.m in Sources */,
 				55B8728A2020FF9F00D37F2E /* VYKViewController.m in Sources */,
-				55B872F220273D1800D37F2E /* VYKSocialNetworkViewController.m in Sources */,
 				55B872872020FF9F00D37F2E /* AppDelegate.m in Sources */,
 				55B872982020FF9F00D37F2E /* main.m in Sources */,
 				55B872EF20273CCD00D37F2E /* VYKTakePhotoViewController.m in Sources */,
-				55B872902020FF9F00D37F2E /* Starlight.xcdatamodeld in Sources */,
 				55F7D29120307A46005211EB /* VYKAppLibraryController.m in Sources */,
 				55F7D28E20307A05005211EB /* VYKAppLibraryViewController.m in Sources */,
+				55F7D2942030A8F9005211EB /* Starlight.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,12 +679,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		55B8728E2020FF9F00D37F2E /* Starlight.xcdatamodeld */ = {
+		55F7D2922030A8F9005211EB /* Starlight.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				55B8728F2020FF9F00D37F2E /* Starlight.xcdatamodel */,
+				55F7D2932030A8F9005211EB /* Starlight.xcdatamodel */,
 			);
-			currentVersion = 55B8728F2020FF9F00D37F2E /* Starlight.xcdatamodel */;
+			currentVersion = 55F7D2932030A8F9005211EB /* Starlight.xcdatamodel */;
 			path = Starlight.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
