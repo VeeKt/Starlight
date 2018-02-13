@@ -229,9 +229,9 @@
 		55B872F920288EEA00D37F2E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				55F7D2A2203110E6005211EB /* Item+CoreDataProperties.h */,
 				55F7D2A3203110E6005211EB /* Item+CoreDataClass.h */,
 				55F7D2A4203110E6005211EB /* Item+CoreDataClass.m */,
+				55F7D2A2203110E6005211EB /* Item+CoreDataProperties.h */,
 				55F7D2A5203110E6005211EB /* Item+CoreDataProperties.m */,
 			);
 			path = Models;

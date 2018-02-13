@@ -7,8 +7,11 @@
 //
 
 #import "VYKAppLibraryViewController.h"
+#import "Item+CoreDataClass.h"
 
 @interface VYKAppLibraryViewController ()
+
+@property (nonatomic, strong) NSManagedObjectContext *coreDataContext;
 
 @end
 
@@ -22,6 +25,14 @@
 - (void)createUI
 {
     self.view.backgroundColor = [UIColor whiteColor];
+}
+
+- (void)loadObjects
+{
+//    Item *item = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:self.coreDataContext];
+//    item.name = @"pic1";
+//    item.date = DISPATCH_TIME_NOW;
+//
 }
 
 @end
