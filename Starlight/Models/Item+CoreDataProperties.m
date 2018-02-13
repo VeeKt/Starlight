@@ -15,10 +15,10 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"Item"];
 }
 
-@dynamic name;
 @dynamic date;
 @dynamic image;
-@dynamic nete;
+@dynamic name;
+@dynamic note;
 @dynamic qty;
 
 @end

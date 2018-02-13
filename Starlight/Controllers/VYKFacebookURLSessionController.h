@@ -11,7 +11,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKPlacesKit/FBSDKPlacesKit.h>
 
-@interface VYKAuthentificationController : NSObject
+@interface VYKFacebookURLSessionController : NSObject
 
 @property (nonatomic, readonly) NSArray *vykProfilePhotosArray;
 

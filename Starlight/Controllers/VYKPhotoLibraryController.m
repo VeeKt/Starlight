@@ -32,20 +32,20 @@
 //    }];
 }
 
-- (void)findPathToPhotoLibrary
-{
-    self.fileManager = [[NSFileManager alloc] init];
-    NSArray *urls = [self.fileManager URLsForDirectory:NSPicturesDirectory inDomains:NSUserDomainMask];
-    if ([urls count] > 0)
-    {
-        NSURL *pictureFolder = urls[0];
-        NSLog(@"%@", pictureFolder);
-    }
-    else
-    {
-        NSLog(@"Could not find Picture folder.");
-    }
-}
+//- (void)findPathToPhotoLibrary
+//{
+//    self.fileManager = [[NSFileManager alloc] init];
+//    NSArray *urls = [self.fileManager URLsForDirectory:NSPicturesDirectory inDomains:NSUserDomainMask];
+//    if ([urls count] > 0)
+//    {
+//        NSURL *pictureFolder = urls[0];
+//        NSLog(@"%@", pictureFolder);
+//    }
+//    else
+//    {
+//        NSLog(@"Could not find Picture folder.");
+//    }
+//}
 
 - (BOOL)cameraSupportMedia:(NSString *)paramMediaType sourceType:(UIImagePickerControllerSourceType)paramSourceType
 {

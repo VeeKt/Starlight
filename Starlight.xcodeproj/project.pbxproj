@@ -22,12 +22,14 @@
 		55F7D259202C64DF005211EB /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F7D258202C64DF005211EB /* FBSDKLoginKit.framework */; };
 		55F7D25B202C64ED005211EB /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F7D25A202C64ED005211EB /* FBSDKCoreKit.framework */; };
 		55F7D27B202E2A4F005211EB /* VYKModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D27A202E2A4F005211EB /* VYKModelTests.m */; };
-		55F7D286202FD4C2005211EB /* VYKAuthentificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D285202FD4C2005211EB /* VYKAuthentificationController.m */; };
+		55F7D286202FD4C2005211EB /* VYKFacebookURLSessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D285202FD4C2005211EB /* VYKFacebookURLSessionController.m */; };
 		55F7D289202FE238005211EB /* VYKPhotoLibraryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D288202FE238005211EB /* VYKPhotoLibraryController.m */; };
 		55F7D28B203066E1005211EB /* FBSDKPlacesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F7D28A203066E0005211EB /* FBSDKPlacesKit.framework */; };
 		55F7D28E20307A05005211EB /* VYKAppLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D28D20307A05005211EB /* VYKAppLibraryViewController.m */; };
 		55F7D29120307A46005211EB /* VYKAppLibraryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D29020307A46005211EB /* VYKAppLibraryController.m */; };
 		55F7D2942030A8F9005211EB /* Starlight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D2922030A8F9005211EB /* Starlight.xcdatamodeld */; };
+		55F7D2A6203110E6005211EB /* Item+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D2A4203110E6005211EB /* Item+CoreDataClass.m */; };
+		55F7D2A7203110E6005211EB /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D2A5203110E6005211EB /* Item+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,8 +77,8 @@
 		55F7D258202C64DF005211EB /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		55F7D25A202C64ED005211EB /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		55F7D27A202E2A4F005211EB /* VYKModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKModelTests.m; sourceTree = "<group>"; };
-		55F7D284202FD4C2005211EB /* VYKAuthentificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKAuthentificationController.h; sourceTree = "<group>"; };
-		55F7D285202FD4C2005211EB /* VYKAuthentificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKAuthentificationController.m; sourceTree = "<group>"; };
+		55F7D284202FD4C2005211EB /* VYKFacebookURLSessionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKFacebookURLSessionController.h; sourceTree = "<group>"; };
+		55F7D285202FD4C2005211EB /* VYKFacebookURLSessionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKFacebookURLSessionController.m; sourceTree = "<group>"; };
 		55F7D287202FE238005211EB /* VYKPhotoLibraryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKPhotoLibraryController.h; sourceTree = "<group>"; };
 		55F7D288202FE238005211EB /* VYKPhotoLibraryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKPhotoLibraryController.m; sourceTree = "<group>"; };
 		55F7D28A203066E0005211EB /* FBSDKPlacesKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKPlacesKit.framework; sourceTree = "<group>"; };
@@ -85,10 +87,10 @@
 		55F7D28F20307A46005211EB /* VYKAppLibraryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKAppLibraryController.h; sourceTree = "<group>"; };
 		55F7D29020307A46005211EB /* VYKAppLibraryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKAppLibraryController.m; sourceTree = "<group>"; };
 		55F7D2932030A8F9005211EB /* Starlight.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Starlight.xcdatamodel; sourceTree = "<group>"; };
-		55F7D29520310BAF005211EB /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataProperties.h"; sourceTree = "<group>"; };
-		55F7D29620310BAF005211EB /* Item+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataClass.h"; sourceTree = "<group>"; };
-		55F7D29720310BAF005211EB /* Item+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataClass.m"; sourceTree = "<group>"; };
-		55F7D29820310BAF005211EB /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
+		55F7D2A2203110E6005211EB /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataProperties.h"; sourceTree = "<group>"; };
+		55F7D2A3203110E6005211EB /* Item+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataClass.h"; sourceTree = "<group>"; };
+		55F7D2A4203110E6005211EB /* Item+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataClass.m"; sourceTree = "<group>"; };
+		55F7D2A5203110E6005211EB /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,14 +152,13 @@
 				55B872972020FF9F00D37F2E /* main.m */,
 				55B872962020FF9F00D37F2E /* Info.plist */,
 				55B872912020FF9F00D37F2E /* Assets.xcassets */,
+				55F7D29B20310D71005211EB /* Views */,
 				55F7D282202FCBCA005211EB /* Controllers */,
-				55F7D27E202F3F8B005211EB /* Views */,
 				55B872E32024884200D37F2E /* App Delegate */,
 				55B8730A202A8CD500D37F2E /* Constants */,
 				55B872E22022FBF400D37F2E /* ViewControllers */,
 				55B872F920288EEA00D37F2E /* Models */,
 				55B872F320273E2A00D37F2E /* Protocols */,
-				55B872E120229C1100D37F2E /* Serveces */,
 			);
 			path = Starlight;
 			sourceTree = "<group>";
@@ -179,13 +180,6 @@
 				55B872AE2020FFA000D37F2E /* Info.plist */,
 			);
 			path = StarlightUITests;
-			sourceTree = "<group>";
-		};
-		55B872E120229C1100D37F2E /* Serveces */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Serveces;
 			sourceTree = "<group>";
 		};
 		55B872E22022FBF400D37F2E /* ViewControllers */ = {
@@ -235,10 +229,10 @@
 		55B872F920288EEA00D37F2E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				55F7D29520310BAF005211EB /* Item+CoreDataProperties.h */,
-				55F7D29620310BAF005211EB /* Item+CoreDataClass.h */,
-				55F7D29720310BAF005211EB /* Item+CoreDataClass.m */,
-				55F7D29820310BAF005211EB /* Item+CoreDataProperties.m */,
+				55F7D2A2203110E6005211EB /* Item+CoreDataProperties.h */,
+				55F7D2A3203110E6005211EB /* Item+CoreDataClass.h */,
+				55F7D2A4203110E6005211EB /* Item+CoreDataClass.m */,
+				55F7D2A5203110E6005211EB /* Item+CoreDataProperties.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -252,24 +246,25 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		55F7D27E202F3F8B005211EB /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		55F7D282202FCBCA005211EB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				55F7D284202FD4C2005211EB /* VYKAuthentificationController.h */,
-				55F7D285202FD4C2005211EB /* VYKAuthentificationController.m */,
+				55F7D284202FD4C2005211EB /* VYKFacebookURLSessionController.h */,
+				55F7D285202FD4C2005211EB /* VYKFacebookURLSessionController.m */,
 				55F7D287202FE238005211EB /* VYKPhotoLibraryController.h */,
 				55F7D288202FE238005211EB /* VYKPhotoLibraryController.m */,
 				55F7D28F20307A46005211EB /* VYKAppLibraryController.h */,
 				55F7D29020307A46005211EB /* VYKAppLibraryController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		55F7D29B20310D71005211EB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,15 +402,15 @@
 				55B872E62026586500D37F2E /* VYKPhoneMemoryViewController.m in Sources */,
 				55F7D289202FE238005211EB /* VYKPhotoLibraryController.m in Sources */,
 				55B8730D202A9F8900D37F2E /* Constans.m in Sources */,
-				55F7D286202FD4C2005211EB /* VYKAuthentificationController.m in Sources */,
+				55F7D286202FD4C2005211EB /* VYKFacebookURLSessionController.m in Sources */,
 				55B8728A2020FF9F00D37F2E /* VYKViewController.m in Sources */,
 				55B872872020FF9F00D37F2E /* AppDelegate.m in Sources */,
-				55F7D29A20310BAF005211EB /* Item+CoreDataProperties.m in Sources */,
+				55F7D2A7203110E6005211EB /* Item+CoreDataProperties.m in Sources */,
 				55B872982020FF9F00D37F2E /* main.m in Sources */,
 				55B872EF20273CCD00D37F2E /* VYKTakePhotoViewController.m in Sources */,
 				55F7D29120307A46005211EB /* VYKAppLibraryController.m in Sources */,
 				55F7D28E20307A05005211EB /* VYKAppLibraryViewController.m in Sources */,
-				55F7D29920310BAF005211EB /* Item+CoreDataClass.m in Sources */,
+				55F7D2A6203110E6005211EB /* Item+CoreDataClass.m in Sources */,
 				55F7D2942030A8F9005211EB /* Starlight.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

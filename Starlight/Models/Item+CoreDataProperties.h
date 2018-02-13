@@ -16,10 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<Item *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, copy) NSDate *date;
 @property (nullable, nonatomic, retain) NSData *image;
-@property (nullable, nonatomic, copy) NSString *nete;
+@property (nullable, nonatomic, copy) NSString *name;
+@property (nullable, nonatomic, copy) NSString *note;
 @property (nullable, nonatomic, copy) NSString *qty;
 
 @end
