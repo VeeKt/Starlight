@@ -10,6 +10,6 @@
 
 @interface VYKItemViewController : UIViewController
 
-@property (nonatomic, strong) UIImage *photo;
+@property (nonatomic, strong) UIImageView *photo;
 
 @end

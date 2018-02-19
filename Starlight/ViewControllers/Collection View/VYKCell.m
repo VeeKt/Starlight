@@ -14,7 +14,7 @@
 {
     if (self = [super initWithFrame:frame])
     {
-        self.backgroundColor = [UIColor lightGrayColor];
+        self.backgroundColor = [UIColor clearColor];
 //        self.vykImage.image = [UIImage imageNamed:@"photo2.jpeg"];
         [self.contentView addSubview:self.vykImage];
     }

@@ -17,6 +17,8 @@
 
 @implementation VYKItemViewController
 
+//@synthesize photo;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createUI];
@@ -27,12 +29,13 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.itemView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height - 240)];
-    self.itemView.backgroundColor = [UIColor lightGrayColor];
-    self.itemView.image = [UIImage imageNamed:@"photo1.jpeg"];
+    self.itemView.backgroundColor = [UIColor clearColor];
+    self.itemView.image = [UIImage imageNamed:@"photo1"];
     
     [self.view addSubview:self.itemView];
+//    [self.view addSubview:self.photo];
 
-    UISlider *sliderWhite = [[UISlider alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height - 130, self.view.frame.size.width - 20, 10)];
+    UISlider *sliderWhite = [[UISlider alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height - 160, self.view.frame.size.width - 20, 5)];
     sliderWhite.minimumValue = 0.0f;
     sliderWhite.maximumValue = 100.0f;
     sliderWhite.value = 50.0f;
@@ -41,7 +44,7 @@
 
     [self.view addSubview:sliderWhite];
     
-    UISlider *sliderBlack = [[UISlider alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height - 70, self.view.frame.size.width - 20, 10)];
+    UISlider *sliderBlack = [[UISlider alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height - 100, self.view.frame.size.width - 20, 5)];
     sliderBlack.minimumValue = 0.0f;
     sliderBlack.maximumValue = 100.0f;
     sliderBlack.value = 50.0f;
@@ -50,6 +53,20 @@
     
     [self.view addSubview:sliderBlack];
     
+    UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    saveButton.frame = CGRectMake(10, self.view.frame.size.height - 60, self.view.frame.size.width - 20, 50);
+    [saveButton setTitle:@"Save" forState:UIControlStateNormal];
+    saveButton.backgroundColor = [UIColor lightGrayColor];
+    [saveButton addTarget:self action:@selector(savePhoto) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:saveButton];
+}
+
+- (void)savePhoto
+{
+    //если фото изменено, то сохранить, выдать сообщение об успешном сохранении и вернуться в рут вью
+    //сохраняем в кор дату
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)changeWhiteBalance

@@ -60,12 +60,6 @@ static NSString *cellIdentifier = @"Cell";
     collectionView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
     
     [self.view addSubview:collectionView];
-    
-    UIImageView *backgroundImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    backgroundImage.image = [UIImage imageNamed:@"pictures.png"];
-    backgroundImage.center = self.view.center;
-    
-    [self.view addSubview:backgroundImage];
 }
 
 
@@ -78,8 +72,8 @@ static NSString *cellIdentifier = @"Cell";
     cell.vykImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.height)];
     cell.vykImage.contentMode = UIViewContentModeScaleAspectFit;
     cell.vykImage.clipsToBounds = YES;
-    cell.vykImage.image = [self.photosArray objectAtIndex:indexPath.row];
-//    cell.vykImage.image = [UIImage imageNamed:@"photo1.jpeg"];
+//    cell.vykImage.image = [self.photosArray objectAtIndex:indexPath.row];
+    cell.vykImage.image = [UIImage imageNamed:@"photo4.jpeg"];
     [cell addSubview:cell.vykImage];
     
     return cell;
@@ -87,23 +81,32 @@ static NSString *cellIdentifier = @"Cell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    if (self.photosArray.count == 0)
-    {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oooops!" message:@"No photos yet :)" preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action){
-            [self.navigationController popToRootViewControllerAnimated:YES];
-        }];
-        [alert addAction:ok];
-        [self presentViewController:alert animated:YES completion:nil];
-    }
-    return self.photosArray.count;
-//    return 10;
+//    if (self.photosArray.count == 0)
+//    {
+//        UIImageView *backgroundImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+//        backgroundImage.image = [UIImage imageNamed:@"pictures.png"];
+//        backgroundImage.center = self.view.center;
+//
+//        [self.view addSubview:backgroundImage];
+//
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oooops!" message:@"No photos yet :)" preferredStyle:UIAlertControllerStyleActionSheet];
+//        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action){
+//            [self.navigationController popToRootViewControllerAnimated:YES];
+//        }];
+//        [alert addAction:ok];
+//        [self presentViewController:alert animated:YES completion:nil];
+//    }
+//    return self.photosArray.count;
+    return 10;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     VYKItemViewController *itemViewController = [[VYKItemViewController alloc] init];
-    itemViewController.photo = [self.photosArray objectAtIndex:indexPath.row];
+//    itemViewController.photo = [[UIImageView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height - 240)];
+//    itemViewController.photo.backgroundColor = [UIColor lightGrayColor];
+//    itemViewController.photo.image = [UIImage imageNamed:[self.photosArray objectAtIndex:indexPath.row]];
+//    itemViewController.photo.image = [self.photosArray objectAtIndex:indexPath.row];   //передача текущего изображения в контроллер для редактирования
     [self.navigationController pushViewController:itemViewController animated:YES];
 }
 
