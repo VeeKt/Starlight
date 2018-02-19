@@ -8,11 +8,13 @@
 
 #import "VYKAppLibraryViewController.h"
 #import "Item+CoreDataClass.h"
+#import "VYKAppLibraryController.h"
+
+//#import "VYKCollectionViewController.h"
+#import "VYKViewController.h"
 
 @interface VYKAppLibraryViewController ()
-
 @property (nonatomic, strong) NSManagedObjectContext *coreDataContext;
-
 @end
 
 @implementation VYKAppLibraryViewController
@@ -20,6 +22,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createUI];
+    
+//    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+//
+//    VYKCollectionViewController *collection = [[VYKCollectionViewController alloc] initWithCollectionViewLayout:flowLayout];
+    VYKViewController *collection = [[VYKViewController alloc] init];
+    
+    [self.navigationController pushViewController:collection animated:YES];
+    
+//    VYKAppLibraryController *libraryController = [[VYKAppLibraryController alloc] init];
+//    self.delegate = libraryController;
+//    [self.delegate isSucsessfulRequest:self];
 }
 
 - (void)createUI

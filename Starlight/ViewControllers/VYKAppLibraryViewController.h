@@ -7,8 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VYKCreateUIProtocol.h"
 
-@interface VYKAppLibraryViewController : UIViewController <VYKCreateUIProtocol>
+@class VYKAppLibraryViewController;
+
+@protocol VYKAppLibraryViewControllerDelegate
+
+- (BOOL)isSucsessfulRequest:(VYKAppLibraryViewController *)appLibraryController;
+
+@end
+
+@interface VYKAppLibraryViewController : UIViewController
+
+@property (nonatomic, weak) id<VYKAppLibraryViewControllerDelegate> delegate;
 
 @end

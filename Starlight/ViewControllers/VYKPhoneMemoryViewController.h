@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VYKCreateUIProtocol.h"
 
-@interface VYKPhoneMemoryViewController : UIViewController <VYKCreateUIProtocol, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface VYKPhoneMemoryViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+//- (NSString *)currentState;
 
 @end

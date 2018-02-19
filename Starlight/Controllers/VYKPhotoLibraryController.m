@@ -10,10 +10,8 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 
 @interface VYKPhotoLibraryController ()
-
 @property (nonatomic, strong) NSFileManager *fileManager;
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
-
 @end
 
 @implementation VYKPhotoLibraryController

@@ -10,4 +10,9 @@
 
 @implementation VYKAppLibraryController
 
+- (BOOL)isSucsessfulRequest:(VYKAppLibraryViewController *)appLibraryController {
+    NSLog(@"in VYKAppLibraryController");
+    return YES;
+}
+
 @end

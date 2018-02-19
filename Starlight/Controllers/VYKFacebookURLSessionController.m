@@ -7,12 +7,13 @@
 //
 
 #import "VYKFacebookURLSessionController.h"
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKPlacesKit/FBSDKPlacesKit.h>
 
 @interface VYKFacebookURLSessionController ()
-
 @property (nonatomic, strong) NSArray *vykProfilePhotosArray;
 @property (nonatomic, assign) BOOL cancelled;
-
 @end
 
 @implementation VYKFacebookURLSessionController

@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VYKAppLibraryViewController.h"
 
-@interface VYKAppLibraryController : NSObject
+@interface VYKAppLibraryController : NSObject <VYKAppLibraryViewControllerDelegate>
+
+- (BOOL)isSucsessfulRequest:(VYKAppLibraryViewController *)appLibraryController;
 
 @end

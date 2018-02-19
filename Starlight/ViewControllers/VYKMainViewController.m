@@ -6,26 +6,24 @@
 //  Copyright © 2018 Victoria. All rights reserved.
 //
 
-#import "VYKViewController.h"
+#import "VYKMainViewController.h"
 #import "VYKPhoneMemoryViewController.h"
-#import "VYKTakePhotoViewController.h"
+#import "VYKCameraViewController.h"
 #import "VYKAppLibraryViewController.h"
 #import "Constants.h"
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
-@interface VYKViewController ()
-
+@interface VYKMainViewController ()
 @property (nonatomic, strong) UIButton *phoneMemoryButton;
 @property (nonatomic, strong) UIButton *makePhotoButton;
 @property (nonatomic, strong) UIButton *socialNetworkButton;
 @property (nonatomic, strong) UIButton *appLibraryButton;
 @property (nonatomic, strong) UILabel *welcomeLabel;
 @property (nonatomic, strong) UIButton *socialNetworkPhotoGalleryButton;
-
 @end
 
-@implementation VYKViewController
+@implementation VYKMainViewController
 
 
 #pragma  mark - view controller methods
@@ -61,7 +59,7 @@
 
 - (void)clickOnMakePhotoButton:(id)sender
 {
-    VYKTakePhotoViewController *takePhotoViewController = [[VYKTakePhotoViewController alloc]
+    VYKCameraViewController *takePhotoViewController = [[VYKCameraViewController alloc]
                                                            initWithNibName:nil bundle:nil];
     [self.navigationController pushViewController:takePhotoViewController animated:YES];
 }
@@ -85,7 +83,8 @@
          if(error)
          {
              return;
-         } else if (result.isCancelled)
+         }
+         if (result.isCancelled)
          {
              return;
          }
@@ -118,7 +117,7 @@
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
-    button.frame = CGRectMake(offsetWidth, offsetHight, sideSize, sideSize);
+    button.frame = CGRectMake(offsetWidth, offsetHight, kVYKSquareSideSize, kVYKSquareSideSize);
     button.layer.cornerRadius = 0.5 * button.bounds.size.width;
     [button setImage:image forState:UIControlStateNormal];
     button.backgroundColor = buttonBackgroundColor;
@@ -128,35 +127,35 @@
 - (void)createMakePhotoButton
 {
     self.makePhotoButton = [UIButton new];
-    self.makePhotoButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 offsetWidth:widthOffset image:[UIImage imageNamed:@"whiteDslr.png"] buttonBackgroundColor:[UIColor yellowColor] selector:@selector(clickOnMakePhotoButton:)];
+    self.makePhotoButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 offsetWidth:kVYKWidthOffset image:[UIImage imageNamed:@"whiteDslr.png"] buttonBackgroundColor:[UIColor yellowColor] selector:@selector(clickOnMakePhotoButton:)];
     [self.view addSubview:self.makePhotoButton];
 }
 
 - (void)createPhoneMemoryButton
 {
     self.phoneMemoryButton = [UIButton new];
-    self.phoneMemoryButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 offsetWidth:CGRectGetWidth(self.view.frame) - widthOffset - sideSize image:[UIImage imageNamed:@"whiteSmartphone.png"] buttonBackgroundColor:[UIColor orangeColor] selector:@selector(clickOnPhoneMemoryButton:)];
+    self.phoneMemoryButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 offsetWidth:CGRectGetWidth(self.view.frame) - kVYKWidthOffset - kVYKSquareSideSize image:[UIImage imageNamed:@"whiteSmartphone.png"] buttonBackgroundColor:[UIColor orangeColor] selector:@selector(clickOnPhoneMemoryButton:)];
     [self.view addSubview:self.phoneMemoryButton];
 }
 
 - (void)createSocialNetworkButton
 {
     self.socialNetworkButton = [UIButton new];
-    self.socialNetworkButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 + sideSize offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * widthOffset image:[UIImage imageNamed:@"fcbk.png"] buttonBackgroundColor:[UIColor lightGrayColor] selector:@selector(clickOnSocialNetworkButton:)];
+    self.socialNetworkButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 + kVYKSquareSideSize offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * kVYKWidthOffset image:[UIImage imageNamed:@"fcbk.png"] buttonBackgroundColor:[UIColor lightGrayColor] selector:@selector(clickOnSocialNetworkButton:)];
     [self.view addSubview:self.socialNetworkButton];
 }
 
 - (void)createAppLibraryButton
 {
     self.appLibraryButton = [UIButton new];
-    self.appLibraryButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 - sideSize offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * widthOffset image:[UIImage imageNamed:@"library.png"] buttonBackgroundColor:[UIColor lightGrayColor] selector:@selector(clickAppLibraryButton:)];
+    self.appLibraryButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 - kVYKSquareSideSize offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * kVYKWidthOffset image:[UIImage imageNamed:@"library.png"] buttonBackgroundColor:[UIColor lightGrayColor] selector:@selector(clickAppLibraryButton:)];
     [self.view addSubview:self.appLibraryButton];
 }
 
 - (void)createSocialNetworkPhotoGalleryButton
 {
     self.socialNetworkPhotoGalleryButton = [UIButton new];
-    self.socialNetworkPhotoGalleryButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 + sideSize offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * widthOffset image:[UIImage imageNamed:@"fcbk.png"] buttonBackgroundColor:[UIColor lightGrayColor] selector:@selector(clickOnSocialNetworkPhotoGalleryButton:)];
+    self.socialNetworkPhotoGalleryButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 + kVYKSquareSideSize offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * kVYKWidthOffset image:[UIImage imageNamed:@"fcbk.png"] buttonBackgroundColor:[UIColor lightGrayColor] selector:@selector(clickOnSocialNetworkPhotoGalleryButton:)];
     [self.view addSubview:self.socialNetworkPhotoGalleryButton];
 }
 
@@ -167,9 +166,9 @@
 {
     self.welcomeLabel = [UILabel new];
     self.welcomeLabel.numberOfLines = 0;
-    [self.welcomeLabel setFrame:CGRectMake(2 * widthOffset,
+    [self.welcomeLabel setFrame:CGRectMake(2 * kVYKWidthOffset,
                                            CGRectGetHeight(self.view.frame)/8,
-                                           CGRectGetWidth(self.view.frame) - 3 * widthOffset,
+                                           CGRectGetWidth(self.view.frame) - 3 * kVYKWidthOffset,
                                            CGRectGetHeight(self.view.frame)/7/*4*/)];
     [self.welcomeLabel setText:@"Welcome!\n\nLoad photo from..."];
     [self.welcomeLabel setTextAlignment:NSTextAlignmentCenter];

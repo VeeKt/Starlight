@@ -7,12 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKPlacesKit/FBSDKPlacesKit.h>
 
 @interface VYKFacebookURLSessionController : NSObject
-
 @property (nonatomic, readonly) NSArray *vykProfilePhotosArray;
-
 @end

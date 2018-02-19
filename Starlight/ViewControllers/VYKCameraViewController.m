@@ -6,31 +6,21 @@
 //  Copyright © 2018 Victoria. All rights reserved.
 //
 
-#import "VYKTakePhotoViewController.h"
+#import "VYKCameraViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
-@interface VYKTakePhotoViewController ()
-
+@interface VYKCameraViewController ()
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
 @property (nonatomic, strong) UIImageView *photoImageView;
 @property (nonatomic, strong) UIImageView *backgroundImage;
-
 @end
 
-@implementation VYKTakePhotoViewController
+@implementation VYKCameraViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createUI];
     [self application:nil didFinishLaunchingWithOptions:[NSDictionary dictionary]];
-    
-////load data from camera to image view when app was restarted
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    if ([defaults objectForKey:@"userImage"])
-//    {
-//        NSData *loadData = [defaults objectForKey:@"userImage"];
-//        self.photoImageView.image = [UIImage imageWithData:loadData];
-//    }
 }
 
 
@@ -96,12 +86,6 @@
     }
     self.photoImageView.image = currentImage;
     [self dismissViewControllerAnimated:YES completion:nil];
- 
-////save image from cam to UserDefaults
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSData *data = UIImageJPEGRepresentation(self.photoImageView.image, 1.0);
-//    [defaults setObject:data forKey:@"userImage"];
-//    [defaults synchronize];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker

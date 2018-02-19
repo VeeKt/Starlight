@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VYKCreateUIProtocol.h"
 
-@interface VYKViewController : UIViewController <VYKCreateUIProtocol>
+@interface VYKMainViewController : UIViewController
 
 @end
 

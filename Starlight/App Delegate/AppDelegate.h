@@ -8,16 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-#import "VYKViewController.h"
+
+@class VYKMainViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
 @property (strong, nonatomic) UIWindow *window;
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
-@property (nonatomic, readonly) VYKViewController *rootViewController;
+@property (nonatomic, readonly) VYKMainViewController *rootViewController;
 @property (nonatomic, readonly) UINavigationController *navigationControloler;
-
 - (void)saveContext;
-
 @end
 

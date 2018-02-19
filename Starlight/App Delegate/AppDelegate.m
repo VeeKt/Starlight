@@ -7,11 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "VYKViewController.h"
+#import "VYKMainViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface AppDelegate ()
-@property (nonatomic, strong) VYKViewController *rootViewController;
+@property (nonatomic, strong) VYKMainViewController *rootViewController;
 @property (nonatomic, strong) UINavigationController *navigationControloler;
 @end
 
@@ -34,8 +34,11 @@
 
 - (void)initNavigationController
 {
-    self.rootViewController = [[VYKViewController alloc] initWithNibName:nil bundle:nil];
-    self.navigationControloler = [[UINavigationController alloc] initWithRootViewController:self.rootViewController];
+    self.rootViewController = [[VYKMainViewController alloc]
+                               initWithNibName:nil bundle:nil];
+    self.navigationControloler = [[UINavigationController alloc]
+                                  initWithRootViewController:self.rootViewController];
+    
     self.window.rootViewController = self.navigationControloler;
     [self.window addSubview:self.navigationControloler.view];
 }
@@ -45,9 +48,11 @@
 
 - (void)initWindow
 {
-    self.window = [UIWindow new];
-    self.window.tintColor = [UIColor blackColor];
+    self.window = [[UIWindow alloc]
+                   initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    self.window.tintColor = [UIColor blackColor];
+
     [self initNavigationController];
     [self.window makeKeyAndVisible];
 }
@@ -59,7 +64,7 @@
             openURL:(NSURL *)url
             options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
-    
+
     BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
                                                                   openURL:url
                                                         sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
@@ -86,6 +91,17 @@
             {
                 if (error != nil)
                 {
+                    // Replace this implementation with code to handle the error appropriately.
+                    // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                    
+                    /*
+                     Typical reasons for an error here include:
+                     * The parent directory does not exist, cannot be created, or disallows writing.
+                     * The persistent store is not accessible, due to permissions or data protection when the device is locked.
+                     * The device is out of space.
+                     * The store could not be migrated to the current model version.
+                     Check the error message to determine what the actual problem was.
+                     */
                     NSLog(@"Unresolved error %@, %@", error, error.userInfo);
                     abort();
                 }
@@ -105,6 +121,8 @@
     NSError *error = nil;
     if ([context hasChanges] && ![context save:&error])
     {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);
         abort();
     }

@@ -6,11 +6,5 @@
 //  Copyright © 2018 Victoria. All rights reserved.
 //
 
-#ifndef Starlight_Constants_h
-#define Starlight_Constants_h
-
-extern const float widthOffset;
-extern const float sideSize;
-extern const float hightFieldOffset;
-
-#endif
+static const CGFloat kVYKWidthOffset = 25;
+static const CGFloat kVYKSquareSideSize = 110;

@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) VYKPhotoLibraryController *photoLibraryController;
 @property (nonatomic, strong) UIImageView *backgroundImage;
+//@property (nonatomic, copy) NSString *currentState;
 
 @end
 
@@ -63,5 +64,16 @@
 {
     
 }
+
+//- (NSString *)currentState
+//{
+//    return self.currentState;
+//}
+//
+//- (instancetype)initWithCurrentState
+//{
+//
+//    return self;
+//}
 
 @end

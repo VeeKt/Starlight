@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VYKCreateUIProtocol.h"
 
-@interface VYKTakePhotoViewController : UIViewController <VYKCreateUIProtocol, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-
+@interface VYKCameraViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, readonly) UIImageView *photoImageView;
-
 @end
