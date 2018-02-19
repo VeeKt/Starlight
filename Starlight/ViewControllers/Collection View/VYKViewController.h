@@ -10,7 +10,7 @@
 
 @interface VYKViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-/* модель данных */
+// модель данных
 @property (nonatomic, copy) NSArray *photosArray;
 
 @end

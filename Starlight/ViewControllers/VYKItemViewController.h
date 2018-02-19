@@ -10,6 +10,7 @@
 
 @interface VYKItemViewController : UIViewController
 
+// image view редактируемой фотографии
 @property (nonatomic, strong) UIImageView *photo;
 
 @end

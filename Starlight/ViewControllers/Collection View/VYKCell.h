@@ -10,6 +10,7 @@
 
 @interface VYKCell : UICollectionViewCell
 
+// image view ячейки
 @property (nonatomic, strong) UIImageView *vykImage;
 
 @end

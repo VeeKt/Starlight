@@ -106,7 +106,10 @@ static NSString *cellIdentifier = @"Cell";
     VYKItemViewController *itemViewController = [[VYKItemViewController alloc] init];
     itemViewController.photo = [[UIImageView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height - 240)];
     itemViewController.photo.backgroundColor = [UIColor lightGrayColor];
-    itemViewController.photo.image = [self.photosArray objectAtIndex:indexPath.row];   //передача текущего изображения в контроллер для редактирования
+    
+//передача текущего изображения в контроллер для редактирования
+    itemViewController.photo.image = [self.photosArray objectAtIndex:indexPath.row];
+    
     [self.navigationController pushViewController:itemViewController animated:YES];
 }
 
