@@ -16,7 +16,7 @@ static NSString *cellIdentifier = @"Cell";
 @interface VYKViewController ()
 
 /* модель данных */
-@property (nonatomic, strong) NSMutableArray *datesArray;
+@property (nonatomic, strong) NSMutableArray *photosArray;
 
 @end
 
@@ -34,8 +34,8 @@ static NSString *cellIdentifier = @"Cell";
 
 - (void)dataInitialization
 {
-    self.datesArray = [NSMutableArray new];
-    [self.datesArray addObject:[NSDate date]];
+    self.photosArray = [NSMutableArray new];
+    [self.photosArray addObject:[NSDate date]];
 }
 
 
@@ -62,14 +62,30 @@ static NSString *cellIdentifier = @"Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     VYKCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    cell.vykImage.image = [UIImage imageNamed:@"photo4.jpeg"];
+    
+    cell.vykImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.height)];
+    cell.vykImage.contentMode = UIViewContentModeScaleAspectFit;
+    cell.vykImage.clipsToBounds = YES;
+    cell.vykImage.image = [self.photosArray objectAtIndex:indexPath.row];
+//    cell.vykImage.image = [UIImage imageNamed:@"photo1.jpeg"];
+    [cell addSubview:cell.vykImage];
     
     return cell;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    if (self.photosArray.count == 0)
+    {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oooops!" message:@"No photos yet :)" preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action){
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    return self.photosArray.count;
+//    return 10;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -83,7 +99,13 @@ static NSString *cellIdentifier = @"Cell";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(self.view.frame.size.width/2 - 20, 200);
+    UIImage *photoImage = [self.photosArray objectAtIndex:indexPath.row];
+    CGSize imageSize = photoImage.size;
+    imageSize.height += 200;
+    imageSize.width += 200;
+    
+    return imageSize;
+//    return CGSizeMake(self.view.frame.size.width/2 - 20, 200);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section

@@ -28,7 +28,7 @@
 //    VYKCollectionViewController *collection = [[VYKCollectionViewController alloc] initWithCollectionViewLayout:flowLayout];
     VYKViewController *collection = [[VYKViewController alloc] init];
     
-    [self.navigationController pushViewController:collection animated:YES];
+    [self.navigationController pushViewController:collection animated:NO];
     
 //    VYKAppLibraryController *libraryController = [[VYKAppLibraryController alloc] init];
 //    self.delegate = libraryController;
