@@ -30,10 +30,10 @@
     
     self.itemView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height - 240)];
     self.itemView.backgroundColor = [UIColor clearColor];
-    self.itemView.image = [UIImage imageNamed:@"photo1"];
+//    self.itemView.image = [UIImage imageNamed:@"photo1"];
     
-    [self.view addSubview:self.itemView];
-//    [self.view addSubview:self.photo];
+//    [self.view addSubview:self.itemView];
+    [self.view addSubview:self.photo];
 
     UISlider *sliderWhite = [[UISlider alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height - 160, self.view.frame.size.width - 20, 5)];
     sliderWhite.minimumValue = 0.0f;

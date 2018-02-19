@@ -25,9 +25,9 @@
     [self createUI];
     
     // delegate implementation
-    VYKAppLibraryController *libraryController = [[VYKAppLibraryController alloc] init];
-    self.delegate = libraryController;
-    [self.delegate isSucsessfulRequest:self];
+//    VYKAppLibraryController *libraryController = [[VYKAppLibraryController alloc] init];
+//    self.delegate = libraryController;
+//    [self.delegate isSucsessfulRequest:self];
 }
 
 - (void)createUI
