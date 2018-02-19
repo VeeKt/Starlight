@@ -10,11 +10,15 @@
 #import <Photos/Photos.h>
 
 @protocol VYKPhotoLibraryControllerDelegate
+
 @optional
 - (void)addNewAssertWithImage:(UIImage *)image toAlbum:(PHAssetCollection *)album;
+
 @end
 
 @interface VYKPhotoLibraryController : NSObject <VYKPhotoLibraryControllerDelegate, PHPhotoLibraryChangeObserver>
+
 @property (nonatomic, weak) id<VYKPhotoLibraryControllerDelegate> delegate;
 - (BOOL)doesCameraSupportPhotoLibrary;
+
 @end

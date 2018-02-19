@@ -24,7 +24,7 @@
 		55F7D259202C64DF005211EB /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F7D258202C64DF005211EB /* FBSDKLoginKit.framework */; };
 		55F7D25B202C64ED005211EB /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F7D25A202C64ED005211EB /* FBSDKCoreKit.framework */; };
 		55F7D27B202E2A4F005211EB /* VYKModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D27A202E2A4F005211EB /* VYKModelTests.m */; };
-		55F7D286202FD4C2005211EB /* VYKFacebookURLSessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D285202FD4C2005211EB /* VYKFacebookURLSessionController.m */; };
+		55F7D286202FD4C2005211EB /* VYKFacebookController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D285202FD4C2005211EB /* VYKFacebookController.m */; };
 		55F7D289202FE238005211EB /* VYKPhotoLibraryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D288202FE238005211EB /* VYKPhotoLibraryController.m */; };
 		55F7D28B203066E1005211EB /* FBSDKPlacesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F7D28A203066E0005211EB /* FBSDKPlacesKit.framework */; };
 		55F7D28E20307A05005211EB /* VYKAppLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F7D28D20307A05005211EB /* VYKAppLibraryViewController.m */; };
@@ -84,8 +84,8 @@
 		55F7D258202C64DF005211EB /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		55F7D25A202C64ED005211EB /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		55F7D27A202E2A4F005211EB /* VYKModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKModelTests.m; sourceTree = "<group>"; };
-		55F7D284202FD4C2005211EB /* VYKFacebookURLSessionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKFacebookURLSessionController.h; sourceTree = "<group>"; };
-		55F7D285202FD4C2005211EB /* VYKFacebookURLSessionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKFacebookURLSessionController.m; sourceTree = "<group>"; };
+		55F7D284202FD4C2005211EB /* VYKFacebookController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKFacebookController.h; sourceTree = "<group>"; };
+		55F7D285202FD4C2005211EB /* VYKFacebookController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKFacebookController.m; sourceTree = "<group>"; };
 		55F7D287202FE238005211EB /* VYKPhotoLibraryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKPhotoLibraryController.h; sourceTree = "<group>"; };
 		55F7D288202FE238005211EB /* VYKPhotoLibraryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKPhotoLibraryController.m; sourceTree = "<group>"; };
 		55F7D28A203066E0005211EB /* FBSDKPlacesKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKPlacesKit.framework; sourceTree = "<group>"; };
@@ -269,8 +269,8 @@
 		55F7D282202FCBCA005211EB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				55F7D284202FD4C2005211EB /* VYKFacebookURLSessionController.h */,
-				55F7D285202FD4C2005211EB /* VYKFacebookURLSessionController.m */,
+				55F7D284202FD4C2005211EB /* VYKFacebookController.h */,
+				55F7D285202FD4C2005211EB /* VYKFacebookController.m */,
 				55F7D287202FE238005211EB /* VYKPhotoLibraryController.h */,
 				55F7D288202FE238005211EB /* VYKPhotoLibraryController.m */,
 				55F7D28F20307A46005211EB /* VYKAppLibraryController.h */,
@@ -422,7 +422,7 @@
 				55B872E62026586500D37F2E /* VYKPhoneMemoryViewController.m in Sources */,
 				55F7D289202FE238005211EB /* VYKPhotoLibraryController.m in Sources */,
 				555B68F2203AD5BD00E691B8 /* VYKViewController.m in Sources */,
-				55F7D286202FD4C2005211EB /* VYKFacebookURLSessionController.m in Sources */,
+				55F7D286202FD4C2005211EB /* VYKFacebookController.m in Sources */,
 				55B8728A2020FF9F00D37F2E /* VYKMainViewController.m in Sources */,
 				555B68E32037B59700E691B8 /* VYKCell.m in Sources */,
 				55B872872020FF9F00D37F2E /* AppDelegate.m in Sources */,

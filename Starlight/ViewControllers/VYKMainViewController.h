@@ -8,7 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class VYKMainViewController;
+
+@protocol VYKAppLibraryViewControllerDelegate
+
+- (BOOL)isSucsessfulRequest:(VYKMainViewController *)appLibraryController;
+
+@end
+
+
 @interface VYKMainViewController : UIViewController
+
+@property (nonatomic, weak) id<VYKAppLibraryViewControllerDelegate> delegate;
 
 @end
 

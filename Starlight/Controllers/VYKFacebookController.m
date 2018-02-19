@@ -6,17 +6,17 @@
 //  Copyright © 2018 Victoria. All rights reserved.
 //
 
-#import "VYKFacebookURLSessionController.h"
+#import "VYKFacebookController.h"
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKPlacesKit/FBSDKPlacesKit.h>
 
-@interface VYKFacebookURLSessionController ()
+@interface VYKFacebookController ()
 @property (nonatomic, strong) NSArray *vykProfilePhotosArray;
 @property (nonatomic, assign) BOOL cancelled;
 @end
 
-@implementation VYKFacebookURLSessionController
+@implementation VYKFacebookController
 
 - (void)awakeFromNib
 {

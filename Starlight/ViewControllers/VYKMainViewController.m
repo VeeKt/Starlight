@@ -9,18 +9,25 @@
 #import "VYKMainViewController.h"
 #import "VYKPhoneMemoryViewController.h"
 #import "VYKCameraViewController.h"
-#import "VYKAppLibraryViewController.h"
+#import "VYKViewController.h"
+
 #import "Constants.h"
+
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
+#import "VYKAppLibraryController.h"
+
+
 @interface VYKMainViewController ()
+
 @property (nonatomic, strong) UIButton *phoneMemoryButton;
-@property (nonatomic, strong) UIButton *makePhotoButton;
-@property (nonatomic, strong) UIButton *socialNetworkButton;
+@property (nonatomic, strong) UIButton *cameraButton;
+@property (nonatomic, strong) UIButton *socialNetworkSignInButton;
+@property (nonatomic, strong) UIButton *socialNetworkUserPhotosButton;
 @property (nonatomic, strong) UIButton *appLibraryButton;
 @property (nonatomic, strong) UILabel *welcomeLabel;
-@property (nonatomic, strong) UIButton *socialNetworkPhotoGalleryButton;
+
 @end
 
 @implementation VYKMainViewController
@@ -57,11 +64,11 @@
 
 #pragma mark - selectors
 
-- (void)clickOnMakePhotoButton:(id)sender
+- (void)clickOnCameraButton:(id)sender
 {
-    VYKCameraViewController *takePhotoViewController = [[VYKCameraViewController alloc]
+    VYKCameraViewController *cameraViewController = [[VYKCameraViewController alloc]
                                                            initWithNibName:nil bundle:nil];
-    [self.navigationController pushViewController:takePhotoViewController animated:YES];
+    [self.navigationController pushViewController:cameraViewController animated:YES];
 }
 
 - (void)clickOnPhoneMemoryButton:(id)sender
@@ -89,23 +96,29 @@
              return;
          }
          [self createSocialNetworkPhotoGalleryButton];
-         [self.socialNetworkButton setHidden:YES];
+         [self.socialNetworkSignInButton setHidden:YES];
      }];
 }
 
-- (void)clickAppLibraryButton:(id)sender
+- (void)clickOnButtonToPhotoLib:(id)sender
 {
-    VYKAppLibraryViewController *appLibraryViewController = [[VYKAppLibraryViewController alloc]
-                                                             initWithNibName:nil bundle:nil];
-    [self.navigationController pushViewController:appLibraryViewController animated:YES];
+    VYKAppLibraryController *libraryController = [[VYKAppLibraryController alloc] init];
+    self.delegate = libraryController;
+    [self.delegate isSucsessfulRequest:self];
+    
+    VYKViewController *collection = [[VYKViewController alloc] init];
+    [self.navigationController pushViewController:collection animated:YES];
+    /////////
+    /////////
+    /////////
 }
 
-- (void)clickOnSocialNetworkPhotoGalleryButton:(id)sender
-{
-    VYKAppLibraryViewController *socialNetworkViewController = [[VYKAppLibraryViewController alloc]
-                                                                   initWithNibName:nil bundle:nil];
-    [self.navigationController pushViewController:socialNetworkViewController animated:YES];
-}
+//- (void)clickOnSocialNetworkPhotoGalleryButton:(id)sender
+//{
+//    VYKAppLibraryViewController *socialNetworkViewController = [[VYKAppLibraryViewController alloc]
+//                                                                   initWithNibName:nil bundle:nil];
+//    [self.navigationController pushViewController:socialNetworkViewController animated:YES];
+//}
 
 # pragma mark - buttons
 
@@ -117,46 +130,69 @@
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
+    
     button.frame = CGRectMake(offsetWidth, offsetHight, kVYKSquareSideSize, kVYKSquareSideSize);
     button.layer.cornerRadius = 0.5 * button.bounds.size.width;
+    
     [button setImage:image forState:UIControlStateNormal];
     button.backgroundColor = buttonBackgroundColor;
+    
     return button;
 }
 
 - (void)createMakePhotoButton
 {
-    self.makePhotoButton = [UIButton new];
-    self.makePhotoButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 offsetWidth:kVYKWidthOffset image:[UIImage imageNamed:@"whiteDslr.png"] buttonBackgroundColor:[UIColor yellowColor] selector:@selector(clickOnMakePhotoButton:)];
-    [self.view addSubview:self.makePhotoButton];
+    self.cameraButton = [UIButton new];
+    self.cameraButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2
+                              offsetWidth:kVYKWidthOffset
+                                    image:[UIImage imageNamed:@"whiteDslr.png"]
+                    buttonBackgroundColor:[UIColor yellowColor]
+                                 selector:@selector(clickOnCameraButton:)];
+    [self.view addSubview:self.cameraButton];
 }
 
 - (void)createPhoneMemoryButton
 {
     self.phoneMemoryButton = [UIButton new];
-    self.phoneMemoryButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 offsetWidth:CGRectGetWidth(self.view.frame) - kVYKWidthOffset - kVYKSquareSideSize image:[UIImage imageNamed:@"whiteSmartphone.png"] buttonBackgroundColor:[UIColor orangeColor] selector:@selector(clickOnPhoneMemoryButton:)];
+    self.phoneMemoryButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2
+                                   offsetWidth:CGRectGetWidth(self.view.frame) - kVYKWidthOffset - kVYKSquareSideSize
+                                         image:[UIImage imageNamed:@"whiteSmartphone.png"]
+                         buttonBackgroundColor:[UIColor orangeColor]
+                                      selector:@selector(clickOnPhoneMemoryButton:)];
     [self.view addSubview:self.phoneMemoryButton];
 }
 
 - (void)createSocialNetworkButton
 {
-    self.socialNetworkButton = [UIButton new];
-    self.socialNetworkButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 + kVYKSquareSideSize offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * kVYKWidthOffset image:[UIImage imageNamed:@"fcbk.png"] buttonBackgroundColor:[UIColor lightGrayColor] selector:@selector(clickOnSocialNetworkButton:)];
-    [self.view addSubview:self.socialNetworkButton];
+    self.socialNetworkSignInButton = [UIButton new];
+    self.socialNetworkSignInButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 + kVYKSquareSideSize
+                                     offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * kVYKWidthOffset
+                                           image:[UIImage imageNamed:@"fcbk.png"]
+                           buttonBackgroundColor:[UIColor lightGrayColor]
+                                        selector:@selector(clickOnSocialNetworkButton:)];
+    [self.view addSubview:self.socialNetworkSignInButton];
 }
 
 - (void)createAppLibraryButton
 {
     self.appLibraryButton = [UIButton new];
-    self.appLibraryButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 - kVYKSquareSideSize offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * kVYKWidthOffset image:[UIImage imageNamed:@"library.png"] buttonBackgroundColor:[UIColor lightGrayColor] selector:@selector(clickAppLibraryButton:)];
+    self.appLibraryButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 - kVYKSquareSideSize
+                                  offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * kVYKWidthOffset
+                                        image:[UIImage imageNamed:@"library.png"]
+                        buttonBackgroundColor:[UIColor lightGrayColor]
+                                     selector:@selector(clickOnButtonToPhotoLib:)];
     [self.view addSubview:self.appLibraryButton];
 }
 
 - (void)createSocialNetworkPhotoGalleryButton
 {
-    self.socialNetworkPhotoGalleryButton = [UIButton new];
-    self.socialNetworkPhotoGalleryButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 + kVYKSquareSideSize offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * kVYKWidthOffset image:[UIImage imageNamed:@"fcbk.png"] buttonBackgroundColor:[UIColor lightGrayColor] selector:@selector(clickOnSocialNetworkPhotoGalleryButton:)];
-    [self.view addSubview:self.socialNetworkPhotoGalleryButton];
+    self.socialNetworkUserPhotosButton = [UIButton new];
+    self.socialNetworkUserPhotosButton = [self offsetHight:CGRectGetHeight(self.view.frame)/2 + kVYKSquareSideSize
+                                                 offsetWidth:CGRectGetWidth(self.view.frame)/2 - 2.2 * kVYKWidthOffset
+                                                       image:[UIImage imageNamed:@"fcbk.png"]
+                                       buttonBackgroundColor:[UIColor lightGrayColor]
+                                                    selector:@selector(clickOnButtonToPhotoLib:)];
+    [self.view addSubview:self.socialNetworkUserPhotosButton];
 }
 
 

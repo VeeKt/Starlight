@@ -54,6 +54,12 @@ static NSString *cellIdentifier = @"Cell";
     collectionView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
     
     [self.view addSubview:collectionView];
+    
+    UIImageView *backgroundImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    backgroundImage.image = [UIImage imageNamed:@"pictures.png"];
+    backgroundImage.center = self.view.center;
+    
+    [self.view addSubview:backgroundImage];
 }
 
 

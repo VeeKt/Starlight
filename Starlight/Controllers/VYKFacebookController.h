@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface VYKFacebookURLSessionController : NSObject
+@interface VYKFacebookController : NSObject 
+
 @property (nonatomic, readonly) NSArray *vykProfilePhotosArray;
+
 @end
