@@ -15,8 +15,7 @@ static NSString *cellIdentifier = @"Cell";
 
 @interface VYKViewController ()
 
-/* модель данных */
-@property (nonatomic, strong) NSMutableArray *photosArray;
+@property (nonatomic, strong) NSMutableArray *photosMutableArray;
 
 @end
 
@@ -27,6 +26,8 @@ static NSString *cellIdentifier = @"Cell";
     [super viewDidLoad];
     
     [self createUI];
+    
+    
 }
 
 
@@ -34,9 +35,14 @@ static NSString *cellIdentifier = @"Cell";
 
 - (void)dataInitialization
 {
-    self.photosArray = [NSMutableArray new];
-    [self.photosArray addObject:[NSDate date]];
+    self.photosMutableArray = [NSMutableArray new];
+    [self.photosMutableArray addObject:[NSDate date]];
 }
+
+//- (void)copyFromMutableArray:(NSMutableArray *)mutableArray toArray:(NSArray *)array
+//{
+//
+//}
 
 
 #pragma mark - ui
@@ -96,8 +102,9 @@ static NSString *cellIdentifier = @"Cell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    VYKItemViewController *itemView = [[VYKItemViewController alloc] init];
-    [self.navigationController pushViewController:itemView animated:YES];
+    VYKItemViewController *itemViewController = [[VYKItemViewController alloc] init];
+    itemViewController.photo = [self.photosArray objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:itemViewController animated:YES];
 }
 
 
@@ -111,7 +118,6 @@ static NSString *cellIdentifier = @"Cell";
     imageSize.width += 200;
     
     return imageSize;
-//    return CGSizeMake(self.view.frame.size.width/2 - 20, 200);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section

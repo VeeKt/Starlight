@@ -170,7 +170,6 @@
 				55B872972020FF9F00D37F2E /* main.m */,
 				55B872962020FF9F00D37F2E /* Info.plist */,
 				55B872912020FF9F00D37F2E /* Assets.xcassets */,
-				555B68E02037B55D00E691B8 /* Collection View */,
 				55F7D29B20310D71005211EB /* Views */,
 				55F7D282202FCBCA005211EB /* Controllers */,
 				55B872E32024884200D37F2E /* App Delegate */,
@@ -214,6 +213,7 @@
 				55F7D28D20307A05005211EB /* VYKAppLibraryViewController.m */,
 				555B68F3203AE0F000E691B8 /* VYKItemViewController.h */,
 				555B68F4203AE0F000E691B8 /* VYKItemViewController.m */,
+				555B68E02037B55D00E691B8 /* Collection View */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

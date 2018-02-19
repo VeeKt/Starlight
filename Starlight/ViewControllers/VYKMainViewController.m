@@ -102,9 +102,9 @@
 
 - (void)clickOnButtonToPhotoLib:(id)sender
 {
-    VYKAppLibraryController *libraryController = [[VYKAppLibraryController alloc] init];
-    self.delegate = libraryController;
-    [self.delegate isSucsessfulRequest:self];
+//    VYKAppLibraryController *libraryController = [[VYKAppLibraryController alloc] init];
+//    self.delegate = libraryController;
+//    [self.delegate isSucsessfulRequest:self];
     
     VYKViewController *collection = [[VYKViewController alloc] init];
     [self.navigationController pushViewController:collection animated:YES];
