@@ -98,17 +98,18 @@ static NSString *cellIdentifier = @"Cell";
         [self presentViewController:alert animated:YES completion:nil];
     }
     return self.photosArray.count;
-//    return 10;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    UIImage *item = [self.photosArray objectAtIndex:indexPath.row];
+    
     VYKItemViewController *itemViewController = [[VYKItemViewController alloc] init];
     itemViewController.photo = [[UIImageView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height - 240)];
     itemViewController.photo.backgroundColor = [UIColor lightGrayColor];
     
 //передача текущего изображения в контроллер для редактирования
-    itemViewController.photo.image = [self.photosArray objectAtIndex:indexPath.row];
+    itemViewController.photo.image = item;
     
     [self.navigationController pushViewController:itemViewController animated:YES];
 }
@@ -122,7 +123,7 @@ static NSString *cellIdentifier = @"Cell";
     CGSize imageSize = photoImage.size;
     imageSize.height /= 3;
     imageSize.width /= 3;
-    
+
     return imageSize;
 }
 

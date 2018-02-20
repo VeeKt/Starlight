@@ -8,6 +8,7 @@
 
 #import "VYKCameraViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "VYKItemViewController.h"
 
 @interface VYKCameraViewController ()
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
@@ -85,7 +86,17 @@
         currentImage = info[UIImagePickerControllerOriginalImage];
     }
     self.photoImageView.image = currentImage;
+    
+    
+    VYKItemViewController *itemViewController = [[VYKItemViewController alloc] init];
+    itemViewController.photo = [[UIImageView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height - 240)];
+    itemViewController.photo.backgroundColor = [UIColor lightGrayColor];
+    
+    //передача текущего изображения в контроллер для редактирования
+    itemViewController.photo.image = currentImage;
+    
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController pushViewController:itemViewController animated:YES];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
