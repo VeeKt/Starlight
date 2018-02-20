@@ -10,6 +10,7 @@
 		555B68E32037B59700E691B8 /* VYKCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 555B68E22037B59700E691B8 /* VYKCell.m */; };
 		555B68F2203AD5BD00E691B8 /* VYKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555B68F1203AD5BD00E691B8 /* VYKViewController.m */; };
 		555B68F5203AE0F000E691B8 /* VYKItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555B68F4203AE0F000E691B8 /* VYKItemViewController.m */; };
+		555B68F9203C39E000E691B8 /* VYKSlider+Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 555B68F8203C39E000E691B8 /* VYKSlider+Filter.m */; };
 		55B872872020FF9F00D37F2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872862020FF9F00D37F2E /* AppDelegate.m */; };
 		55B8728A2020FF9F00D37F2E /* VYKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B872892020FF9F00D37F2E /* VYKMainViewController.m */; };
 		55B872922020FF9F00D37F2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B872912020FF9F00D37F2E /* Assets.xcassets */; };
@@ -58,6 +59,8 @@
 		555B68F1203AD5BD00E691B8 /* VYKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKViewController.m; sourceTree = "<group>"; };
 		555B68F3203AE0F000E691B8 /* VYKItemViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VYKItemViewController.h; sourceTree = "<group>"; };
 		555B68F4203AE0F000E691B8 /* VYKItemViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VYKItemViewController.m; sourceTree = "<group>"; };
+		555B68F7203C39E000E691B8 /* VYKSlider+Filter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VYKSlider+Filter.h"; sourceTree = "<group>"; };
+		555B68F8203C39E000E691B8 /* VYKSlider+Filter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "VYKSlider+Filter.m"; sourceTree = "<group>"; };
 		55B872822020FF9F00D37F2E /* Starlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Starlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B872852020FF9F00D37F2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		55B872862020FF9F00D37F2E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -141,6 +144,15 @@
 			path = "Collection View";
 			sourceTree = "<group>";
 		};
+		555B68F6203C395500E691B8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				555B68F7203C39E000E691B8 /* VYKSlider+Filter.h */,
+				555B68F8203C39E000E691B8 /* VYKSlider+Filter.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		55B872792020FF9F00D37F2E = {
 			isa = PBXGroup;
 			children = (
@@ -166,11 +178,11 @@
 		55B872842020FF9F00D37F2E /* Starlight */ = {
 			isa = PBXGroup;
 			children = (
+				555B68F6203C395500E691B8 /* Services */,
 				55F7D2922030A8F9005211EB /* Starlight.xcdatamodeld */,
 				55B872972020FF9F00D37F2E /* main.m */,
 				55B872962020FF9F00D37F2E /* Info.plist */,
 				55B872912020FF9F00D37F2E /* Assets.xcassets */,
-				55F7D29B20310D71005211EB /* Views */,
 				55F7D282202FCBCA005211EB /* Controllers */,
 				55B872E32024884200D37F2E /* App Delegate */,
 				55B8730A202A8CD500D37F2E /* Constants */,
@@ -277,14 +289,6 @@
 				55F7D29020307A46005211EB /* VYKAppLibraryController.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		55F7D29B20310D71005211EB /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,6 +434,7 @@
 				55B872982020FF9F00D37F2E /* main.m in Sources */,
 				55B872EF20273CCD00D37F2E /* VYKCameraViewController.m in Sources */,
 				555B68F5203AE0F000E691B8 /* VYKItemViewController.m in Sources */,
+				555B68F9203C39E000E691B8 /* VYKSlider+Filter.m in Sources */,
 				55F7D29120307A46005211EB /* VYKAppLibraryController.m in Sources */,
 				55F7D28E20307A05005211EB /* VYKAppLibraryViewController.m in Sources */,
 				55F7D2A6203110E6005211EB /* Item+CoreDataClass.m in Sources */,

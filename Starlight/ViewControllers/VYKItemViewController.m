@@ -9,6 +9,7 @@
 #import "VYKItemViewController.h"
 #import <CoreImage/CoreImage.h>
 #import <CoreGraphics/CoreGraphics.h>
+//#import "VYKSlider+Filter.h"
 
 @interface VYKItemViewController ()
 
@@ -106,14 +107,16 @@
 {
 //прикрутить асинхронность (медленно)
     CGFloat sliderValue = [slider value];
-    
+//    VYKSlider_Filter *filter = [[VYKSlider_Filter alloc] init];
+//    UIImage *newImage = [filter imageWithFilter:@"CIDiscBlur" forKey:@"inputRadius" withSliderValue:sliderValue];
+//
     CIImage *ciImage = [CIImage imageWithCGImage:self.photo.image.CGImage];
     CIContext *context = [CIContext contextWithOptions:nil];
     CIFilter *filter = [CIFilter filterWithName:@"CIDiscBlur"]; //CIPhotoEffectFade
     [filter setValue:ciImage forKey:kCIInputImageKey];
-    
+
     [filter setValue:[NSNumber numberWithFloat:sliderValue] forKey:@"inputRadius"];
-    
+
     CIImage *outputImage = [filter outputImage];
     CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];
     UIImage *newImage = [UIImage imageWithCGImage:cgimg scale:1.0 orientation:self.photo.image.imageOrientation];
@@ -127,13 +130,19 @@
 
     CGFloat sliderValue = [slider value];
     
+//    VYKSlider_Filter *filter = [[VYKSlider_Filter alloc] init];
+//    filter.inputImage = self.photo.image;
+//
+//    CGImageRef cgimg = [filter imageWithFilter:@"CISepiaTone" forKey:@"inputIntensity" withSliderValue:sliderValue];
+//    UIImage *newImage = [UIImage imageWithCGImage:cgimg scale:1.0 orientation:self.photo.image.imageOrientation];
+//    CGImageRelease(cgimg);
     CIImage *ciImage = [CIImage imageWithCGImage:self.photo.image.CGImage];
     CIContext *context = [CIContext contextWithOptions:nil];
     CIFilter *filter = [CIFilter filterWithName:@"CISepiaTone"]; //CIPhotoEffectFade
     [filter setValue:ciImage forKey:kCIInputImageKey];
-    
+
     [filter setValue:[NSNumber numberWithFloat:sliderValue] forKey:@"inputIntensity"];
-    
+
     CIImage *outputImage = [filter outputImage];
     CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];
     UIImage *newImage = [UIImage imageWithCGImage:cgimg scale:1.0 orientation:self.photo.image.imageOrientation];
