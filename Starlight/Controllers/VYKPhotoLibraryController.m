@@ -20,64 +20,11 @@
 
 @implementation VYKPhotoLibraryController
 
-- (void)photoLibraryDidChange:(nonnull PHChange *)changeInstance {
-//    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-//        //request creating an assert from image
-//        PHAssetChangeRequest *createAssertRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:image];
-//        //request editing album
-//        PHAssetCollectionChangeRequest *albumChangeRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:album];
-//        //get a placeholder for the new asset and add it to the album editing request
-//        PHObjectPlaceholder *assetPlaceholder = [createAssertRequest placeholderForCreatedAssert];
-//        [albumChangeRequest addAssets:@[assetPlaceholder]];
-//    } completionHandler:^(BOOL success, NSError *error){
-//        NSLog(@"Finished adding asset %@", (success ? @"Success" : error));
-//    }];
-}
-
-//- (void)findPathToPhotoLibrary
-//{
-//    self.fileManager = [[NSFileManager alloc] init];
-//    NSArray *urls = [self.fileManager URLsForDirectory:NSPicturesDirectory inDomains:NSUserDomainMask];
-//    if ([urls count] > 0)
-//    {
-//        NSURL *pictureFolder = urls[0];
-//        NSLog(@"%@", pictureFolder);
-//    }
-//    else
-//    {
-//        NSLog(@"Could not find Picture folder.");
-//    }
-//}
-
-//- (BOOL)cameraSupportMedia:(NSString *)paramMediaType sourceType:(UIImagePickerControllerSourceType)paramSourceType
-//{
-//    __block BOOL result = NO;
-//    if ([paramMediaType length] == 0)
-//    {
-//        NSLog(@"Media type is empty.");
-//        return NO;
-//    }
-//    NSArray *availableMediaTypes = [UIImagePickerController availableMediaTypesForSourceType:paramSourceType];
-//    [availableMediaTypes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop){
-//        NSString *mediaType = (NSString *)obj;
-//        if ([mediaType isEqualToString:paramMediaType])
-//        {
-//            result = YES;
-//            *stop = YES;
-//        }
-//    }];
-//    return result;
-//}
-
 - (BOOL)isPhotoLibraryAvailable
 {
     return [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary];
 }
 
-//- (BOOL)canUserPickPhotoFromPhotoLibrary
-//{
-//    return [self cameraSupportMedia:(__bridge NSString *)kUTTypeImage sourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-//}
 
 #pragma mark - photo library
 
@@ -88,11 +35,6 @@
     }
     return NO;
 }
-
-//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(nonnull UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo
-//{
-//
-//}
 
 - (void)awakeFromNib
 {
@@ -106,7 +48,6 @@
         
         controller.mediaTypes = mediaTypes;
         controller.delegate = self;
-//        [AppDelegate.]
     }
 }
 

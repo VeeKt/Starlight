@@ -9,13 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @class VYKMainViewController;
-@class VYKPhoneMemoryController;
 
 @protocol VYKAppLibraryViewControllerDelegate
 
 - (BOOL)isSucsessfulRequest:(VYKMainViewController *)appLibraryController;
-
-//- (BOOL)isPhoneMemoryAcsessible:(VYKPhoneMemoryController *)phoneMemoryController;
 
 @end
 

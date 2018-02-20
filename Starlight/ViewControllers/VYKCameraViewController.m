@@ -11,9 +11,11 @@
 #import "VYKItemViewController.h"
 
 @interface VYKCameraViewController ()
+
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
 @property (nonatomic, strong) UIImageView *vykPhotoImageView;
 @property (nonatomic, strong) UIImageView *backgroundImage;
+
 @end
 
 @implementation VYKCameraViewController

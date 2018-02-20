@@ -13,6 +13,4 @@
 
 - (BOOL)isSucsessfulRequest:(VYKMainViewController *)appLibraryController;
 
-//- (BOOL)isPhoneMemoryAcsessible:(VYKMainViewController *)phoneMemoryController;
-
 @end

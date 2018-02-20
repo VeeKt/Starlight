@@ -23,9 +23,6 @@
     FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:@"/me/photos" parameters:nil HTTPMethod:@"GET"];
     [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error){
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        
-//        NSURL *urls = [NSURL ]
-        
     }];
     
 }

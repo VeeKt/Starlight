@@ -12,10 +12,12 @@
 @class VYKMainViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+
 @property (strong, nonatomic) UIWindow *window;
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 @property (nonatomic, readonly) VYKMainViewController *rootViewController;
 @property (nonatomic, readonly) UINavigationController *navigationControloler;
 - (void)saveContext;
+
 @end
 
