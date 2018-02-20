@@ -10,8 +10,10 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 
 @interface VYKPhotoLibraryController ()
+
 @property (nonatomic, strong) NSFileManager *fileManager;
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
+
 @end
 
 @implementation VYKPhotoLibraryController
@@ -68,6 +70,21 @@
 - (BOOL)doesCameraSupportPhotoLibrary
 {
     return [self cameraSupportMedia:(__bridge NSString *)kUTTypeImage sourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+}
+
+#pragma mark - photo library
+
+- (BOOL)isCreatePhotoLibraryController
+{
+    if ([self doesCameraSupportPhotoLibrary]){
+        return YES;
+    }
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Attention!" message:@"The photo library is not available." preferredStyle:UIAlertControllerStyleActionSheet];
+//        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action){
+//
+//        }];
+//        [alert addAction:ok];
+    return NO;
 }
 
 @end

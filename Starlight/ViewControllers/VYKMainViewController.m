@@ -7,7 +7,6 @@
 //
 
 #import "VYKMainViewController.h"
-#import "VYKPhoneMemoryViewController.h"
 #import "VYKCameraViewController.h"
 #import "VYKViewController.h"
 
@@ -73,9 +72,31 @@
 
 - (void)clickOnPhoneMemoryButton:(id)sender
 {
-    VYKPhoneMemoryViewController *phoneMemoryViewController = [[VYKPhoneMemoryViewController alloc]
-                                                               initWithNibName:nil bundle:nil];
-    [self.navigationController pushViewController:phoneMemoryViewController animated:YES];
+    VYKAppLibraryController *libraryController = [[VYKAppLibraryController alloc] init];
+    self.delegate = libraryController;
+    if (![self.delegate isSucsessfulRequest:self])
+    {
+        UIAlertController *alert = [UIAlertController
+                                    alertControllerWithTitle:@"Attention!"
+                                    message:@"The photo library is not available."
+                                    preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK"
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction *_Nonnull action){
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }];
+        
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+    VYKViewController *collection = [[VYKViewController alloc] init];
+    
+    //передать массив картинок из памяти телефона
+//    collection.photosArray =
+    
+    [self.navigationController pushViewController:collection animated:YES];
 }
 
 - (void)clickOnSocialNetworkButton:(id)sender
@@ -104,21 +125,22 @@
 {
 //    VYKAppLibraryController *libraryController = [[VYKAppLibraryController alloc] init];
 //    self.delegate = libraryController;
-//    [self.delegate isSucsessfulRequest:self];
+//    if (![self.delegate isSucsessfulRequest:self])
+//    {
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Attention!" message:@"The photo library is not available." preferredStyle:UIAlertControllerStyleActionSheet];
+//        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action){
+//            [self.navigationController popToRootViewControllerAnimated:YES];
+//        }];
+//        [alert addAction:ok];
+//        [self presentViewController:alert animated:YES completion:nil];
+//        return;
+//    }
+    
     
     VYKViewController *collection = [[VYKViewController alloc] init];
     [self.navigationController pushViewController:collection animated:YES];
-    /////////
-    /////////
-    /////////
 }
 
-//- (void)clickOnSocialNetworkPhotoGalleryButton:(id)sender
-//{
-//    VYKAppLibraryViewController *socialNetworkViewController = [[VYKAppLibraryViewController alloc]
-//                                                                   initWithNibName:nil bundle:nil];
-//    [self.navigationController pushViewController:socialNetworkViewController animated:YES];
-//}
 
 # pragma mark - buttons
 

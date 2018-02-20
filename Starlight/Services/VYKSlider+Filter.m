@@ -24,8 +24,6 @@
     CIImage *outputImage = [filter outputImage];
     CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];
 
-//    UIImage *newImage = [UIImage imageWithCGImage:cgimg scale:1.0 orientation:UIImageOrientationUp];
-//    CGImageRelease(cgimg);
     context = nil;
     return cgimg;
 }
