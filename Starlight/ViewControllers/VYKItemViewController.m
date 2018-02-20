@@ -15,10 +15,21 @@
 @end
 
 @implementation VYKItemViewController
+//{
+//    CIContext *context;
+//    CIImage *beginImage;
+//    CIFilter *filter;
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createUI];
+    
+//    beginImage = [CIImage imageWithCGImage:self.photo.image.CGImage];
+//    filter = [CIFilter filterWithName:@"CISepiaTone"];
+//    [filter setValue:self.photo.image forKey:kCIInputImageKey];
+//    [filter setValue:[NSNumber numberWithFloat:0] forKey:@"inputIntensity"];
+//    context = [CIContext contextWithOptions:nil];
 }
 
 
@@ -29,23 +40,25 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:self.photo];
+    
 
-    UISlider *sliderWhite = [[UISlider alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height - 160, self.view.frame.size.width - 20, 5)];
-    sliderWhite.minimumValue = -1;
-    sliderWhite.maximumValue = 1;
-    sliderWhite.value = 0;
-    [sliderWhite setContinuous:YES];
-    [sliderWhite addTarget:self action:@selector(changeWhiteBalance)
+
+    UISlider *sliderBlur = [[UISlider alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height - 160, self.view.frame.size.width - 20, 5)];
+    sliderBlur.minimumValue = 0;
+    sliderBlur.maximumValue = 5;
+    sliderBlur.value = 0;
+    [sliderBlur setContinuous:YES];
+    [sliderBlur addTarget:self action:@selector(changeWhiteBalance:)
           forControlEvents:UIControlEventValueChanged];
 
-    [self.view addSubview:sliderWhite];
-    
+    [self.view addSubview:sliderBlur];
+
     UISlider *sliderBlack = [[UISlider alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height - 100, self.view.frame.size.width - 20, 5)];
     sliderBlack.minimumValue = 0;
     sliderBlack.maximumValue = 4;
     sliderBlack.value = 1;
     [sliderBlack setContinuous:YES];
-    [sliderBlack addTarget:self action:@selector(changeBlackBalance)
+    [sliderBlack addTarget:self action:@selector(changeBlackBalance:)
           forControlEvents:UIControlEventValueChanged];
     
     [self.view addSubview:sliderBlack];
@@ -89,14 +102,44 @@
 
 #pragma mark - sliders actions
 
-- (void)changeWhiteBalance
+- (void)changeWhiteBalance:(UISlider *)slider
 {
+//прикрутить асинхронность (медленно)
+    CGFloat sliderValue = [slider value];
     
+    CIImage *ciImage = [CIImage imageWithCGImage:self.photo.image.CGImage];
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CIFilter *filter = [CIFilter filterWithName:@"CIDiscBlur"]; //CIPhotoEffectFade
+    [filter setValue:ciImage forKey:kCIInputImageKey];
+    
+    [filter setValue:[NSNumber numberWithFloat:sliderValue] forKey:@"inputRadius"];
+    
+    CIImage *outputImage = [filter outputImage];
+    CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];
+    UIImage *newImage = [UIImage imageWithCGImage:cgimg scale:1.0 orientation:self.photo.image.imageOrientation];
+    CGImageRelease(cgimg);
+    context = nil;
+    self.photo.image = newImage;
 }
 
-- (void)changeBlackBalance
+- (void)changeBlackBalance:(UISlider *)slider
 {
+
+    CGFloat sliderValue = [slider value];
     
+    CIImage *ciImage = [CIImage imageWithCGImage:self.photo.image.CGImage];
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CIFilter *filter = [CIFilter filterWithName:@"CISepiaTone"]; //CIPhotoEffectFade
+    [filter setValue:ciImage forKey:kCIInputImageKey];
+    
+    [filter setValue:[NSNumber numberWithFloat:sliderValue] forKey:@"inputIntensity"];
+    
+    CIImage *outputImage = [filter outputImage];
+    CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];
+    UIImage *newImage = [UIImage imageWithCGImage:cgimg scale:1.0 orientation:self.photo.image.imageOrientation];
+    CGImageRelease(cgimg);
+    context = nil;
+    self.photo.image = newImage;
 }
 
 @end
