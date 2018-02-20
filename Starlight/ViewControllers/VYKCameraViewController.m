@@ -12,7 +12,7 @@
 
 @interface VYKCameraViewController ()
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
-@property (nonatomic, strong) UIImageView *photoImageView;
+@property (nonatomic, strong) UIImageView *vykPhotoImageView;
 @property (nonatomic, strong) UIImageView *backgroundImage;
 @end
 
@@ -30,8 +30,8 @@
 - (void)createUI
 {
     self.view.backgroundColor = [UIColor whiteColor];
-    self.photoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.frame)/8, CGRectGetWidth(self.view.frame), 2 * CGRectGetHeight(self.view.frame)/3)];
-    [self.view addSubview:self.photoImageView];
+    self.vykPhotoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.frame)/8, CGRectGetWidth(self.view.frame), 2 * CGRectGetHeight(self.view.frame)/3)];
+    [self.view addSubview:self.vykPhotoImageView];
     
     self.backgroundImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     self.backgroundImage.image = [UIImage imageNamed:@"smallCam.png"];
@@ -85,15 +85,15 @@
     {
         currentImage = info[UIImagePickerControllerOriginalImage];
     }
-    self.photoImageView.image = currentImage;
+    self.vykPhotoImageView.image = currentImage;
     
     
     VYKItemViewController *itemViewController = [[VYKItemViewController alloc] init];
-    itemViewController.photo = [[UIImageView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height - 240)];
-    itemViewController.photo.backgroundColor = [UIColor lightGrayColor];
+    itemViewController.vykPhoto = [[UIImageView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height - 240)];
+    itemViewController.vykPhoto.backgroundColor = [UIColor lightGrayColor];
     
     //передача текущего изображения в контроллер для редактирования
-    itemViewController.photo.image = currentImage;
+    itemViewController.vykPhoto.image = currentImage;
     
     [self dismissViewControllerAnimated:YES completion:nil];
     [self.navigationController pushViewController:itemViewController animated:YES];

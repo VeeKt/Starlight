@@ -16,9 +16,11 @@
 
 @end
 
-@interface VYKPhotoLibraryController : NSObject <VYKPhotoLibraryControllerDelegate, PHPhotoLibraryChangeObserver>
+@interface VYKPhotoLibraryController : NSObject <VYKPhotoLibraryControllerDelegate, PHPhotoLibraryChangeObserver, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, weak) id<VYKPhotoLibraryControllerDelegate> delegate;
-- (BOOL)doesCameraSupportPhotoLibrary;
+@property (nonatomic, strong) UIImageView *vykImageView;
+
+//- (BOOL)doesCameraSupportPhotoLibrary;
 
 @end

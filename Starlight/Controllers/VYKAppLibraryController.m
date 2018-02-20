@@ -7,20 +7,56 @@
 //
 
 #import "VYKAppLibraryController.h"
+#import "Item+CoreDataClass.h"
+#import "AppDelegate.h"
+
+@interface VYKAppLibraryController () <NSFetchedResultsControllerDelegate>
+
+@property (nonatomic,strong) NSArray *itemsArray;
+@property (nonatomic, strong) NSManagedObjectContext *coreDataContext;
+@property NSUInteger rowNo;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+
+@end
 
 @implementation VYKAppLibraryController
 
-- (BOOL)isSucsessfulRequest:(VYKAppLibraryViewController *)appLibraryController {
-//    if (self.photosArray.count == 0)
-//    {
-//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oooops!" message:@"No photos yet :)" preferredStyle:UIAlertControllerStyleActionSheet];
-//        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action){
-//            [self.navigationController popToRootViewControllerAnimated:YES];
-//        }];
-//        [alert addAction:ok];
-//        [self presentViewController:alert animated:YES completion:nil];
-//    }
+- (BOOL)isSucsessfulRequest:(VYKMainViewController *)appLibraryController {
+    [self loadModel];
+    if (self.itemsArray.count == 0){
+        return NO;
+    }
     return YES;
+}
+
+
+#pragma mark - workWithModel
+
+- (void)loadModel {
+    self.itemsArray = nil;
+    self.itemsArray = [self.coreDataContext executeFetchRequest:[Item fetchRequest] error:nil];
+}
+
+- (NSManagedObjectContext *)coreDataContext {
+    if (_coreDataContext) {
+        return _coreDataContext;
+    }
+    
+    UIApplication *application = [UIApplication sharedApplication];
+    NSPersistentContainer *container = ((AppDelegate *)(application.delegate)).
+    persistentContainer;
+    NSManagedObjectContext *context = container.viewContext;
+    
+    return context;
+}
+
+#pragma mark - fetchRequest
+
+- (NSFetchRequest *)getFetchRequest {
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"The item"];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:NO];
+    fetchRequest.sortDescriptors = @[sortDescriptor];
+    return fetchRequest;
 }
 
 @end

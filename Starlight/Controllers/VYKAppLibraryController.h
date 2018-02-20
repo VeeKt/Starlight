@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VYKAppLibraryViewController.h"
+#import "VYKMainViewController.h"
 
 @interface VYKAppLibraryController : NSObject <VYKAppLibraryViewControllerDelegate>
 
-- (BOOL)isSucsessfulRequest:(VYKAppLibraryViewController *)appLibraryController;
+- (BOOL)isSucsessfulRequest:(VYKMainViewController *)appLibraryController;
+
+//- (BOOL)isPhoneMemoryAcsessible:(VYKMainViewController *)phoneMemoryController;
 
 @end

@@ -9,6 +9,14 @@
 #import "VYKItemViewController.h"
 #import <CoreImage/CoreImage.h>
 #import <CoreGraphics/CoreGraphics.h>
+#import "Item+CoreDataClass.h"
+#include "AppDelegate.h"
+
+@interface VYKItemViewController ()
+
+@property (nonatomic, strong) NSManagedObjectContext *coreDataContext;
+
+@end
 
 @implementation VYKItemViewController
 
@@ -24,7 +32,7 @@
 {
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self.view addSubview:self.photo];
+    [self.view addSubview:self.vykPhoto];
     
 
 
@@ -73,8 +81,7 @@
 
 - (void)savePhoto
 {
-    //если фото изменено, то сохранить, выдать сообщение об успешном сохранении и вернуться в рут вью
-    //сохраняем в кор дату
+    [self coreDataSaveItem];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
@@ -89,7 +96,7 @@
 - (void)changeWhiteBalance:(UISlider *)slider
 {
         CGFloat sliderValue = [slider value];
-        CIImage *ciImage = [CIImage imageWithCGImage:self.photo.image.CGImage];
+        CIImage *ciImage = [CIImage imageWithCGImage:self.vykPhoto.image.CGImage];
         CIContext *context = [CIContext contextWithOptions:nil];
         CIFilter *filter = [CIFilter filterWithName:@"CIDiscBlur"];
         [filter setValue:ciImage forKey:kCIInputImageKey];
@@ -98,17 +105,17 @@
 
         CIImage *outputImage = [filter outputImage];
         CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];
-        UIImage *newImage = [UIImage imageWithCGImage:cgimg scale:1.0 orientation:self.photo.image.imageOrientation];
+        UIImage *newImage = [UIImage imageWithCGImage:cgimg scale:1.0 orientation:self.vykPhoto.image.imageOrientation];
         CGImageRelease(cgimg);
         context = nil;
-        self.photo.image = newImage;
+        self.vykPhoto.image = newImage;
 }
 
 - (void)changeBlackBalance:(UISlider *)slider
 {
     CGFloat sliderValue = [slider value];
 
-    CIImage *ciImage = [CIImage imageWithCGImage:self.photo.image.CGImage];
+    CIImage *ciImage = [CIImage imageWithCGImage:self.vykPhoto.image.CGImage];
     CIContext *context = [CIContext contextWithOptions:nil];
     CIFilter *filter = [CIFilter filterWithName:@"CISepiaTone"];
     [filter setValue:ciImage forKey:kCIInputImageKey];
@@ -117,10 +124,40 @@
 
     CIImage *outputImage = [filter outputImage];
     CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];
-    UIImage *newImage = [UIImage imageWithCGImage:cgimg scale:1.0 orientation:self.photo.image.imageOrientation];
+    UIImage *newImage = [UIImage imageWithCGImage:cgimg scale:1.0 orientation:self.vykPhoto.image.imageOrientation];
     CGImageRelease(cgimg);
     context = nil;
-    self.photo.image = newImage;
+    self.vykPhoto.image = newImage;
+}
+
+- (NSManagedObjectContext *)coreDataContext {
+    if (_coreDataContext) {
+        return _coreDataContext;
+    }
+    
+    UIApplication *application = [UIApplication sharedApplication];
+    NSPersistentContainer *container = ((AppDelegate *)(application.delegate)).
+    persistentContainer;
+    NSManagedObjectContext *context = container.viewContext;
+    
+    return context;
+}
+
+- (void)coreDataSaveItem {
+    Item *item = [NSEntityDescription insertNewObjectForEntityForName:@"Item"
+                                               inManagedObjectContext:self.coreDataContext];
+    NSData *imageData = UIImageJPEGRepresentation(self.vykPhoto.image, 1.0f);
+    item.image = imageData;
+    
+    NSError *error = nil;
+    if (![item.managedObjectContext save:&error]) {
+        NSLog(@"Failed saving object");
+        NSLog(@"%@, %@", error, error.localizedDescription);
+    }
+    
+    error = nil;
+    NSArray *result = [self.coreDataContext executeFetchRequest:[Item fetchRequest] error:&error];
+    NSLog(@"result - %@", result);
 }
 
 @end

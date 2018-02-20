@@ -17,6 +17,9 @@
 
 #import "VYKAppLibraryController.h"
 
+#import "AppDelegate.h"
+#import "Item+CoreDataClass.h"
+
 
 @interface VYKMainViewController ()
 
@@ -26,6 +29,9 @@
 @property (nonatomic, strong) UIButton *socialNetworkUserPhotosButton;
 @property (nonatomic, strong) UIButton *appLibraryButton;
 @property (nonatomic, strong) UILabel *welcomeLabel;
+
+@property (nonatomic,strong) NSArray *itemsArray;
+@property (nonatomic, strong) NSManagedObjectContext *coreDataContext;
 
 @end
 
@@ -38,6 +44,9 @@
 {
     [super viewDidLoad];
     [self createUI];
+    
+    VYKAppLibraryController *libraryController = [[VYKAppLibraryController alloc] init];
+    self.delegate = libraryController;
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -71,31 +80,11 @@
 }
 
 - (void)clickOnPhoneMemoryButton:(id)sender
-{
-    VYKAppLibraryController *libraryController = [[VYKAppLibraryController alloc] init];
-    self.delegate = libraryController;
-    if (![self.delegate isSucsessfulRequest:self])
-    {
-        UIAlertController *alert = [UIAlertController
-                                    alertControllerWithTitle:@"Attention!"
-                                    message:@"The photo library is not available."
-                                    preferredStyle:UIAlertControllerStyleActionSheet];
-        
-        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK"
-                                                     style:UIAlertActionStyleDefault
-                                                   handler:^(UIAlertAction *_Nonnull action){
-            [self.navigationController popToRootViewControllerAnimated:YES];
-        }];
-        
-        [alert addAction:ok];
-        [self presentViewController:alert animated:YES completion:nil];
-        return;
-    }
+{   
     VYKViewController *collection = [[VYKViewController alloc] init];
-    
+
     //передать массив картинок из памяти телефона
-//    collection.photosArray =
-    
+
     [self.navigationController pushViewController:collection animated:YES];
 }
 
@@ -107,7 +96,6 @@
      fromViewController:self
      handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
          
-//do smth with it!!!!
          if(error)
          {
              return;
@@ -123,21 +111,11 @@
 
 - (void)clickOnButtonToPhotoLib:(id)sender
 {
-//    VYKAppLibraryController *libraryController = [[VYKAppLibraryController alloc] init];
-//    self.delegate = libraryController;
-//    if (![self.delegate isSucsessfulRequest:self])
-//    {
-//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Attention!" message:@"The photo library is not available." preferredStyle:UIAlertControllerStyleActionSheet];
-//        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action){
-//            [self.navigationController popToRootViewControllerAnimated:YES];
-//        }];
-//        [alert addAction:ok];
-//        [self presentViewController:alert animated:YES completion:nil];
-//        return;
-//    }
-    
-    
     VYKViewController *collection = [[VYKViewController alloc] init];
+    
+    //передать массив картинок из памяти телефона
+    collection.photosArray = [self.coreDataContext executeFetchRequest:[Item fetchRequest] error:nil];
+    
     [self.navigationController pushViewController:collection animated:YES];
 }
 
@@ -231,6 +209,28 @@
     [self.welcomeLabel setText:@"Welcome!\n\nLoad photo from..."];
     [self.welcomeLabel setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:self.welcomeLabel];
+}
+
+- (NSManagedObjectContext *)coreDataContext {
+    if (_coreDataContext) {
+        return _coreDataContext;
+    }
+    
+    UIApplication *application = [UIApplication sharedApplication];
+    NSPersistentContainer *container = ((AppDelegate *)(application.delegate)).
+    persistentContainer;
+    NSManagedObjectContext *context = container.viewContext;
+    
+    return context;
+}
+
+#pragma mark - fetchRequest
+
+- (NSFetchRequest *)getFetchRequest {
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"The item"];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:NO];
+    fetchRequest.sortDescriptors = @[sortDescriptor];
+    return fetchRequest;
 }
 
 @end

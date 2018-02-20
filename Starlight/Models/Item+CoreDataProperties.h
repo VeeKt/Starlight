@@ -2,7 +2,7 @@
 //  Item+CoreDataProperties.h
 //  Starlight
 //
-//  Created by Victoria on 12.02.2018.
+//  Created by Victoria on 20.02.2018.
 //  Copyright © 2018 Victoria. All rights reserved.
 //
 //
@@ -16,11 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<Item *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSDate *date;
 @property (nullable, nonatomic, retain) NSData *image;
-@property (nullable, nonatomic, copy) NSString *name;
-@property (nullable, nonatomic, copy) NSString *note;
-@property (nullable, nonatomic, copy) NSString *qty;
 
 @end
 

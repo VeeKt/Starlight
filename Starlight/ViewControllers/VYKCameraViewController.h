@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface VYKCameraViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-@property (nonatomic, readonly) UIImageView *photoImageView;
+
+// image view для захваченного изображения
+@property (nonatomic, readonly) UIImageView *vykPhotoImageView;
+
 @end

@@ -2,7 +2,7 @@
 //  Item+CoreDataClass.h
 //  Starlight
 //
-//  Created by Victoria on 12.02.2018.
+//  Created by Victoria on 20.02.2018.
 //  Copyright © 2018 Victoria. All rights reserved.
 //
 //

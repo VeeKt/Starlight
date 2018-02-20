@@ -8,6 +8,8 @@
 
 #import "VYKPhotoLibraryController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface VYKPhotoLibraryController ()
 
@@ -47,44 +49,65 @@
 //    }
 //}
 
-- (BOOL)cameraSupportMedia:(NSString *)paramMediaType sourceType:(UIImagePickerControllerSourceType)paramSourceType
+//- (BOOL)cameraSupportMedia:(NSString *)paramMediaType sourceType:(UIImagePickerControllerSourceType)paramSourceType
+//{
+//    __block BOOL result = NO;
+//    if ([paramMediaType length] == 0)
+//    {
+//        NSLog(@"Media type is empty.");
+//        return NO;
+//    }
+//    NSArray *availableMediaTypes = [UIImagePickerController availableMediaTypesForSourceType:paramSourceType];
+//    [availableMediaTypes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop){
+//        NSString *mediaType = (NSString *)obj;
+//        if ([mediaType isEqualToString:paramMediaType])
+//        {
+//            result = YES;
+//            *stop = YES;
+//        }
+//    }];
+//    return result;
+//}
+
+- (BOOL)isPhotoLibraryAvailable
 {
-    __block BOOL result = NO;
-    if ([paramMediaType length] == 0)
-    {
-        NSLog(@"Media type is empty.");
-        return NO;
-    }
-    NSArray *availableMediaTypes = [UIImagePickerController availableMediaTypesForSourceType:paramSourceType];
-    [availableMediaTypes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop){
-        NSString *mediaType = (NSString *)obj;
-        if ([mediaType isEqualToString:paramMediaType])
-        {
-            result = YES;
-            *stop = YES;
-        }
-    }];
-    return result;
+    return [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary];
 }
 
-- (BOOL)doesCameraSupportPhotoLibrary
-{
-    return [self cameraSupportMedia:(__bridge NSString *)kUTTypeImage sourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-}
+//- (BOOL)canUserPickPhotoFromPhotoLibrary
+//{
+//    return [self cameraSupportMedia:(__bridge NSString *)kUTTypeImage sourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+//}
 
 #pragma mark - photo library
 
 - (BOOL)isCreatePhotoLibraryController
 {
-    if ([self doesCameraSupportPhotoLibrary]){
+    if ([self isPhotoLibraryAvailable]){
         return YES;
     }
-//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Attention!" message:@"The photo library is not available." preferredStyle:UIAlertControllerStyleActionSheet];
-//        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action){
-//
-//        }];
-//        [alert addAction:ok];
     return NO;
+}
+
+//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(nonnull UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo
+//{
+//
+//}
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    if ([self isPhotoLibraryAvailable])
+    {
+        UIImagePickerController *controller = [[UIImagePickerController alloc] init];
+        controller.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        NSMutableArray *mediaTypes = [[NSMutableArray alloc] init];
+        
+        controller.mediaTypes = mediaTypes;
+        controller.delegate = self;
+//        [AppDelegate.]
+    }
 }
 
 @end
