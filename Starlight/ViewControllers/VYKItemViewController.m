@@ -46,21 +46,25 @@
 
     UISlider *sliderBlur = [[UISlider alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height - 160, self.view.frame.size.width - 20, 5)];
     sliderBlur.minimumValue = 0;
-    sliderBlur.maximumValue = 5;
+    sliderBlur.maximumValue = 2;
     sliderBlur.value = 0;
     [sliderBlur setContinuous:YES];
+//    dispatch_async(dispatch_get_main_queue(), ^{
     [sliderBlur addTarget:self action:@selector(changeWhiteBalance:)
           forControlEvents:UIControlEventValueChanged];
+//     });
 
     [self.view addSubview:sliderBlur];
 
     UISlider *sliderBlack = [[UISlider alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height - 100, self.view.frame.size.width - 20, 5)];
     sliderBlack.minimumValue = 0;
-    sliderBlack.maximumValue = 4;
-    sliderBlack.value = 1;
+    sliderBlack.maximumValue = 5;
+    sliderBlack.value = 0;
     [sliderBlack setContinuous:YES];
+//    dispatch_async(dispatch_get_main_queue(), ^{
     [sliderBlack addTarget:self action:@selector(changeBlackBalance:)
           forControlEvents:UIControlEventValueChanged];
+//    });
     
     [self.view addSubview:sliderBlack];
     
@@ -71,7 +75,6 @@
     cancelButton.backgroundColor = [UIColor lightGrayColor];
     [cancelButton addTarget:self action:@selector(cancelEditing)
          forControlEvents:UIControlEventTouchUpInside];
-    
     [self.view addSubview:cancelButton];
     
     UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -105,37 +108,28 @@
 
 - (void)changeWhiteBalance:(UISlider *)slider
 {
-//прикрутить асинхронность (медленно)
-    CGFloat sliderValue = [slider value];
-//    VYKSlider_Filter *filter = [[VYKSlider_Filter alloc] init];
-//    UIImage *newImage = [filter imageWithFilter:@"CIDiscBlur" forKey:@"inputRadius" withSliderValue:sliderValue];
-//
-    CIImage *ciImage = [CIImage imageWithCGImage:self.photo.image.CGImage];
-    CIContext *context = [CIContext contextWithOptions:nil];
-    CIFilter *filter = [CIFilter filterWithName:@"CIDiscBlur"]; //CIPhotoEffectFade
-    [filter setValue:ciImage forKey:kCIInputImageKey];
+//    dispatch_async(dispatch_get_main_queue(), ^{
+        CGFloat sliderValue = [slider value];
+        CIImage *ciImage = [CIImage imageWithCGImage:self.photo.image.CGImage];
+        CIContext *context = [CIContext contextWithOptions:nil];
+        CIFilter *filter = [CIFilter filterWithName:@"CIDiscBlur"]; //CIPhotoEffectFade
+        [filter setValue:ciImage forKey:kCIInputImageKey];
 
-    [filter setValue:[NSNumber numberWithFloat:sliderValue] forKey:@"inputRadius"];
+        [filter setValue:[NSNumber numberWithFloat:sliderValue] forKey:@"inputRadius"];
 
-    CIImage *outputImage = [filter outputImage];
-    CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];
-    UIImage *newImage = [UIImage imageWithCGImage:cgimg scale:1.0 orientation:self.photo.image.imageOrientation];
-    CGImageRelease(cgimg);
-    context = nil;
-    self.photo.image = newImage;
+        CIImage *outputImage = [filter outputImage];
+        CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];
+        UIImage *newImage = [UIImage imageWithCGImage:cgimg scale:1.0 orientation:self.photo.image.imageOrientation];
+        CGImageRelease(cgimg);
+        context = nil;
+        self.photo.image = newImage;
+//        });
 }
 
 - (void)changeBlackBalance:(UISlider *)slider
 {
-
     CGFloat sliderValue = [slider value];
-    
-//    VYKSlider_Filter *filter = [[VYKSlider_Filter alloc] init];
-//    filter.inputImage = self.photo.image;
-//
-//    CGImageRef cgimg = [filter imageWithFilter:@"CISepiaTone" forKey:@"inputIntensity" withSliderValue:sliderValue];
-//    UIImage *newImage = [UIImage imageWithCGImage:cgimg scale:1.0 orientation:self.photo.image.imageOrientation];
-//    CGImageRelease(cgimg);
+
     CIImage *ciImage = [CIImage imageWithCGImage:self.photo.image.CGImage];
     CIContext *context = [CIContext contextWithOptions:nil];
     CIFilter *filter = [CIFilter filterWithName:@"CISepiaTone"]; //CIPhotoEffectFade
