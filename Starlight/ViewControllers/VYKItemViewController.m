@@ -9,28 +9,12 @@
 #import "VYKItemViewController.h"
 #import <CoreImage/CoreImage.h>
 #import <CoreGraphics/CoreGraphics.h>
-//#import "VYKSlider+Filter.h"
-
-@interface VYKItemViewController ()
-
-@end
 
 @implementation VYKItemViewController
-//{
-//    CIContext *context;
-//    CIImage *beginImage;
-//    CIFilter *filter;
-//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createUI];
-    
-//    beginImage = [CIImage imageWithCGImage:self.photo.image.CGImage];
-//    filter = [CIFilter filterWithName:@"CISepiaTone"];
-//    [filter setValue:self.photo.image forKey:kCIInputImageKey];
-//    [filter setValue:[NSNumber numberWithFloat:0] forKey:@"inputIntensity"];
-//    context = [CIContext contextWithOptions:nil];
 }
 
 
@@ -49,10 +33,8 @@
     sliderBlur.maximumValue = 2;
     sliderBlur.value = 0;
     [sliderBlur setContinuous:YES];
-//    dispatch_async(dispatch_get_main_queue(), ^{
     [sliderBlur addTarget:self action:@selector(changeWhiteBalance:)
           forControlEvents:UIControlEventValueChanged];
-//     });
 
     [self.view addSubview:sliderBlur];
 
@@ -61,10 +43,8 @@
     sliderBlack.maximumValue = 5;
     sliderBlack.value = 0;
     [sliderBlack setContinuous:YES];
-//    dispatch_async(dispatch_get_main_queue(), ^{
     [sliderBlack addTarget:self action:@selector(changeBlackBalance:)
           forControlEvents:UIControlEventValueChanged];
-//    });
     
     [self.view addSubview:sliderBlack];
     
@@ -108,11 +88,10 @@
 
 - (void)changeWhiteBalance:(UISlider *)slider
 {
-//    dispatch_async(dispatch_get_main_queue(), ^{
         CGFloat sliderValue = [slider value];
         CIImage *ciImage = [CIImage imageWithCGImage:self.photo.image.CGImage];
         CIContext *context = [CIContext contextWithOptions:nil];
-        CIFilter *filter = [CIFilter filterWithName:@"CIDiscBlur"]; //CIPhotoEffectFade
+        CIFilter *filter = [CIFilter filterWithName:@"CIDiscBlur"];
         [filter setValue:ciImage forKey:kCIInputImageKey];
 
         [filter setValue:[NSNumber numberWithFloat:sliderValue] forKey:@"inputRadius"];
@@ -123,7 +102,6 @@
         CGImageRelease(cgimg);
         context = nil;
         self.photo.image = newImage;
-//        });
 }
 
 - (void)changeBlackBalance:(UISlider *)slider
@@ -132,7 +110,7 @@
 
     CIImage *ciImage = [CIImage imageWithCGImage:self.photo.image.CGImage];
     CIContext *context = [CIContext contextWithOptions:nil];
-    CIFilter *filter = [CIFilter filterWithName:@"CISepiaTone"]; //CIPhotoEffectFade
+    CIFilter *filter = [CIFilter filterWithName:@"CISepiaTone"];
     [filter setValue:ciImage forKey:kCIInputImageKey];
 
     [filter setValue:[NSNumber numberWithFloat:sliderValue] forKey:@"inputIntensity"];
